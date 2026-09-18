@@ -6,7 +6,7 @@
   /* ================================================================ DATA */
   const CHAPTERS = [
     {
-      n: 1, city: 'Manila', country: 'Philippines', venue: 'Manila, Philippines',
+      n: 1, city: 'Manila', country: 'Philippines', venue: 'Manila, Philippines', img: 'assets/cities/manila.jpg',
       title: 'Closing the GDMT Gap: From Evidence to Early Implementation',
       short: 'Closing the GDMT Gap',
       date: '28 October 2026', dateShort: '28 Oct 2026', time: '7:00–9:00 PM PHT',
@@ -33,7 +33,7 @@
       nowPlaying: 2, upNext: [4, 5, 6]
     },
     {
-      n: 2, city: 'Bangkok', country: 'Thailand', venue: 'Bangkok, Thailand',
+      n: 2, city: 'Bangkok', country: 'Thailand', venue: 'Bangkok, Thailand', img: 'assets/cities/bangkok.jpg',
       title: 'Managing Challenging Heart Failure Patients',
       short: 'Managing Challenging HF Patients',
       date: '30 October 2026', dateShort: '30 Oct 2026', time: '3:00–5:00 PM ICT',
@@ -63,7 +63,7 @@
       nowPlaying: 1, upNext: [3, 4, 5]
     },
     {
-      n: 3, city: 'Jakarta', country: 'Indonesia', venue: 'Jakarta, Indonesia',
+      n: 3, city: 'Jakarta', country: 'Indonesia', venue: 'Jakarta, Indonesia', img: 'assets/cities/jakarta.jpg',
       title: 'Personalizing Cardiovascular Care Through Patient Profiling',
       short: 'Personalizing CV Care',
       date: '31 October 2026', dateShort: '31 Oct 2026', time: '3:30–5:30 PM WIB',
@@ -227,12 +227,13 @@
   /* ---- Landing ---- */
   function renderLanding() {
     $('land-chapters').innerHTML = CHAPTERS.map((c) => `<article class="ch-art">
-      <div class="ch-city"><div class="country">${c.country}</div><div><div class="city">${c.city}</div><div class="fmt">In person &amp; livestream</div></div><div class="big">0${c.n}</div></div>
+      <div class="ch-city"><img src="${c.img}" alt="${c.city}"><div class="country">${c.country}</div><div><div class="city">${c.city}</div><div class="fmt">In person &amp; livestream</div></div><div class="big">0${c.n}</div></div>
       <div class="ch-label"><span>Chapter ${c.n}</span><i></i></div>
       <h3>${c.city}</h3><div class="theme">${esc(c.title)}</div>
       <dl><dt>Venue</dt><dd>${c.venue}</dd><dt>Date</dt><dd>${c.date}</dd><dt>Time</dt><dd>${c.time}</dd></dl>
       <a class="btn btn-line sm" href="#register">Register to attend</a>
     </article>`).join('');
+    $('land-events').innerHTML = eventRows();
     $('land-faculty').innerHTML = ['savarese', 'advincula', 'don', 'patricio', 'tiongco', 'speaker-bkk', 'mod-bkk', 'speaker-id'].map((id) => facultyCard(id)).join('');
     const c = $('reg-country');
     if (!c.options.length) {
@@ -259,7 +260,7 @@
       const s = status(i);
       const actions = s === 'locked' ? `<span class="small">Unlocks after Chapter ${c.n - 1}</span>`
         : `${s === 'live' ? `<button class="btn btn-live sm" data-chapter="${i}" data-target="live">Join live</button>` : `<button class="btn btn-navy sm" data-chapter="${i}" data-target="live">${s === 'done' || s === 'replay' ? 'Replay' : 'Join live'}</button>`}<button class="btn btn-soft sm" data-chapter="${i}">Agenda</button>`;
-      return `<div class="row${s === 'locked' ? ' locked' : ''}"><div class="num">0${c.n}</div>
+      return `<div class="row${s === 'locked' ? ' locked' : ''}"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
         <div><b>${c.city} — ${esc(c.title)}</b><div class="meta">${c.venue} · ${c.date} · ${c.time}</div>${statusPill(s)}</div>
         <div class="btn-row">${actions}</div></div>`;
     }).join('');
@@ -276,7 +277,7 @@
   function renderOverview() {
     $('ov-chapters').innerHTML = CHAPTERS.map((c, i) => {
       const s = status(i);
-      return `<div class="ov-row${s === 'locked' ? ' locked' : ''}"><div class="num">0${c.n}</div>
+      return `<div class="ov-row${s === 'locked' ? ' locked' : ''}"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
         <div><div class="ch-label"><span>Chapter ${c.n} · ${c.city}</span><i></i>${statusPill(s)}</div><h3>${esc(c.title)}</h3><div class="meta">${c.venue} · ${c.date} · ${c.time} · Hybrid</div>
         <div class="avatars">${c.faculty.slice(0, 5).map((id) => `<span class="avatar" title="${esc(FACULTY[id].name)}">${FACULTY[id].photo ? `<img src="${FACULTY[id].photo}" alt="">` : initials(FACULTY[id].name)}</span>`).join('')}</div></div>
         <button class="btn btn-navy sm" data-chapter="${i}" ${s === 'locked' ? 'disabled' : ''}>View chapter →</button></div>`;
@@ -290,7 +291,7 @@
     $('ch-n').textContent = 'Chapter ' + c.n;
     $('ch-title').textContent = c.title;
     $('ch-venue').textContent = c.venue; $('ch-date').textContent = `${c.date} | ${c.time}`;
-    $('ch-status').innerHTML = statusPill(s); $('ch-big').textContent = '0' + c.n; $('ch-agenda-meta').textContent = c.time + ' local time';
+    $('ch-status').innerHTML = statusPill(s); $('ch-big').textContent = '0' + c.n; $('ch-img').src = c.img; $('ch-img').alt = c.city; $('ch-agenda-meta').textContent = c.time + ' local time';
     $('ch-objectives').innerHTML = c.objectives.map((o) => `<li>${esc(o)}</li>`).join('');
     $('ch-agenda').innerHTML = c.agenda.map(([t, sess, sp, mod]) => `<tr><td class="mono">${t}</td><td>${esc(sess)}</td><td>${esc(sp)}</td><td>${esc(mod)}</td></tr>`).join('');
     $('ch-faculty').innerHTML = c.faculty.map((id) => facultyCard(id, 'compact')).join('');

@@ -33,23 +33,51 @@
 
     <!-- ============================================== LANDING / REGISTRATION -->
     <section class="view landing" data-view="landing">
-      <div class="hero">
+      <div class="hero" id="register">
         <div>
           <div class="kicker-line"><span class="kicker">A Hetero education initiative · Endorsed by ESC</span></div>
           <h1 class="display">PULCE Connect</h1>
           <div class="sub">Cardiovascular &amp; Heart Failure Education Series</div>
           <p class="lead">A 3-part hybrid meeting series across Asia — bridging the gap between heart failure guidelines and real-world clinical practice.</p>
-          <div class="btn-row"><a class="btn btn-burg" href="#register">Register — free for HCPs →</a><a class="btn btn-line" href="#chapters">View the three chapters</a></div>
           <div class="facts">
             <div class="fact"><b>3</b><span>Chapters</span></div>
             <div class="fact"><b>Oct 2026</b><span>Manila · Bangkok · Jakarta</span></div>
             <div class="fact"><b>Hybrid</b><span>In person &amp; livestream</span></div>
           </div>
-        </div>
-        <div class="hero-side">
           <div class="hero-img"><img src="assets/skyline.jpg" alt="Manila · Bangkok · Jakarta"></div>
+          <div class="card table-wrap events"><table class="table"><thead><tr><th>Chapter</th><th>Venue</th><th>Date</th><th>Time</th></tr></thead><tbody id="land-events"></tbody></table></div>
           <div class="esc-note"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"><p>Endorsed by the <b>European Society of Cardiology</b> — the series follows ESC heart failure guidance and standards for independent medical education.</p></div>
         </div>
+        <aside class="hero-form">
+          <div class="form-head"><div id="reg-intro"><div class="kicker">Registration</div><h2>Register now</h2><p class="intro">Free for healthcare professionals. Access to chapters, live sessions and certificates opens after registration.</p></div><div id="login-intro" hidden><div class="kicker">Returning participant</div><h2>Welcome back</h2><p class="intro">Log in with your name or email address.</p></div></div>
+          <div class="form-panel">
+            <div class="mode-tabs"><button type="button" class="active" id="tab-register" data-show-register>Register</button><button type="button" id="tab-login" data-show-login>Log in</button></div>
+            <form id="reg-form" autocomplete="on">
+              <div class="form-grid">
+                <label class="field">Full name <em>*</em><input class="input" name="name" placeholder="Dr. " autocomplete="name" required></label>
+                <label class="field">Email <em>*</em><input class="input" name="email" type="email" placeholder="name@hospital.org" autocomplete="email" required></label>
+                <label class="field">Country <em>*</em><select class="input" id="reg-country" name="country" required></select></label>
+                <label class="field">Role <em>*</em><select class="input" id="reg-role" name="role" required></select></label>
+                <label class="field">Specialty <em>*</em><select class="input" id="reg-specialty" name="specialty" required></select></label>
+                <label class="field">License no. (optional)<input class="input" name="license"></label>
+                <label class="field span2">Institution (optional)<input class="input" name="institution" autocomplete="organization"></label>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-burg">Register →</button><div class="hint">Already registered? <button type="button" class="link" data-show-login>Log in</button></div></div>
+            </form>
+            <form id="login-form" hidden>
+              <div class="form-grid" style="max-width:420px">
+                <label class="field span2">Full name<input class="input" name="name" autocomplete="name"></label>
+                <label class="field span2">Email<input class="input" id="login-email" name="email" type="email" autocomplete="email"></label>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-navy">Log in →</button><div class="hint">New here? <button type="button" class="link" data-show-register>Register</button></div></div>
+            </form>
+          </div>
+          <div class="benefits">
+            <div><i>—</i><div>Access to all three chapters, live in person or by livestream</div></div>
+            <div><i>—</i><div>On-demand recordings and case discussion materials</div></div>
+            <div><i>—</i><div>Certificate of attendance for each chapter you attend</div></div>
+          </div>
+        </aside>
       </div>
 
       <section class="section" id="chapters">
@@ -85,43 +113,6 @@
         <div class="rule-head"><h2 class="h2">Faculty</h2><div class="meta">International &amp; regional speakers</div></div>
         <div class="fac-grid" id="land-faculty"></div>
         <div class="note" style="border-top:1px solid var(--rule)">Full faculty list per chapter is published ahead of each meeting.</div>
-      </section>
-
-      <section class="register" id="register">
-        <div class="register-in">
-          <div>
-            <div id="reg-intro"><h2>Register now</h2><p class="intro">Free for healthcare professionals. Access to chapters, live sessions and certificates opens after registration.</p></div>
-            <div id="login-intro" hidden><h2>Welcome back</h2><p class="intro">Log in with your name or email address.</p></div>
-            <div class="benefits">
-              <div><i>—</i><div>Access to all three chapters, live in person or by livestream</div></div>
-              <div><i>—</i><div>On-demand recordings and case discussion materials</div></div>
-              <div><i>—</i><div>Certificate of attendance for each chapter you attend</div></div>
-            </div>
-            <div class="esc-reg"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"><span>Endorsed by the European Society of Cardiology</span></div>
-          </div>
-          <div class="form-panel">
-            <div class="mode-tabs"><button type="button" class="active" id="tab-register" data-show-register>Register</button><button type="button" id="tab-login" data-show-login>Log in</button></div>
-            <form id="reg-form" autocomplete="on">
-              <div class="form-grid">
-                <label class="field">Full name <em>*</em><input class="input" name="name" placeholder="Dr. " autocomplete="name" required></label>
-                <label class="field">Email <em>*</em><input class="input" name="email" type="email" placeholder="name@hospital.org" autocomplete="email" required></label>
-                <label class="field">Country <em>*</em><select class="input" id="reg-country" name="country" required></select></label>
-                <label class="field">Role <em>*</em><select class="input" id="reg-role" name="role" required></select></label>
-                <label class="field">Specialty <em>*</em><select class="input" id="reg-specialty" name="specialty" required></select></label>
-                <label class="field">License no. (optional)<input class="input" name="license"></label>
-                <label class="field span2">Institution (optional)<input class="input" name="institution" autocomplete="organization"></label>
-              </div>
-              <div class="form-actions"><button type="submit" class="btn btn-burg">Register →</button><div class="hint">Already registered? <button type="button" class="link" data-show-login>Log in</button></div></div>
-            </form>
-            <form id="login-form" hidden>
-              <div class="form-grid" style="max-width:420px">
-                <label class="field span2">Full name<input class="input" name="name" autocomplete="name"></label>
-                <label class="field span2">Email<input class="input" id="login-email" name="email" type="email" autocomplete="email"></label>
-              </div>
-              <div class="form-actions"><button type="submit" class="btn btn-navy">Log in →</button><div class="hint">New here? <button type="button" class="link" data-show-register>Register</button></div></div>
-            </form>
-          </div>
-        </div>
       </section>
 
       <section class="trust">
@@ -174,6 +165,7 @@
     <section class="view wrap" data-view="chapter" hidden>
       <button class="back" data-go="overview">← Program overview</button>
       <div class="ch-hero">
+        <img id="ch-img" alt="">
         <div><div class="kicker" id="ch-n"></div><h1 id="ch-title"></h1><div class="meta"><span>📍 <span id="ch-venue"></span></span><span>📅 <span id="ch-date"></span></span><span>🎥 Hybrid (In-person + Virtual)</span></div></div>
         <div id="ch-status"></div>
         <div class="big" id="ch-big"></div>
