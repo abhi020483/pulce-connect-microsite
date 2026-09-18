@@ -282,8 +282,6 @@ textarea.input{resize:vertical;min-height:80px}
 .tl .who>div{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2)}
 .tl .who small{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:2px}
 .tl .who .avatar{margin:0}
-.objectives li{transition:background .2s,padding-left .2s}
-.objectives li:hover{background:var(--paper-2);padding-left:6px}
 .fact b{font-variant-numeric:tabular-nums}
 
 /* ---------- Cardio imagery ---------- */
@@ -373,9 +371,20 @@ textarea.input{resize:vertical;min-height:80px}
 .ch-hero .status.s-done{color:#9fd8b5;border-color:#9fd8b5;background:transparent}
 .ch-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .ch-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;margin-top:44px}
-.objectives{counter-reset:o;list-style:none;padding:0}
-.objectives li{counter-increment:o;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--rule-2);font-size:15px;line-height:1.5;color:var(--ink-2)}
-.objectives li::before{content:counter(o);font-size:22px;font-weight:300;color:var(--burg);line-height:1.1}
+/* learning objectives — card grid */
+.objectives{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.objectives li{position:relative;background:var(--white);border:1px solid var(--rule-2);padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s;animation:objIn .5s ease both;animation-delay:var(--d,0ms)}
+.objectives li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--burg);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+.objectives li::after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(142,38,55,.08),transparent 70%);transition:transform .4s ease}
+.objectives li:hover{transform:translateY(-4px);border-color:var(--burg);box-shadow:0 18px 40px -28px rgba(14,26,43,.45)}
+.objectives li:hover::before{transform:scaleY(1)}.objectives li:hover::after{transform:scale(1.6)}
+.obj-top{display:flex;align-items:center;justify-content:space-between}
+.obj-n{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--burg);font-variant-numeric:tabular-nums}
+.obj-ico{width:40px;height:40px;border-radius:50%;background:var(--live-bg);display:inline-flex;align-items:center;justify-content:center;color:var(--burg);transition:background .25s,color .25s,transform .25s}
+.obj-ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.objectives li:hover .obj-ico{background:var(--burg);color:#fff;transform:rotate(-8deg) scale(1.08)}
+.objectives p{font-size:14.5px;line-height:1.55;color:var(--ink-2);position:relative}
+@keyframes objIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .agenda td:first-child{width:110px}.agenda td:nth-child(2){width:44%}
 .criteria td:first-child{width:170px}
 .post{margin-top:44px;border-top:2px solid var(--burg);background:var(--white);padding:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -525,6 +534,7 @@ textarea.input{resize:vertical;min-height:80px}
   /* chapter */
   .ch-hero{padding:22px 18px;gap:18px}.ch-hero .big{font-size:110px;top:-20px}.ch-hero h1{font-size:26px}
   .ch-hero .btn-row .btn,.post .btn-row .btn{width:100%}
+  .objectives{grid-template-columns:1fr;gap:10px}.objectives li{padding:14px 16px 16px}
   .timeline{padding-left:18px}.tl{grid-template-columns:1fr;gap:8px;padding:14px}.tl::before{left:-15px}.tl .who{gap:10px}
   .post{padding:20px;margin-top:32px}
   /* live / feedback / resources */
@@ -599,3 +609,4 @@ html[data-theme="dark"] .hero-logo img{background:#fff;padding:14px 18px;border-
 /* certificates stay light — they are printed */
 html[data-theme="dark"] .cert-preview{background:#fff;color:#0E1A2B}
 html[data-theme="dark"] .cert-preview .kicker,html[data-theme="dark"] .cert-preview .num{color:#8E2637}
+html[data-theme="dark"] .obj-ico{background:rgba(212,83,106,.18)}

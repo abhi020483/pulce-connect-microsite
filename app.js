@@ -91,11 +91,11 @@
   ];
 
   const FACULTY = {
-    'savarese':    { name: 'Dr Gianluigi Savarese', role: 'Speaker', chapters: [1, 2, 3], photo: 'assets/faculty/savarese.jpg', cred: 'Karolinska Institutet, Stockholm · Heart failure specialist' },
+    'savarese':    { name: 'Dr Gianluigi Savarese', role: 'Speaker', chapters: [1, 2, 3], photo: 'assets/faculty/savarese.jpg?v=3', cred: 'Karolinska Institutet, Stockholm · Heart failure specialist' },
     'advincula':   { name: 'Dr Glenny Advincula', role: 'Speaker', chapters: [1], cred: 'Cardiologist, Philippines' },
     'don':         { name: 'Dr Don', role: 'Chairperson, Philippines', chapters: [1], cred: 'Chairperson · Philippines' },
-    'patricio':    { name: 'Dr Marion Patricio', role: 'Moderator', chapters: [1], photo: 'assets/faculty/patricio.jpg', cred: 'Cardiologist, Philippines' },
-    'tiongco':     { name: 'Dr Richard Tiongco', role: 'Panelist', chapters: [1], photo: 'assets/faculty/tiongco.jpg', cred: 'Cardiologist, Philippines' },
+    'patricio':    { name: 'Dr Marion Patricio', role: 'Moderator', chapters: [1], photo: 'assets/faculty/patricio.jpg?v=3', cred: 'Cardiologist, Philippines' },
+    'tiongco':     { name: 'Dr Richard Tiongco', role: 'Panelist', chapters: [1], photo: 'assets/faculty/tiongco.jpg?v=3', cred: 'Cardiologist, Philippines' },
     'speaker-bkk': { name: 'Speaker from Bangkok', role: 'Speaker', chapters: [2], cred: 'Cardiologist, Thailand · To be announced', tba: true },
     'mod-bkk':     { name: 'Moderator from Bangkok', role: 'Moderator', chapters: [2], cred: 'Top KOL, Thailand · To be announced', tba: true },
     'speaker-id':  { name: 'Speaker from Indonesia', role: 'Speaker', chapters: [3], cred: 'Cardiologist, Indonesia · To be announced', tba: true },
@@ -306,13 +306,29 @@
   }
 
   /* ---- Chapter detail ---- */
+  /* pick a line icon for a learning objective from its wording */
+  const OBJ_ICONS = [
+    [/gap|barrier|inertia|delay/i, '<path d="M3 17l5-5 4 4 5-6 4 3"/><path d="M3 21h18"/>'],
+    [/evidence|review|guideline|recommend/i, '<path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 0-3 3z"/><path d="M18 7h2v13h-2"/><path d="M8 9h6M8 13h6"/>'],
+    [/benefit|survival|quality of life|outcome/i, '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/><path d="M5 12h3l2-3 2 5 2-2h5"/>'],
+    [/transition|hospital|outpatient|adherence|follow/i, '<path d="M3 12h13"/><path d="M12 7l5 5-5 5"/><path d="M21 5v14"/>'],
+    [/actionable|practical|strateg|implement|translat/i, '<path d="M9 11l2 2 4-4"/><rect x="4" y="4" width="16" height="16" rx="2"/>'],
+    [/profil|personal|phenotype|patient/i, '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'],
+    [/comorbid|challeng|complex|decompens/i, '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/>'],
+  ];
+  function objIcon(text) {
+    const hit = OBJ_ICONS.find(([re]) => re.test(text));
+    const d = hit ? hit[1] : '<circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/>';
+    return `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+  }
+
   function renderChapter() {
     const i = state.chapter, c = CHAPTERS[i], s = status(i);
     $('ch-n').textContent = 'Chapter ' + c.n;
     $('ch-title').textContent = c.title;
     $('ch-venue').textContent = c.venue; $('ch-date').textContent = `${c.date} | ${c.time}`;
     $('ch-status').innerHTML = statusPill(s); $('ch-big').textContent = '0' + c.n; $('ch-img').src = c.img; $('ch-img').alt = c.city; $('ch-agenda-meta').textContent = c.time + ' local time';
-    $('ch-objectives').innerHTML = c.objectives.map((o) => `<li>${esc(o)}</li>`).join('');
+    $('ch-objectives').innerHTML = c.objectives.map((o, k) => `<li style="--d:${k * 70}ms"><div class="obj-top"><span class="obj-n">0${k + 1}</span><span class="obj-ico">${objIcon(o)}</span></div><p>${esc(o)}</p></li>`).join('');
     const nowMin = (() => { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); })();
     const live = s === 'live';
     const person = (name) => { const id = Object.keys(FACULTY).find((k) => FACULTY[k].name === name); const f = id && FACULTY[id]; return f ? `<span class="avatar">${f.photo ? `<img src="${f.photo}" alt="" onerror="this.replaceWith(document.createTextNode('${initials(f.name)}'))">` : initials(f.name)}</span>${esc(name)}` : esc(name); };
