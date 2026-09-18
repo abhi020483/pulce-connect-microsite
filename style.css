@@ -223,6 +223,30 @@ textarea.input{resize:vertical;min-height:80px}
 .t-pulce{width:190px;height:70px}.t-hetero{width:140px;height:52px}.t-strip{width:420px;max-width:100%;height:56px}.t-esc{width:120px;height:56px}
 .trust p{padding-top:14px;max-width:80ch}
 
+/* ---------- Cardio imagery ---------- */
+.pulse-band{margin-top:76px;background:var(--navy) url(assets/cardio/ecg.jpg) center/cover no-repeat;color:#fff;position:relative}
+.pulse-band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,26,43,.94) 0%,rgba(14,26,43,.82) 55%,rgba(14,26,43,.45) 100%)}
+.pulse-in{position:relative;max-width:var(--max);margin:0 auto;padding:64px var(--pad)}
+.pulse-in .kicker{color:var(--rose);margin-bottom:14px}
+.pulse-in h2{font-size:clamp(26px,3vw,38px);font-weight:300;letter-spacing:-.01em;line-height:1.15;max-width:22ch}
+.pulse-in p{margin-top:16px;font-size:16px;line-height:1.6;max-width:60ch;opacity:.88}
+.pulse-stats{display:flex;gap:0;margin-top:28px;border-top:1px solid rgba(255,255,255,.25);max-width:720px}
+.pulse-stats div{flex:1;padding:16px 18px 0 0;border-right:1px solid rgba(255,255,255,.25);margin-right:18px}
+.pulse-stats div:last-child{border-right:0}
+.pulse-stats b{display:block;font-size:22px;font-weight:300}
+.pulse-stats span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.photo{margin:22px 0 0;border:1px solid var(--rule-2);background:#fff;overflow:hidden}
+.photo img{width:100%;height:240px;object-fit:cover;display:block}
+.photo.wide img{height:300px}
+.photo figcaption{padding:10px 14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule-2)}
+.thanks .photo{margin:0 0 26px}
+.card.navy.ecg{background:var(--navy) url(assets/cardio/ecg.jpg) center/cover no-repeat;position:relative}
+.card.navy.ecg::before{content:"";position:absolute;inset:0;background:rgba(14,26,43,.86)}
+.card.navy.ecg>*{position:relative}
+.embed{background:var(--navy) url(assets/cardio/monitor.jpg) center/cover no-repeat;position:relative}
+.embed::before{content:"";position:absolute;inset:0;background:rgba(14,26,43,.78)}
+.embed>*{position:relative}
+
 /* ---------- Thanks ---------- */
 .thanks{max-width:900px}
 .thanks .check{font-size:44px;margin-bottom:10px}
@@ -292,7 +316,7 @@ textarea.input{resize:vertical;min-height:80px}
 
 /* ---------- Live ---------- */
 .live-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;margin-top:28px;align-items:start}
-.embed{aspect-ratio:16/9;background:var(--navy);color:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
+.embed{aspect-ratio:16/9;color:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
 .embed-msg{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:26px;font-weight:300;letter-spacing:.12em;text-transform:uppercase}
 .embed-msg small{font-size:13px;letter-spacing:.04em;text-transform:none;opacity:.8;max-width:420px;line-height:1.5}
 .live-dot{width:12px;height:12px;border-radius:50%;background:var(--burg);box-shadow:0 0 0 6px rgba(142,38,55,.35);animation:pulse 1.2s infinite}
@@ -385,7 +409,7 @@ textarea.input{resize:vertical;min-height:80px}
 @media (max-width:760px){
   :root{--pad:18px}
   .hdr-in{padding:10px var(--pad)}.hdr-nav{gap:14px}.hdr-nav a:not(.cta){display:none}.esc-box{display:none}.hdr-hetero{height:44px}.hdr-logo{height:52px}.vrule{height:30px}
-  .wrap{padding:32px var(--pad) 60px}.section{padding-top:56px}
+  .wrap{padding:32px var(--pad) 60px}.section{padding-top:56px}.pulse-band{margin-top:56px}.pulse-stats{flex-direction:column}.pulse-stats div{border-right:0;border-bottom:1px solid rgba(255,255,255,.25);padding:12px 0;margin:0}.photo img,.photo.wide img{height:200px}
   .facts{flex-direction:column}.fact{border-right:0;border-bottom:1px solid var(--rule);padding:14px 0}.fact:last-child{border-bottom:0}
   .chapters-grid{grid-template-columns:1fr}.ch-art{border-right:0;border-bottom:1px solid var(--rule);padding:0 0 22px;margin-bottom:22px}
   .fac-grid{grid-template-columns:1fr 1fr}.fac{padding-right:12px}

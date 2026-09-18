@@ -92,10 +92,10 @@
 
   const FACULTY = {
     'savarese':    { name: 'Dr Gianluigi Savarese', role: 'Speaker', chapters: [1, 2, 3], photo: 'assets/faculty/savarese.jpg', cred: 'Karolinska Institutet, Stockholm · Heart failure specialist' },
-    'advincula':   { name: 'Dr Glenny Advincula', role: 'Speaker', chapters: [1], cred: 'Cardiologist, Philippines' },
-    'don':         { name: 'Dr Don', role: 'Chairperson, Philippines', chapters: [1], cred: 'Chairperson · Philippines' },
-    'patricio':    { name: 'Dr Marion Patricio', role: 'Moderator', chapters: [1], cred: 'Cardiologist, Philippines' },
-    'tiongco':     { name: 'Dr Richard Tiongco', role: 'Panelist', chapters: [1], cred: 'Cardiologist, Philippines' },
+    'advincula':   { name: 'Dr Glenny Advincula', role: 'Speaker', chapters: [1], photo: 'assets/faculty/advincula.jpg', cred: 'Cardiologist, Philippines' },
+    'don':         { name: 'Dr Don', role: 'Chairperson, Philippines', chapters: [1], photo: 'assets/faculty/don.jpg', cred: 'Chairperson · Philippines' },
+    'patricio':    { name: 'Dr Marion Patricio', role: 'Moderator', chapters: [1], photo: 'assets/faculty/patricio.jpg', cred: 'Cardiologist, Philippines' },
+    'tiongco':     { name: 'Dr Richard Tiongco', role: 'Panelist', chapters: [1], photo: 'assets/faculty/tiongco.jpg', cred: 'Cardiologist, Philippines' },
     'speaker-bkk': { name: 'Speaker from Bangkok', role: 'Speaker', chapters: [2], cred: 'Cardiologist, Thailand · To be announced', tba: true },
     'mod-bkk':     { name: 'Moderator from Bangkok', role: 'Moderator', chapters: [2], cred: 'Top KOL, Thailand · To be announced', tba: true },
     'speaker-id':  { name: 'Speaker from Indonesia', role: 'Speaker', chapters: [3], cred: 'Cardiologist, Indonesia · To be announced', tba: true },
@@ -219,7 +219,7 @@
   const facultyCard = (id, size = '') => {
     const f = FACULTY[id], tag = f.chapters.length ? 'CH ' + f.chapters.join('·') : 'TBA';
     return `<div class="fac${size ? ' ' + size : ''}${f.tba ? ' tba' : ''}">
-      <div class="fac-photo">${f.photo ? `<img src="${f.photo}" alt="${esc(f.name)}">` : `<div class="tag">${f.tba ? tag : initials(f.name)}</div>`}</div>
+      <div class="fac-photo">${f.photo ? `<img src="${f.photo}" alt="${esc(f.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'tag',textContent:'${initials(f.name)}'}))">` : `<div class="tag">${f.tba ? tag : initials(f.name)}</div>`}</div>
       <div><b>${esc(f.name)}</b><span>${esc(f.role)}${f.chapters.length ? ' · Chapter' + (f.chapters.length > 1 ? 's ' : ' ') + f.chapters.join(', ') : ''}</span><small>${esc(f.cred)}</small></div>
     </div>`;
   };
@@ -279,7 +279,7 @@
       const s = status(i);
       return `<div class="ov-row${s === 'locked' ? ' locked' : ''}"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
         <div><div class="ch-label"><span>Chapter ${c.n} · ${c.city}</span><i></i>${statusPill(s)}</div><h3>${esc(c.title)}</h3><div class="meta">${c.venue} · ${c.date} · ${c.time} · Hybrid</div>
-        <div class="avatars">${c.faculty.slice(0, 5).map((id) => `<span class="avatar" title="${esc(FACULTY[id].name)}">${FACULTY[id].photo ? `<img src="${FACULTY[id].photo}" alt="">` : initials(FACULTY[id].name)}</span>`).join('')}</div></div>
+        <div class="avatars">${c.faculty.slice(0, 5).map((id) => `<span class="avatar" title="${esc(FACULTY[id].name)}">${FACULTY[id].photo ? `<img src="${FACULTY[id].photo}" alt="" onerror="this.replaceWith(document.createTextNode('${initials(FACULTY[id].name)}'))">` : initials(FACULTY[id].name)}</span>`).join('')}</div></div>
         <button class="btn btn-navy sm" data-chapter="${i}" ${s === 'locked' ? 'disabled' : ''}>View chapter →</button></div>`;
     }).join('');
     $('ov-faculty').innerHTML = FACULTY_ORDER.map((id) => facultyCard(id)).join('');
