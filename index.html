@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PULCE Connect 2026 — Heart Failure Educational Series</title>
+<meta name="description" content="PULCE Connect: a 3-part hybrid cardiovascular & heart failure education series across Asia — Manila, Bangkok and Jakarta, October 2026. A Hetero initiative, endorsed by ESC.">
+<link rel="icon" type="image/png" href="assets/hetero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="hdr">
+    <a class="hdr-brand" href="./" aria-label="PULCE Connect home">
+      <img class="hdr-hetero" src="assets/hetero.png" alt="Hetero">
+      <span class="vsep"></span>
+      <img class="hdr-logo" src="assets/pulce-logo.png" alt="PULCE Connect 2026 — Heart Failure Educational Series">
+    </a>
+    <div class="hdr-right">
+      <img class="hdr-esc" src="assets/esc-endorsed.png" alt="Endorsed by ESC — European Society of Cardiology">
+      <div id="hdr-auth"></div>
+    </div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="Programme"></nav>
+
+  <main>
+
+    <!-- ============================================== LANDING / REGISTRATION -->
+    <section class="view landing" data-view="landing">
+      <div class="land-grid">
+        <div class="land-copy">
+          <div class="pill"><i></i>A Hetero education initiative · Endorsed by ESC</div>
+          <h1>PULCE Connect</h1>
+          <p class="land-sub">Cardiovascular &amp; Heart Failure Education Series</p>
+          <p class="land-lead">A 3-part hybrid meeting series across Asia — bridging the gap between heart failure guidelines and real-world clinical practice.</p>
+
+          <div class="land-visual"><img src="assets/skyline.jpg" alt="Manila, Bangkok and Jakarta"><div class="land-visual-cities"><span>Manila</span><span>Bangkok</span><span>Jakarta</span></div></div>
+
+          <div class="card table-card events">
+            <table><thead><tr><th>Chapter</th><th>Venue</th><th>Date</th><th>Time</th></tr></thead><tbody id="land-events"></tbody></table>
+          </div>
+
+          <h2 class="h2">Program summary</h2>
+          <p class="body">PULCE Connect is a three-part hybrid education series designed for cardiologists and heart failure specialists across Asia. Each chapter addresses a critical gap in heart failure management — from early GDMT implementation to managing complex patients and personalising cardiovascular care. The series features international and regional faculty, interactive panel discussions, and case-based learning.</p>
+
+          <h2 class="h2">What you will learn</h2>
+          <ol class="learn">
+            <li><b>Closing the GDMT Gap:</b> From Evidence to Early Implementation</li>
+            <li><b>Managing Challenging Heart Failure Patients</b></li>
+            <li><b>Personalizing Cardiovascular Care</b> Through Patient Profiling</li>
+          </ol>
+
+          <div class="trust card">
+            <div class="trust-label">Trust bar</div>
+            <div class="trust-row"><img class="t-hetero" src="assets/hetero.png" alt="Hetero"><span class="vsep"></span><img class="t-esc" src="assets/esc-endorsed.png" alt="Endorsed by ESC"><span class="vsep"></span><img class="t-strip" src="assets/partners-strip.png" alt="Hetero Healthcare, Camber, Seven Pharma, Amarox — technical support by AlphaMed"></div>
+            <div class="trust-fac" id="land-faculty"></div>
+          </div>
+        </div>
+
+        <aside class="land-form">
+          <div class="card reg-card" id="reg-card">
+            <div class="reg-head"><div class="eyebrow">Registration</div><h2>Register now</h2><p>Free for healthcare professionals. Access to chapters, live sessions and certificates opens after registration.</p></div>
+            <form class="reg" id="reg-form" autocomplete="on">
+              <label class="field"><span>Full name <em>*</em></span><input class="input" name="name" placeholder="Dr. Maria Santos" autocomplete="name" required></label>
+              <label class="field"><span>Email <em>*</em></span><input class="input" name="email" type="email" placeholder="maria.santos@hospital.ph" autocomplete="email" required></label>
+              <label class="field"><span>Country <em>*</em></span><select class="input" id="reg-country" name="country" required></select></label>
+              <label class="field"><span>Role <em>*</em></span><select class="input" id="reg-role" name="role" required></select></label>
+              <label class="field"><span>Specialty <em>*</em></span><select class="input" id="reg-specialty" name="specialty" required></select></label>
+              <label class="field"><span>License no. <small>(optional)</small></span><input class="input" name="license" placeholder="PRC 0123456"></label>
+              <label class="field"><span>Institution <small>(optional)</small></span><input class="input" name="institution" placeholder="Philippine Heart Center" autocomplete="organization"></label>
+              <div class="reg-actions"><button type="submit" class="btn btn-primary lg wide">REGISTER →</button><div class="hint">Already registered? <button type="button" class="link" data-show-login>Log in</button></div></div>
+            </form>
+          </div>
+          <div class="card reg-card" id="login-card" hidden>
+            <div class="reg-head"><div class="eyebrow">Returning participant</div><h2>Welcome back</h2><p>Log in with your name or email address.</p></div>
+            <form class="reg" id="login-form">
+              <label class="field"><span>Full name</span><input class="input" name="name" placeholder="Dr. Maria Santos" autocomplete="name"></label>
+              <label class="field"><span>Email</span><input class="input" id="login-email" name="email" type="email" placeholder="maria.santos@hospital.ph" autocomplete="email"></label>
+              <div class="reg-actions"><button type="submit" class="btn btn-primary lg wide">Log in →</button><div class="hint">New here? <button type="button" class="link" data-show-register>Register</button></div></div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================== THANK YOU -->
+    <section class="view wrap w-980 thanks" data-view="thanks" hidden>
+      <div class="card thanks-card">
+        <div class="thanks-check">✅</div>
+        <h1>You're registered!</h1>
+        <p class="lead" id="thanks-name"></p>
+        <p class="body">Your registration is confirmed for:</p>
+        <div class="table-card"><table><thead><tr><th>Chapter</th><th>Venue</th><th>Date</th><th>Time</th></tr></thead><tbody id="thanks-events"></tbody></table></div>
+        <p class="note">📧 A confirmation email has been sent to <b id="thanks-email"></b></p>
+        <button class="btn btn-primary lg" data-go="dashboard">Go to My Dashboard →</button>
+      </div>
+      <h2 class="h2 center">Meet the faculty</h2>
+      <div class="fac-grid" id="thanks-faculty"></div>
+    </section>
+
+    <!-- ============================================== DASHBOARD -->
+    <section class="view wrap w-1240" data-view="dashboard" hidden>
+      <div class="eyebrow">Learner dashboard</div>
+      <h1 class="h-xl" id="dash-welcome"></h1>
+      <p class="lead" id="dash-sub"></p>
+      <div class="ch-cards" id="dash-cards"></div>
+      <div class="three-col">
+        <div class="card block"><div class="eyebrow">My progress</div><div class="bar big"><i id="dash-bar"></i></div><b class="pct-big" id="dash-pct"></b></div>
+        <div class="card block"><div class="eyebrow">Upcoming</div><div id="dash-upcoming"></div></div>
+        <div class="card block"><div class="eyebrow">My certificates</div><div id="dash-certs"></div></div>
+      </div>
+    </section>
+
+    <!-- ============================================== PROGRAM OVERVIEW -->
+    <section class="view wrap w-1240" data-view="overview" hidden>
+      <div class="eyebrow">Program overview</div>
+      <h1 class="h-xl">PULCE Connect — 3 Chapters</h1>
+      <p class="lead">Three hybrid chapters across Asia. Each chapter unlocks once you complete the feedback survey for the previous one.</p>
+      <div class="ov-grid" id="ov-chapters"></div>
+      <h2 class="h2">Faculty</h2>
+      <div class="fac-grid" id="ov-faculty"></div>
+    </section>
+
+    <!-- ============================================== CHAPTER DETAIL -->
+    <section class="view wrap w-1180" data-view="chapter" hidden>
+      <button class="back" data-go="overview">← Back to program overview</button>
+      <div class="ch-hero">
+        <img src="assets/skyline.jpg" alt="">
+        <div class="ch-hero-copy"><div class="eyebrow light" id="ch-n"></div><h1 id="ch-title"></h1>
+          <div class="ch-hero-meta"><span>📍 <b id="ch-venue"></b></span><span>📅 <b id="ch-date"></b></span><span>🎥 <b>Hybrid (In-person + Virtual)</b></span></div>
+          <div id="ch-status"></div></div>
+      </div>
+      <div class="btn-row ctas">
+        <button class="btn btn-primary lg" id="ch-join" data-chapter="0">Join live session</button>
+        <button class="btn btn-outline lg" id="ch-ics" data-ics="0">📅 Add to calendar</button>
+      </div>
+      <div class="two-col">
+        <div class="card block"><h3>Key learning objectives</h3><ol class="objectives" id="ch-objectives"></ol></div>
+        <div class="card block"><h3>Faculty for this chapter</h3><div class="fac-list" id="ch-faculty"></div></div>
+      </div>
+      <h2 class="h2">Agenda</h2>
+      <div class="card table-card"><table class="agenda"><thead><tr><th>Time</th><th>Session</th><th>Speaker</th><th>Chair / Moderator</th></tr></thead><tbody id="ch-agenda"></tbody></table></div>
+      <div id="ch-criteria" hidden><h2 class="h2">Selection criteria</h2><div class="card table-card"><table class="criteria"><thead><tr><th>Role</th><th>Criteria</th></tr></thead><tbody id="ch-criteria-rows"></tbody></table></div></div>
+      <div class="card post">
+        <div><div class="eyebrow">Post-session</div><h3>Complete this chapter</h3><p class="body">Submit the short feedback survey to mark the chapter complete and unlock your participation certificate.</p></div>
+        <div class="btn-row"><button class="btn btn-primary lg" id="ch-feedback" data-chapter="0">Take chapter feedback →</button><button class="btn btn-outline md" data-download="Chapter slides">📥 Download slides</button><button class="btn btn-outline md" id="ch-complete" data-chapter="0">Mark complete</button></div>
+      </div>
+    </section>
+
+    <!-- ============================================== LIVE / SESSION -->
+    <section class="view wrap w-1180" data-view="live" hidden>
+      <button class="back" id="live-back" data-chapter="0">← Back to chapter</button>
+      <div class="eyebrow" id="live-n"></div>
+      <h1 class="h-lg" id="live-title"></h1>
+      <div class="live-grid">
+        <div>
+          <div class="embed" id="live-embed"></div>
+          <div class="btn-row ctas"><button class="btn btn-primary md" data-download="Question">💬 Ask a question</button><button class="btn btn-outline md" data-download="Chapter slides">📥 Download slides</button></div>
+        </div>
+        <div class="side">
+          <div class="card block"><div class="eyebrow">Now playing</div><div class="now" id="live-now"></div></div>
+          <div class="card block"><div class="eyebrow">Up next</div><ul class="next" id="live-next"></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== FEEDBACK -->
+    <section class="view wrap w-980" data-view="feedback" hidden>
+      <div class="eyebrow" id="fb-n"></div>
+      <h1 class="h-lg">Chapter feedback</h1>
+      <p class="lead" id="fb-title"></p>
+      <div class="card qcard"><div id="fb-body"></div><button class="btn btn-primary lg mt-26" id="fb-submit"></button></div>
+    </section>
+
+    <!-- ============================================== RESOURCES -->
+    <section class="view wrap w-1080" data-view="resources" hidden>
+      <div class="eyebrow">Library</div>
+      <h1 class="h-xl">Resources</h1>
+      <div class="filters">
+        <select class="input" id="res-ch"><option value="all">All chapters</option><option value="1">Chapter 1</option><option value="2">Chapter 2</option><option value="3">Chapter 3</option><option value="0">General</option></select>
+        <select class="input" id="res-type"><option value="all">All types</option><option>PDF</option><option>MP4</option></select>
+        <input class="input" id="res-q" placeholder="Search 🔍">
+      </div>
+      <div class="res-list" id="res-list"></div>
+    </section>
+
+    <!-- ============================================== CERTIFICATES -->
+    <section class="view wrap w-1180" data-view="certificates" hidden>
+      <div class="eyebrow">Recognition</div>
+      <h1 class="h-xl">My certificates</h1>
+      <div class="cert-list" id="cert-part-list"></div>
+      <div class="card cert adv" id="cert-adv">
+        <div class="cert-preview" data-cert="adv">
+          <div class="cp-logos"><img src="assets/pulce-logo.png" alt="PULCE Connect"><img src="assets/hetero.png" alt="Hetero"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"></div>
+          <div class="cp-kicker">Advanced Learning Certificate</div><div class="cp-awarded">This certifies that</div>
+          <div class="cp-name" id="ca-name"></div>
+          <div class="cp-awarded">has completed all three chapters of</div><div class="cp-prog">PULCE Connect 2026 — Heart Failure Educational Series</div>
+          <div class="cp-date" id="ca-date"></div>
+          <img class="cp-strip" src="assets/partners-strip.png" alt="Partners">
+        </div>
+        <div class="cert-foot"><div><b>🏆 Advanced Learning Certificate</b><span>For completing all 3 chapters · Status: <span id="cert-adv-status"></span></span><div class="adv-progress" id="cert-adv-progress"></div></div>
+        <div class="btn-row"><button class="btn btn-primary md" id="cert-adv-btn" data-print="adv">Download PDF</button></div></div>
+      </div>
+      <h2 class="h2">Certificate audit trail</h2>
+      <div class="card table-card"><table><thead><tr><th>Date</th><th>Type</th><th>Chapter</th><th>Download</th></tr></thead><tbody id="cert-trail"></tbody></table></div>
+    </section>
+
+    <!-- ============================================== PROFILE -->
+    <section class="view wrap w-900" data-view="profile" hidden>
+      <div class="eyebrow">Profile / settings</div>
+      <h1 class="h-xl">My profile</h1>
+      <div class="card block" id="profile-view"><table class="kv"><tbody id="profile-rows"></tbody></table><button class="btn btn-primary md mt-26" data-edit>Edit profile</button></div>
+      <form class="card block reg" id="profile-form" hidden>
+        <label class="field"><span>Full name</span><input class="input" name="name" required></label>
+        <label class="field"><span>Email</span><input class="input" name="email" type="email" required></label>
+        <label class="field"><span>Country</span><select class="input" name="country"></select></label>
+        <label class="field"><span>Role</span><select class="input" name="role"></select></label>
+        <label class="field"><span>Specialty</span><select class="input" name="specialty"></select></label>
+        <label class="field"><span>License no.</span><input class="input" name="license"></label>
+        <label class="field"><span>Institution</span><input class="input" name="institution"></label>
+        <div class="btn-row"><button type="submit" class="btn btn-primary md">Save changes</button><button type="button" class="btn btn-outline md" data-edit>Cancel</button></div>
+      </form>
+    </section>
+
+    <!-- ============================================== ABOUT / FACULTY -->
+    <section class="view wrap w-1180" data-view="about" hidden>
+      <div class="eyebrow">About</div>
+      <h1 class="h-xl">About PULCE Connect</h1>
+      <p class="lead">PULCE Connect is a 3-part hybrid education series designed to bridge the gap between heart failure guidelines and real-world clinical practice across Asia.</p>
+      <div class="about-visual card"><img src="assets/pulce-logo.png" alt="PULCE Connect 2026"><p><b>Progressive Updates &amp; Learning Symposia in Cardio-Endocrinology</b><br>Connecting Heart Failure Expertise Across Asia</p></div>
+      <h2 class="h2">Faculty</h2>
+      <div class="fac-grid lg" id="about-faculty"></div>
+      <h2 class="h2">Endorsed by</h2>
+      <div class="card endorse"><img class="e-esc" src="assets/esc-endorsed.png" alt="Endorsed by ESC"><span class="vsep"></span><img class="e-hetero" src="assets/hetero.png" alt="Hetero"><span class="vsep"></span><img class="e-strip" src="assets/partners-strip.png" alt="Country team logos"></div>
+    </section>
+
+  </main>
+
+  <footer class="ftr">
+    <div class="ftr-inner">
+      <img class="ftr-strip" src="assets/partners-strip.png" alt="An educational initiative brought to you by Hetero Healthcare, Camber, Seven Pharma and Amarox — technical support by AlphaMed — in the interest of Heart Failure Care">
+      <img class="ftr-esc" src="assets/esc-endorsed.png" alt="Endorsed by ESC — European Society of Cardiology">
+    </div>
+    <div class="ftr-legal"><span>For the use of registered medical practitioners only.</span><i>|</i><span>© 2026 Hetero Healthcare Limited</span><i>|</i><a href="admin.html">Admin</a></div>
+  </footer>
+  <div class="toast" id="toast" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · PULCE Connect</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="assets/hetero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+
+<section class="adm-login" id="adm-login">
+  <div class="card adm-login-card">
+    <div class="adm-login-logos"><img src="assets/pulce-logo.png" alt="PULCE Connect"><span class="vsep"></span><img src="assets/hetero.png" alt="Hetero"></div>
+    <div class="eyebrow">Admin · PULCE Connect</div>
+    <h1>Programme administration</h1>
+    <p>Separate login for programme administrators. Participant accounts cannot access this console.</p>
+    <form id="adm-form" class="reg">
+      <label class="field"><span>Admin email</span><input class="input" name="email" type="email" placeholder="admin@onealphamed.com" autocomplete="username" required></label>
+      <label class="field"><span>Password</span><input class="input" name="password" type="password" placeholder="••••••••" autocomplete="current-password" required></label>
+      <div class="reg-actions"><button class="btn btn-primary md wide" type="submit">Sign in →</button><div class="hint" id="adm-err">Demo console — password is <code>pulce</code></div></div>
+    </form>
+    <a class="adm-back" href="./">← Back to participant site</a>
+  </div>
+</section>
+
+<div class="adm" id="adm" hidden>
+  <header class="adm-hdr">
+    <a class="adm-brand" href="./"><img src="assets/pulce-logo.png" alt="PULCE Connect"><span>Admin</span></a>
+    <div class="adm-switch">
+      <label>Chapter<select class="input" id="f-ch"><option value="all">All chapters</option><option value="1">Chapter 1 — Manila</option><option value="2">Chapter 2 — Bangkok</option><option value="3">Chapter 3 — Jakarta</option></select></label>
+      <label>Country<select class="input" id="f-country"><option value="all">All countries</option></select></label>
+      <label>Period<select class="input" id="f-period"><option value="all">All time</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option></select></label>
+    </div>
+    <div class="adm-right"><img class="hdr-hetero" src="assets/hetero.png" alt="Hetero"><button class="btn btn-outline sm" id="adm-logout">Log out</button></div>
+  </header>
+  <nav class="adm-tabs" id="adm-tabs">
+    <button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="users">Users</button><button class="tab" data-tab="geo">Geography</button><button class="tab" data-tab="certs">Certificates</button><button class="tab" data-tab="reports">Reports</button>
+  </nav>
+  <main class="adm-main">
+    <div class="kpis" id="kpis"></div>
+    <section data-tab="overview">
+      <div class="adm-grid">
+        <div class="card adm-card"><h3>Chapter completion</h3><p class="small">Participants who completed each chapter (feedback submitted)</p><div class="bars" id="chart-ch"></div></div>
+        <div class="card adm-card"><h3>Role segmentation</h3><p class="small">Registered participants by role</p><div class="pie-wrap"><svg viewBox="0 0 120 120" class="pie" id="chart-roles"></svg><div class="legend" id="legend-roles"></div></div></div>
+      </div>
+      <div class="card adm-card"><h3>Country breakdown</h3><p class="small">Registrations by country — darker = more participants</p><div class="heat" id="chart-geo"></div></div>
+    </section>
+    <section data-tab="users" hidden>
+      <div class="card adm-card">
+        <div class="tbl-head"><h3>Name-wise tracking</h3><input class="input tbl-search" id="u-search" placeholder="Filter by name, email, institution…"></div>
+        <div class="tbl-wrap"><table class="tbl" id="u-table"><thead><tr><th data-k="name">Name</th><th data-k="role">Role</th><th data-k="country">Country</th><th data-k="institution">Institution</th><th data-k="registered">Registered</th><th data-k="done">Chapters</th><th data-k="status">Status</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+    <section data-tab="geo" hidden>
+      <div class="adm-grid"><div class="card adm-card"><h3>Registrations by country</h3><div class="heat" id="geo-full"></div></div><div class="card adm-card"><h3>Completion rate by country</h3><div class="bars" id="geo-rate"></div></div></div>
+    </section>
+    <section data-tab="certs" hidden>
+      <div class="card adm-card">
+        <div class="tbl-head"><h3>Certificate log</h3><span class="live"><i></i>Real-time</span></div>
+        <div class="tbl-wrap"><table class="tbl" id="c-table"><thead><tr><th>Date</th><th>User</th><th>Type</th><th>Chapter</th><th>Country</th><th>Certificate ID</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+    <section data-tab="reports" hidden>
+      <div class="card adm-card">
+        <h3>Reports &amp; exports</h3><p class="small">Exports respect the chapter, country and period filters above.</p>
+        <div class="exports"><button class="btn btn-primary md" data-export="csv">Export CSV</button><button class="btn btn-outline md" data-export="pdf">Export PDF</button><button class="btn btn-outline md" data-export="schedule">Schedule report</button></div>
+        <div class="sched" id="sched" hidden><h4>Schedule a recurring report</h4>
+          <div class="reg two"><label class="field"><span>Frequency</span><select class="input"><option>Weekly (Monday)</option><option>After each chapter</option><option>Monthly (1st)</option></select></label><label class="field"><span>Format</span><select class="input"><option>CSV</option><option>PDF</option></select></label><label class="field span2"><span>Send to</span><input class="input" placeholder="admin@onealphamed.com, cardio@hetero.com"></label><div class="span2"><button class="btn btn-primary md" id="sched-save">Save schedule</button></div></div>
+        </div>
+        <div class="toast-inline" id="toast" hidden></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
