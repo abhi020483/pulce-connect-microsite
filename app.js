@@ -92,8 +92,8 @@
 
   const FACULTY = {
     'savarese':    { name: 'Dr Gianluigi Savarese', role: 'Speaker', chapters: [1, 2, 3], photo: 'assets/faculty/savarese.jpg', cred: 'Karolinska Institutet, Stockholm · Heart failure specialist' },
-    'advincula':   { name: 'Dr Glenny Advincula', role: 'Speaker', chapters: [1], photo: 'assets/faculty/advincula.jpg', cred: 'Cardiologist, Philippines' },
-    'don':         { name: 'Dr Don', role: 'Chairperson, Philippines', chapters: [1], photo: 'assets/faculty/don.jpg', cred: 'Chairperson · Philippines' },
+    'advincula':   { name: 'Dr Glenny Advincula', role: 'Speaker', chapters: [1], cred: 'Cardiologist, Philippines' },
+    'don':         { name: 'Dr Don', role: 'Chairperson, Philippines', chapters: [1], cred: 'Chairperson · Philippines' },
     'patricio':    { name: 'Dr Marion Patricio', role: 'Moderator', chapters: [1], photo: 'assets/faculty/patricio.jpg', cred: 'Cardiologist, Philippines' },
     'tiongco':     { name: 'Dr Richard Tiongco', role: 'Panelist', chapters: [1], photo: 'assets/faculty/tiongco.jpg', cred: 'Cardiologist, Philippines' },
     'speaker-bkk': { name: 'Speaker from Bangkok', role: 'Speaker', chapters: [2], cred: 'Cardiologist, Thailand · To be announced', tba: true },
@@ -210,6 +210,7 @@
     if (v === 'certificates') renderCertificates();
     if (v === 'profile') renderProfile();
     if (v === 'about') renderAbout();
+    requestAnimationFrame(reveal);
   }
   function titleFor(v) {
     return { thanks: 'Registered', dashboard: 'Dashboard', overview: 'Program Overview', chapter: 'Chapter ' + (state.chapter + 1), live: 'Live Session', feedback: 'Feedback', resources: 'Resources', certificates: 'Certificates', profile: 'Profile', about: 'About & Faculty' }[v] || 'PULCE Connect';
@@ -224,6 +225,24 @@
     </div>`;
   };
 
+  /* ---- Countdown ---- */
+  const timers = [];
+  function countdown(el, iso, label, dark) {
+    if (!el) return; timers.forEach(clearInterval); timers.length = 0;
+    const tick = () => {
+      const diff = Date.parse(iso) - Date.now();
+      if (diff <= 0) { el.innerHTML = `<span class="label">${label}</span><span class="status s-live">Live now</span>`; return; }
+      const d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24, m = Math.floor(diff / 6e4) % 60, sec = Math.floor(diff / 1e3) % 60;
+      el.innerHTML = `<span class="label">${label}</span><div class="cd">${[[d, 'days'], [h, 'hrs'], [m, 'min'], [sec, 'sec']].map(([v, u]) => `<div><b>${String(v).padStart(2, '0')}</b><span>${u}</span></div>`).join('')}</div>`;
+    };
+    el.className = 'countdown' + (dark ? ' dark' : ''); tick(); timers.push(setInterval(tick, 1000));
+  }
+  function animateCounters(scope) {
+    scope.querySelectorAll('[data-count]').forEach((el) => { const to = +el.dataset.count; let v = 0; const step = Math.max(1, Math.round(to / 30)); const id = setInterval(() => { v = Math.min(to, v + step); el.textContent = v; if (v >= to) clearInterval(id); }, 30); });
+  }
+  const io = ('IntersectionObserver' in window) ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 }) : null;
+  function reveal() { document.querySelectorAll('[data-view]:not([hidden]) .section, [data-view]:not([hidden]) .card, [data-view]:not([hidden]) .ch-art, [data-view]:not([hidden]) .fac, [data-view]:not([hidden]) .row, [data-view]:not([hidden]) .ov-row, [data-view]:not([hidden]) .tl, [data-view]:not([hidden]) .cert, [data-view]:not([hidden]) .res').forEach((el) => { if (!el.classList.contains('reveal')) { el.classList.add('reveal'); io ? io.observe(el) : el.classList.add('in'); } }); }
+
   /* ---- Landing ---- */
   function renderLanding() {
     $('land-chapters').innerHTML = CHAPTERS.map((c) => `<article class="ch-art">
@@ -234,6 +253,7 @@
       <a class="btn btn-line sm" href="#register">Register to attend</a>
     </article>`).join('');
     $('land-events').innerHTML = eventRows();
+    countdown($('land-countdown'), CHAPTERS[0].start, 'Chapter 1 opens in');
     $('land-faculty').innerHTML = ['savarese', 'advincula', 'don', 'patricio', 'tiongco', 'speaker-bkk', 'mod-bkk', 'speaker-id'].map((id) => facultyCard(id)).join('');
     const c = $('reg-country');
     if (!c.options.length) {
@@ -293,7 +313,16 @@
     $('ch-venue').textContent = c.venue; $('ch-date').textContent = `${c.date} | ${c.time}`;
     $('ch-status').innerHTML = statusPill(s); $('ch-big').textContent = '0' + c.n; $('ch-img').src = c.img; $('ch-img').alt = c.city; $('ch-agenda-meta').textContent = c.time + ' local time';
     $('ch-objectives').innerHTML = c.objectives.map((o) => `<li>${esc(o)}</li>`).join('');
-    $('ch-agenda').innerHTML = c.agenda.map(([t, sess, sp, mod]) => `<tr><td class="mono">${t}</td><td>${esc(sess)}</td><td>${esc(sp)}</td><td>${esc(mod)}</td></tr>`).join('');
+    const nowMin = (() => { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); })();
+    const live = s === 'live';
+    const person = (name) => { const id = Object.keys(FACULTY).find((k) => FACULTY[k].name === name); const f = id && FACULTY[id]; return f ? `<span class="avatar">${f.photo ? `<img src="${f.photo}" alt="" onerror="this.replaceWith(document.createTextNode('${initials(f.name)}'))">` : initials(f.name)}</span>${esc(name)}` : esc(name); };
+    const people = (str) => str === '\u2014' ? '' : str.replace(/^Panelists:\s*/, '').split(' \u00b7 ').map(person).join('<span style="color:var(--rule-3)">&nbsp;\u00b7&nbsp;</span>');
+    $('ch-agenda').innerHTML = c.agenda.map(([t, sess, sp, mod]) => {
+      const [a0, a1] = t.split('\u2013').map((x) => x.split(':').map(Number)); const m0 = a0[0] * 60 + a0[1], m1 = a1[0] * 60 + a1[1];
+      const isNow = live && nowMin >= m0 && nowMin < m1, isBreak = /^Q&A|Welcome|Closing|Thank You/i.test(sess) && sp === '\u2014';
+      const dur = m1 - m0;
+      return `<div class="tl${isNow ? ' now' : ''}${isBreak ? ' break' : ''}"><div class="t">${t}<small>${dur} min${isNow ? ' \u00b7 now' : ''}</small></div><div><h4>${esc(sess)}</h4><div class="who">${sp !== '\u2014' ? `<div><small>${/^Panelists/.test(sp) ? 'Panel' : 'Speaker'}</small>${people(sp)}</div>` : ''}${mod !== '\u2014' ? `<div><small>Chair</small>${people(mod)}</div>` : ''}</div></div></div>`;
+    }).join('');
     $('ch-faculty').innerHTML = c.faculty.map((id) => facultyCard(id, 'compact')).join('');
     $('ch-criteria').hidden = !c.criteria;
     if (c.criteria) $('ch-criteria-rows').innerHTML = c.criteria.map(([r, d]) => `<tr><td><b>${r}</b></td><td>${esc(d)}</td></tr>`).join('');

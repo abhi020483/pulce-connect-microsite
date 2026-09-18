@@ -19,10 +19,10 @@
       <a class="hdr-brand" href="./" aria-label="PULCE Connect home">
         <img class="hdr-hetero" src="assets/hetero.png" alt="Hetero">
         <span class="vrule"></span>
-        <img class="hdr-logo" src="assets/pulce-logo.png" alt="PULCE Connect 2026 — Heart Failure Educational Series">
+        <span class="wordmark"><b>PULCE CONNECT</b><span>Cardiovascular &amp; heart failure education series</span></span>
       </a>
       <div class="hdr-right">
-        <div class="esc-box"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"><span>Endorsed by<br><b>ESC</b></span></div>
+        <img class="hdr-esc" src="assets/esc-endorsed.png" alt="Endorsed by ESC — European Society of Cardiology">
         <div id="hdr-auth"></div>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <div class="hero-bg"><div class="hero" id="register">
         <div>
           <div class="kicker-line"><span class="kicker">A Hetero education initiative · Endorsed by ESC</span></div>
-          <h1 class="display">PULCE Connect</h1>
+          <h1 class="hero-logo"><img src="assets/pulce-logo.png" alt="PULCE Connect 2026 — Heart Failure Educational Series"></h1>
           <div class="sub">Cardiovascular &amp; Heart Failure Education Series</div>
           <p class="lead">A 3-part hybrid meeting series across Asia — bridging the gap between heart failure guidelines and real-world clinical practice.</p>
           <div class="facts">
@@ -44,6 +44,8 @@
             <div class="fact"><b>Oct 2026</b><span>Manila · Bangkok · Jakarta</span></div>
             <div class="fact"><b>Hybrid</b><span>In person &amp; livestream</span></div>
           </div>
+          <div class="countdown" id="land-countdown"></div>
+          <svg class="ecg-line" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 H120 l10 -12 l10 24 l10 -32 l12 40 l10 -20 H300 l8 -8 l8 8 H420 l10 -14 l10 28 l10 -26 l10 12 H600"/></svg>
           <div class="card table-wrap events"><table class="table"><thead><tr><th>Chapter</th><th>Venue</th><th>Date</th><th>Time</th></tr></thead><tbody id="land-events"></tbody></table></div>
           <div class="esc-note"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"><p>Endorsed by the <b>European Society of Cardiology</b> — the series follows ESC heart failure guidance and standards for independent medical education.</p></div>
         </div>
@@ -126,7 +128,7 @@
 
     <!-- ============================================== THANK YOU -->
     <section class="view wrap thanks" data-view="thanks" hidden>
-      <figure class="photo wide"><img src="assets/cardio/heart-model.jpg" alt="Anatomical heart model"></figure>
+      <div class="thanks-grid"><div>
       <div class="check">✅</div>
       <div class="kicker">Registration confirmed</div>
       <h1 class="h1" style="margin-top:8px">You're registered!</h1>
@@ -135,6 +137,7 @@
       <div class="card table-wrap"><table class="table"><thead><tr><th>Chapter</th><th>Venue</th><th>Date</th><th>Time</th></tr></thead><tbody id="thanks-events"></tbody></table></div>
       <p class="note">📧 A confirmation email has been sent to <b id="thanks-email"></b></p>
       <button class="btn btn-navy" data-go="dashboard">Go to my dashboard →</button>
+      </div><figure class="photo tall"><img src="assets/cardio/heart-model.jpg" alt="Anatomical heart model"></figure></div>
       <div class="rule-head section-head"><h2 class="h2">Meet the faculty</h2></div>
       <div class="fac-grid" id="thanks-faculty"></div>
     </section>
@@ -179,7 +182,7 @@
         <div><div class="rule-head"><h2 class="h2">Faculty for this chapter</h2></div><div id="ch-faculty"></div></div>
       </div>
       <div class="rule-head section-head"><h2 class="h2">Agenda</h2><div class="meta" id="ch-agenda-meta"></div></div>
-      <div class="card table-wrap"><table class="table agenda"><thead><tr><th>Time</th><th>Session</th><th>Speaker</th><th>Chair / Moderator</th></tr></thead><tbody id="ch-agenda"></tbody></table></div>
+      <div class="timeline" id="ch-agenda"></div>
       <div id="ch-criteria" hidden><div class="rule-head section-head"><h2 class="h2">Selection criteria</h2></div><div class="card table-wrap"><table class="table criteria"><thead><tr><th>Role</th><th>Criteria</th></tr></thead><tbody id="ch-criteria-rows"></tbody></table></div></div>
       <div class="post">
         <div><div class="kicker">Post-session</div><h3>Complete this chapter</h3><p class="small">Submit the short feedback survey to mark the chapter complete and unlock your participation certificate.</p></div>
@@ -263,9 +266,11 @@
     <!-- ============================================== ABOUT / FACULTY -->
     <section class="view wrap" data-view="about" hidden>
       <div class="rule-head"><h2 class="h1">About PULCE Connect</h2><div class="meta">Progressive Updates &amp; Learning Symposia in Cardio-Endocrinology</div></div>
-      <p class="lead" style="margin-top:22px">PULCE Connect is a 3-part hybrid education series designed to bridge the gap between heart failure guidelines and real-world clinical practice across Asia.</p>
-      <figure class="photo wide"><img src="assets/cardio/echo.jpg" alt="Cardiologist performing an echocardiogram"><figcaption>International and regional faculty · case-based learning · live Q&amp;A</figcaption></figure>
-      <div class="about-lockup"><img src="assets/pulce-logo.png" alt="PULCE Connect 2026"><p><b>Progressive Updates &amp; Learning Symposia in Cardio-Endocrinology</b><br>Connecting Heart Failure Expertise Across Asia</p></div>
+      <div class="two" style="margin-top:26px;align-items:center">
+        <div><p class="lead">PULCE Connect is a 3-part hybrid education series designed to bridge the gap between heart failure guidelines and real-world clinical practice across Asia.</p>
+          <div class="about-lockup"><img src="assets/pulce-logo.png" alt="PULCE Connect 2026"><p><b>Progressive Updates &amp; Learning Symposia in Cardio-Endocrinology</b><br>Connecting Heart Failure Expertise Across Asia</p></div></div>
+        <figure class="photo"><img src="assets/cardio/echo.jpg" alt="Cardiologist performing an echocardiogram"><figcaption>International and regional faculty · case-based learning · live Q&amp;A</figcaption></figure>
+      </div>
       <div class="rule-head section-head"><h2 class="h2">Faculty</h2><div class="meta">International &amp; regional speakers</div></div>
       <div class="fac-grid" id="about-faculty"></div>
       <div class="rule-head section-head"><h2 class="h2">Endorsed by</h2></div>
