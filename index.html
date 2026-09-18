@@ -48,33 +48,26 @@
           <div class="esc-note"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"><p>Endorsed by the <b>European Society of Cardiology</b> — the series follows ESC heart failure guidance and standards for independent medical education.</p></div>
         </div>
         <aside class="hero-form">
-          <div class="form-head"><div id="reg-intro"><div class="kicker">Registration</div><h2>Register now</h2><p class="intro">Free for healthcare professionals. Access to chapters, live sessions and certificates opens after registration.</p></div><div id="login-intro" hidden><div class="kicker">Returning participant</div><h2>Welcome back</h2><p class="intro">Log in with your name or email address.</p></div></div>
-          <div class="form-panel">
-            <div class="mode-tabs"><button type="button" class="active" id="tab-register" data-show-register>Register</button><button type="button" id="tab-login" data-show-login>Log in</button></div>
-            <form id="reg-form" autocomplete="on">
-              <div class="form-grid">
-                <label class="field">Full name <em>*</em><input class="input" name="name" placeholder="Dr. " autocomplete="name" required></label>
-                <label class="field">Email <em>*</em><input class="input" name="email" type="email" placeholder="name@hospital.org" autocomplete="email" required></label>
-                <label class="field">Country <em>*</em><select class="input" id="reg-country" name="country" required></select></label>
-                <label class="field">Role <em>*</em><select class="input" id="reg-role" name="role" required></select></label>
-                <label class="field">Specialty <em>*</em><select class="input" id="reg-specialty" name="specialty" required></select></label>
-                <label class="field">License no. (optional)<input class="input" name="license"></label>
-                <label class="field span2">Institution (optional)<input class="input" name="institution" autocomplete="organization"></label>
-              </div>
-              <div class="form-actions"><button type="submit" class="btn btn-burg">Register →</button><div class="hint">Already registered? <button type="button" class="link" data-show-login>Log in</button></div></div>
-            </form>
-            <form id="login-form" hidden>
-              <div class="form-grid" style="max-width:420px">
-                <label class="field span2">Full name<input class="input" name="name" autocomplete="name"></label>
-                <label class="field span2">Email<input class="input" id="login-email" name="email" type="email" autocomplete="email"></label>
-              </div>
-              <div class="form-actions"><button type="submit" class="btn btn-navy">Log in →</button><div class="hint">New here? <button type="button" class="link" data-show-register>Register</button></div></div>
+          <div class="reg-card" id="reg-card">
+            <div class="reg-head"><div class="eyebrow">Registration</div><h2>Create your account</h2><p>Free for healthcare professionals. Access to chapters, live sessions and certificates opens after registration.</p></div>
+            <form class="reg" id="reg-form" autocomplete="on">
+              <label class="field span2"><span>Full name <em>*</em></span><input class="input" name="name" placeholder="Dr. Maria Santos" autocomplete="name" required></label>
+              <label class="field"><span>Email <em>*</em></span><input class="input" name="email" type="email" placeholder="maria.santos@hospital.ph" autocomplete="email" required></label>
+              <label class="field"><span>Country <em>*</em></span><select class="input" id="reg-country" name="country" required></select></label>
+              <label class="field"><span>Role <em>*</em></span><select class="input" id="reg-role" name="role" required></select></label>
+              <label class="field"><span>Specialty <em>*</em></span><select class="input" id="reg-specialty" name="specialty" required></select></label>
+              <label class="field"><span>License no. <small>(optional)</small></span><input class="input" name="license" placeholder="PRC 0123456"></label>
+              <label class="field"><span>Institution <small>(optional)</small></span><input class="input" name="institution" placeholder="Philippine Heart Center" autocomplete="organization"></label>
+              <div class="reg-actions span2"><button type="submit" class="btn btn-burg wide">Register →</button><div class="hint">Already registered? <button type="button" class="link" data-show-login>Log in here</button></div></div>
             </form>
           </div>
-          <div class="benefits">
-            <div><i>—</i><div>Access to all three chapters, live in person or by livestream</div></div>
-            <div><i>—</i><div>On-demand recordings and case discussion materials</div></div>
-            <div><i>—</i><div>Certificate of attendance for each chapter you attend</div></div>
+          <div class="reg-card" id="login-card" hidden>
+            <div class="reg-head"><div class="eyebrow">Returning participant</div><h2>Welcome back</h2><p>Log in with your name or email address.</p></div>
+            <form class="reg" id="login-form">
+              <label class="field span2"><span>Full name</span><input class="input" name="name" placeholder="Dr. Maria Santos" autocomplete="name"></label>
+              <label class="field span2"><span>Email</span><input class="input" id="login-email" name="email" type="email" placeholder="maria.santos@hospital.ph" autocomplete="email"></label>
+              <div class="reg-actions span2"><button type="submit" class="btn btn-navy wide">Log in →</button><div class="hint">New here? <button type="button" class="link" data-show-register>Create an account</button></div></div>
+            </form>
           </div>
         </aside>
       </div></div>

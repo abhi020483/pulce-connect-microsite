@@ -395,7 +395,7 @@
 
   /* ---- About / faculty ---- */
   function renderAbout() { $('about-faculty').innerHTML = FACULTY_ORDER.map((id) => facultyCard(id)).join(''); }
-  function setMode(login) { $('login-form').hidden = !login; $('reg-form').hidden = login; $('login-intro').hidden = !login; $('reg-intro').hidden = login; $('tab-login').classList.toggle('active', login); $('tab-register').classList.toggle('active', !login); if (login) $('login-email').focus(); }
+  function setMode(login) { $('login-card').hidden = !login; $('reg-card').hidden = login; if (login) $('login-email').focus(); }
 
   /* ------------------------------------------------------- Calendar (.ics) */
   function downloadIcs(i) {
