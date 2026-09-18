@@ -188,6 +188,7 @@
   function render() {
     const v = state.view;
     document.body.classList.toggle('registered', !!state.user);
+    document.body.dataset.view = v;
     document.querySelectorAll('[data-view]').forEach((el) => { el.hidden = el.dataset.view !== v; });
     document.title = (v === 'landing' ? 'Register' : titleFor(v)) + ' · PULCE Connect 2026';
 

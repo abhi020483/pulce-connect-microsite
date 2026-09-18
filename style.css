@@ -21,6 +21,9 @@ input,select,button,textarea{font-family:inherit}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .page{min-height:100vh;display:flex;flex-direction:column}
 main{flex:1}
+/* PULCE Connect watermark on inner (gated) pages */
+body:not([data-view="landing"])::before{content:"";position:fixed;z-index:-1;left:50%;top:52%;width:min(78vw,1100px);aspect-ratio:1858/749;transform:translate(-50%,-50%);background:url(assets/pulce-logo.png) center/contain no-repeat;opacity:.07;pointer-events:none}
+body[data-print]::before{display:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:44px var(--pad) 80px}
 .view{animation:fadeUp .35s ease both}
 
@@ -120,8 +123,8 @@ textarea.input{resize:vertical;min-height:80px}
 
 /* ---------- Landing ---------- */
 .landing{padding-bottom:0}
-.hero-bg{position:relative;background:#fff url(assets/skyline.jpg) center 62%/cover no-repeat}
-.hero-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.86) 45%,rgba(255,255,255,.55) 100%)}
+.hero-bg{position:relative;background:#fff url(assets/cardio/ecg-paper.jpg) center 40%/cover no-repeat}
+.hero-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.80) 45%,rgba(255,255,255,.62) 100%)}
 .hero{position:relative;max-width:var(--max);margin:0 auto;padding:56px var(--pad) 56px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:52px;align-items:start}
 .hero-logo{margin:0 0 6px}
 .hero-logo img{width:min(100%,520px);height:auto}
@@ -137,6 +140,7 @@ textarea.input{resize:vertical;min-height:80px}
 .reg-card{background:rgba(255,255,255,.97);border:1px solid var(--rule-2);border-radius:18px;padding:30px;box-shadow:0 26px 60px -34px rgba(14,26,43,.3)}
 .reg-head .eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--burg)}
 .reg-head h2{margin-top:8px;font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.reg-head h2.reg-title{margin-top:0;font-size:30px;font-weight:800;letter-spacing:-.01em;color:var(--burg);padding-bottom:12px;border-bottom:3px solid var(--burg);display:inline-block}
 .reg-head p{margin-top:6px;font-size:14px;line-height:1.5;color:var(--muted)}
 .reg{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-top:22px}
 .reg .field{gap:6px;font-size:12.5px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--ink-2)}
@@ -314,7 +318,7 @@ textarea.input{resize:vertical;min-height:80px}
 .row .thumb{position:relative;width:110px;height:82px;overflow:hidden;background:var(--navy)}
 .row .thumb img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 .row .thumb .num{position:absolute;left:8px;bottom:6px;color:var(--paper);font-size:22px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
-.row.locked{opacity:.55}
+.row.locked{background:#fff}.row.locked>*{opacity:.55}
 .row .num{font-size:30px}
 .row b{display:block;font-size:17px;font-weight:600;margin-bottom:3px}
 .row .meta{font-size:12.5px;color:var(--muted)}
@@ -336,7 +340,7 @@ textarea.input{resize:vertical;min-height:80px}
 .ov-row .thumb{position:relative;width:220px;height:150px;overflow:hidden;background:var(--navy)}
 .ov-row .thumb img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 .ov-row .thumb .num{position:absolute;left:12px;bottom:8px;color:var(--paper);font-size:44px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-.ov-row.locked{opacity:.55}
+.ov-row.locked{background:#fff}.ov-row.locked>*{opacity:.55}
 .ov-row .num{font-size:64px}
 .ov-row h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:6px 0 8px}
 .ov-row .meta{font-size:13px;color:var(--muted)}
@@ -435,7 +439,7 @@ textarea.input{resize:vertical;min-height:80px}
 .ftr-in .right{display:flex;gap:18px;align-items:center}
 
 /* ---------- Print (certificate PDF) ---------- */
-@media print{
+@media print{body::before{display:none!important}
   body{background:#fff}
   body[data-print] .page>*:not(main),body[data-print] main>section{display:none!important}
   body[data-print] main>section[data-view="certificates"]{display:block!important;padding:0}
