@@ -1,5 +1,5 @@
 /* Admin console */
-body.admin{background:var(--paper)}
+body.admin{background:#fff}
 .adm-login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:var(--paper)}
 .adm-login-card{width:100%;max-width:460px;padding:36px;}
 .adm-login-logos{display:flex;align-items:center;gap:18px;margin-bottom:22px}
