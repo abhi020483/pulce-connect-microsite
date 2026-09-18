@@ -70,14 +70,14 @@ body[data-print]::before{display:none}
 .hdr-in{max-width:var(--max);margin:0 auto;padding:14px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .hdr-brand{display:flex;align-items:center;gap:16px;color:var(--ink);text-decoration:none}
 .hdr-brand:hover{text-decoration:none;color:var(--ink)}
-.hdr-hetero{height:64px;width:auto;object-fit:contain}
+.hdr-hetero{height:70px;width:auto;object-fit:contain}
 .vrule{width:1px;height:44px;background:var(--rule)}
-.hdr-pulce{height:58px;width:auto;object-fit:contain}
+.hdr-pulce{height:64px;width:auto;object-fit:contain}
 .wordmark{display:flex;flex-direction:column;gap:1px}
 .wordmark b{font-size:22px;font-weight:800;letter-spacing:.15em;line-height:1.1}
 .wordmark span{font-size:10.5px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
 .hdr-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.hdr-esc{height:66px;width:auto;object-fit:contain}
+.hdr-esc{height:73px;width:auto;object-fit:contain}
 .hdr-nav{display:flex;align-items:center;gap:22px}
 .hdr-nav a{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
 .hdr-nav a:hover{text-decoration:none;color:var(--burg)}
@@ -493,7 +493,7 @@ textarea.input{resize:vertical;min-height:80px}
   .kicker-line{margin-bottom:18px}.kicker-line::before{width:24px;flex:none}.kicker{font-size:10px;letter-spacing:.14em;line-height:1.5}
   /* header */
   .hdr-in{padding:10px var(--pad);gap:12px}.hdr-nav{gap:10px}.hdr-nav a:not(.cta){display:none}.hdr-nav a.cta{padding:10px 14px;font-size:11.5px}
-  .hdr-esc{display:none}.hdr-hetero{height:40px}.hdr-pulce{height:38px}.vrule{height:28px}.hdr-brand{gap:10px}.hdr-right{gap:10px}.hdr-user{display:none}.signout{padding:9px 12px}
+  .hdr-esc{display:none}.hdr-hetero{height:44px}.hdr-pulce{height:42px}.vrule{height:28px}.hdr-brand{gap:10px}.hdr-right{gap:10px}.hdr-user{display:none}.signout{padding:9px 12px}
   .theme-toggle{width:36px;height:36px}
   .tabs-in{padding:0 var(--pad);-webkit-overflow-scrolling:touch}.tab{padding:13px 12px;font-size:11px}
   /* landing hero */
