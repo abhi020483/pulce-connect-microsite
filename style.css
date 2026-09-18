@@ -185,7 +185,7 @@ textarea.input{resize:vertical;min-height:80px}
 .ch-art .theme{font-size:15px;line-height:1.5;color:var(--ink-2);margin-bottom:16px}
 .ch-art dl{display:grid;grid-template-columns:auto auto;gap:7px 14px;font-size:13px;justify-content:center;text-align:left}
 .ch-art dt{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px;padding-top:2px}
-.ch-art .btn{margin-top:auto;align-self:center;margin-top:18px}
+.ch-art dl{margin-bottom:22px}.ch-art .btn{margin-top:auto;align-self:center}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:52px}
 .two .h2{margin-bottom:18px;border-bottom:2px solid var(--navy);padding-bottom:14px}
 .format{border-top:2px solid var(--burg);background:var(--white);padding:28px;margin-top:22px}
