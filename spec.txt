@@ -1,0 +1,976 @@
+Instructions - The logos of the company Hetero and Pulce should be substantially visible (aesthetic ) across all pages in the microsite. The landing page should be the registration page with content that is mentioned in the landing page here. Following the registration only should the user have access to all of the content placed in the inner pages. After the registration of the user the inner pages should have prominent tabs which on clicking will navigate one to the module overview and then on subsequently clicking only should one get access to the respective modules overview. There will be a feedback survey after each of the modules / chapter . It would be good to pick up the latest images of the respective Drs whose names are mentioned in this document for their profiles and 
+
+
+  
+ - The campaign logo 
+  
+-The endorsing body 
+Marketing arms:
+  
+
+Marketing arms 
+
+
+PULSE CONNECT — Content Page by Page
+________________
+
+
+PAGE 1 — LANDING PAGE
+Left Side (Program Details)
+Header
+* Hetero logo
+* PULSE CONNECT wordmark
+Hero Title
+PULSE CONNECT
+Cardiovascular & Heart Failure Education Series
+Sub-headline
+A 3-part hybrid meeting series across Asia — bridging the gap between heart failure guidelines and real-world clinical practice.
+Event Strip
+Chapter
+	Venue
+	Date
+	Time
+	Chapter 1
+	Manila, Philippines
+	28 October 2026
+	7:00–9:00 PM PHT
+	Chapter 2
+	Bangkok, Thailand
+	30 October 2026
+	3:00–5:00 PM ICT
+	Chapter 3
+	Jakarta, Indonesia
+	31 October 2026
+	3:30–5:30 PM WIB
+	Program Summary
+PULSE CONNECT is a three-part hybrid education series designed for cardiologists and heart failure specialists across Asia. Each chapter addresses a critical gap in heart failure management — from early GDMT implementation to managing complex patients and personalising cardiovascular care. The series features international and regional faculty, interactive panel discussions, and case-based learning.
+What You Will Learn
+* Closing the GDMT Gap: From Evidence to Early Implementation
+* Managing Challenging Heart Failure Patients
+* Personalizing Cardiovascular Care Through Patient Profiling
+CTA
+Register now  →
+Trust Bar
+Hetero logo | Country Team logos | Faculty names
+________________
+
+
+Right Side (Registration Form)
+Field
+	Type
+	Required
+	Full Name
+	Text
+	Yes
+	Email
+	Email
+	Yes
+	Country
+	Dropdown
+	Yes
+	Role
+	Dropdown
+	Yes
+	Specialty
+	Dropdown
+	Yes
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	REGISTER →
+	Button
+	—
+	Already registered? Log in
+________________
+
+
+PAGE 2 — THANK YOU / CONFIRMATION- Keep a placeholder for the images of all the faculty 
+Heading
+✅ You're registered!
+Body
+Welcome to PULSE CONNECT, Dr. [Name]
+Your registration is confirmed for:
+Chapter
+	Venue
+	Date
+	Time
+	Chapter 1
+	Manila, Philippines
+	28 Oct 2026
+	7:00–9:00 PM PHT
+	Chapter 2
+	Bangkok, Thailand
+	30 Oct 2026
+	3:00–5:00 PM ICT
+	Chapter 3
+	Jakarta, Indonesia
+	31 Oct 2026
+	3:30–5:30 PM WIB
+	Note
+📧 A confirmation email has been sent to [email]
+________________
+
+
+PAGE 3 — LEARNER DASHBOARD
+Welcome Message
+Welcome back, Dr. [Name]
+You have completed 1 of 3 chapters.
+Chapter Status Cards
+Chapter
+	Venue
+	Date
+	Status
+	Action
+	Chapter 1
+	Manila
+	28 Oct 2026
+	✅ Completed
+	View
+	Chapter 2
+	Bangkok
+	30 Oct 2026
+	🔴 Live Now
+	Join Now
+	Chapter 3
+	Jakarta
+	31 Oct 2026
+	🔒 Locked
+	—
+	My Progress
+████████████░░░░░░░░░░░░ 33%
+Upcoming
+Chapter 2 — Bangkok | 30 Oct 2026 | 3:00 PM
+[ Add to Calendar ] [ Join Link ]
+My Certificates
+No certificates yet. Complete all 3 chapters to earn your Advanced Learning Certificate.
+________________
+
+
+PAGE 4 — PROGRAM OVERVIEW
+Heading
+PROGRAM OVERVIEW
+PULSE CONNECT — 3 Chapters- Keep a placeholder for all the faculty 
+Chapter 1
+Title: Closing the GDMT Gap: From Evidence to Early Implementation
+Venue: Manila, Philippines
+Date: 28 October 2026 | 7:00–9:00 PM PHT
+CTA: View Chapter →
+Chapter 2
+Title: Managing Challenging Heart Failure Patients
+Venue: Bangkok, Thailand
+Date: 30 October 2026 | 3:00–5:00 PM ICT
+CTA: View Chapter →
+Chapter 3
+Title: Personalizing Cardiovascular Care Through Patient Profiling
+Venue: Jakarta, Indonesia
+Date: 31 October 2026 | 3:30–5:30 PM WIB
+CTA: View Chapter →
+________________
+
+
+PAGE 5 — CHAPTER 1 DETAIL PAGE
+Chapter Title
+CHAPTER 1
+Closing the GDMT Gap: From Evidence to Early Implementation
+Event Details
+📍 Manila, Philippines
+📅 28 October 2026 | 7:00–9:00 PM PHT
+🎥 Hybrid (In-person + Virtual)- Keep a placeholder for the images of the faculty for this event 
+________________
+
+
+Key Learning Objectives
+1. Understand the current treatment gap in Heart Failure and its impact on patient outcomes
+2. Review the latest evidence supporting early and comprehensive initiation of Guideline-Directed Medical Therapy (GDMT) in HFrEF patients
+3. Recognize the clinical benefits of rapid GDMT implementation compared with traditional sequential treatment approaches
+4. Identify barriers leading to clinical inertia and delayed optimization of heart failure therapy
+5. Explore practical strategies to ensure seamless transition from hospital-based care to long-term outpatient management while maintaining GDMT adherence
+6. Develop actionable approaches for translating guideline recommendations into routine clinical practice to improve patient survival and quality of life
+________________
+
+
+Agenda
+Time
+	Session
+	Speaker
+	Chair/Moderator
+	19:00–19:05
+	Welcome & Introduction of PULSE CONNECT
+	Hetero Corporate
+	—
+	19:05–19:15
+	Welcome Remark & Brief — Bridging the Heart Failure Treatment Gap
+	—
+	Dr Don, Chairperson @Philippines
+	19:15–19:45
+	Closing the GDMT Gap: From Evidence to Early Implementation — Why Early Initiation Matters: Evidence Supporting Rapid GDMT Implementation
+	Dr Savarese
+	Dr Marion Patricio
+	19:45–20:00
+	Rapid GDMT Implementation in Heart Failure: Why Waiting Costs Lives (Early initiation versus sequential therapy)
+	Dr Glenny Advincula
+	—
+	20:00–20:20
+	Panel Discussion: From Hospital to Home — Overcoming Clinical Inertia in Heart Failure Management
+	Panelist 1: Dr from Malaysia (Virtual)
+Panelist 2: Dr from Indonesia (Virtual)
+Panelist 3: Dr Richard Tiongco
+Panelist 4: Dr Savarese
+	Dr Marion Patricio
+	20:20–20:30
+	Q&A
+	—
+	—
+	20:30–20:35
+	Take Home Message
+	—
+	Dr Don, Chairperson @Philippines
+	20:35–20:40
+	Closing Note — Day 1
+	Country Team
+	—
+	________________
+
+
+
+
+CTAs
+[ JOIN LIVE SESSION ] [ ADD TO CALENDAR ]
+Post-Session
+[ Take Module Feedback ] 
+________________
+PAGE 6 — CHAPTER 2 DETAIL PAGE
+Chapter Title
+CHAPTER 2
+Managing Challenging Heart Failure Patients
+Event Details
+📍 Bangkok, Thailand
+📅 30 October 2026 | 3:00–5:00 PM ICT
+🎥 Hybrid (In-person + Virtual)- Keep a placeholder for the images of the faculty for this event 
+
+
+________________
+
+
+Key Learning Objectives
+1. Understand the challenges of implementing GDMT in complex heart failure patients with low blood pressure, chronic kidney disease, and other high-risk clinical conditions
+2. Learn evidence-based approaches for optimizing heart failure therapies in patients with multiple comorbidities
+3. Evaluate practical titration strategies to achieve target doses while maintaining safety and tolerability
+4. Gain confidence in managing treatment-related concerns such as hypotension, renal dysfunction, electrolyte imbalance, and drug interactions
+5. Discuss real-world barriers to GDMT implementation and explore solutions from regional and international expert experiences
+6. Apply guideline recommendations effectively in challenging clinical scenarios to maximize patient outcomes
+________________
+
+
+Agenda
+Time
+	Session
+	Speaker
+	Chair/Moderator
+	15:00–15:10
+	Welcome Note & Brief on Day 1 Agenda: Closing the GDMT Gap
+	—
+	Moderator from Bangkok
+	15:15–15:45
+	Navigating GDMT in Complex Heart Failure Patients: Low Blood Pressure, CKD and Other Clinical Challenges
+	Dr Savarese
+	Moderator from Bangkok
+	15:45–16:10
+	Optimizing Guideline-Directed Therapy in Heart Failure with Multiple Comorbidities
+	Speaker from Bangkok
+	—
+	16:10–16:30
+	Panel Discussion: From Guidelines to Practice — Practical Titration Strategies and Overcoming Treatment Barriers
+	Panelist 1: Dr from Sri Lanka (Virtual)
+Panelist 2: Dr from Malaysia (Virtual)
+Panelist 3: Dr from Cambodia (Virtual)
+Panelist 4: Dr Savarese
+	Moderator from Bangkok
+	16:30–16:40
+	Q&A
+	—
+	—
+	16:40–16:45
+	Take Home Message
+	—
+	Moderator from Bangkok
+	16:45–16:50
+	Thank You Note
+	Country Team
+	—
+	________________
+
+
+
+
+Selection Criteria
+Role
+	Criteria
+	Moderator
+	Top KOL or Subject Matter Expert from the country, 20+ years experience, authority to influence other HCPs
+	Speaker & Panel
+	Cardiologists with minimum 12+ years experience
+	________________
+
+
+CTAs
+[ JOIN LIVE SESSION ] [ ADD TO CALENDAR ]
+Post-Session
+[ Take Module Feedback ] 
+________________
+PAGE 7 — CHAPTER 3 DETAIL PAGE
+Chapter Title
+CHAPTER 3
+Personalizing Cardiovascular Care Through Patient Profiling
+Event Details
+📍 Jakarta, Indonesia
+📅 31 October 2026 | 3:30–5:30 PM WIB
+🎥 Hybrid (In-person + Virtual)- Keep a placeholder for the images of the faculty for this event 
+
+
+________________
+
+
+Key Learning Objectives
+1. Understand the role of patient profiling in enabling individualized cardiovascular and heart failure treatment decisions
+2. Identify the most appropriate heart failure patient populations for ARNI therapy across different stages of the treatment journey
+3. Learn how clinical characteristics, risk factors, and comorbidities influence therapeutic selection and outcomes
+4. Develop a precision medicine approach for balancing thrombotic and bleeding risks in cardiovascular patients
+5. Translate patient profiles into evidence-based therapeutic choices to achieve better clinical outcomes
+6. Explore emerging concepts in personalized cardiovascular medicine and their application in everyday practice
+________________
+
+
+Agenda
+Time
+	Session
+	Speaker
+	Chair/Moderator
+	15:30–15:40
+	Welcome Note & Brief on Day 2 Agenda: Managing Challenging Heart Failure Patients
+	—
+	Moderator from Indonesia
+	15:40–16:10
+	Personalizing Cardiovascular Care Through Patient Profiling — The Right Heart Failure Patient for the Right Therapy: Positioning ARNI Across the Patient Journey
+	Dr Savarese
+	Moderator from Indonesia
+	16:10–16:35
+	Balancing Bleeding and Thrombotic Risk: A Precision Medicine Approach
+	Speaker from Indonesia
+	—
+	16:35–16:55
+	Panel Discussion: Precision-Based Cardiovascular Care — Translating Patient Profiles into Therapeutic Decisions
+	Panelist 1: Dr from Malaysia (Virtual)
+Panelist 2: Dr from Vietnam (Virtual)
+Panelist 3: Dr from Myanmar (Virtual)
+Panelist 4: Dr Savarese
+	Moderator from Indonesia
+	16:55–17:05
+	Q&A
+	—
+	—
+	17:05–17:10
+	Take Home Message
+	—
+	Moderator from Indonesia
+	17:10–17:15
+	Thank You Note
+	Country Team
+	—
+	________________
+
+
+
+
+
+
+CTAs
+[ JOIN LIVE SESSION ] [ ADD TO CALENDAR ]
+Post-Session
+[ Take Module Feedback ] 
+________________
+PAGE 8 — SESSION / LIVE JOIN PAGE
+Chapter 2 — LIVE NOW
+Managing Challenging Heart Failure Patients
+Live Stream Embed
+🔴 LIVE
+Now Playing
+Navigating GDMT in Complex Heart Failure Patients: Low Blood Pressure, CKD and Other Clinical Challenges
+Speaker: Dr Savarese
+Up Next
+16:10 — Panel Discussion: From Guidelines to Practice
+16:30 — Q&A
+16:40 — Take Home Message
+CTAs
+[ 💬 Ask a Question ] [ 📥 Download Slides ]
+________________
+
+
+PAGE 9 — RESOURCES LIBRARY
+Heading
+RESOURCES
+Filters
+[ All Chapters ▼ ] [ All Types ▼ ] [ Search 🔍 ]
+Resource List
+Resource
+	Chapter
+	Type
+	Action
+	Closing the GDMT Gap — 
+	Chapter 1
+	PDF
+	Download
+	Managing Challenging HF Patients — 
+	Chapter 2
+	PDF
+	Download
+	Personalizing CV Care — 
+	Chapter 3
+	PDF
+	Download
+	Post event Synopsis 
+	All
+	PDF
+	Download
+	Highlght videos 
+	All
+	MP4
+	Download
+	________________
+
+
+PAGE 10 — CERTIFICATE PAGE
+Heading
+MY CERTIFICATES
+Participation Certificate
+For completing Chapter 1 — Manila
+Status: ✅ Available
+[ Download PDF ] 
+Advanced Learning Certificate
+For completing all 3 chapters
+Status: 🔒 Locked — complete all chapters
+Progress: 1 of 3 chapters completed
+████████░░░░░░░░░░░░ 33%
+Certificate Audit Trail
+Date
+	Type
+	Chapter
+	Download
+	28 Oct 2026
+	Participation
+	Chapter 1
+	✅
+	________________
+
+
+PAGE 11 — PROFILE / SETTINGS
+My Profile
+Field
+	Value
+	Full Name
+	Dr. [Name]
+	Email
+	[email]
+	Country
+	[Country]
+	Role
+	[Role]
+	Specialty
+	[Specialty]
+	License No.
+	[License]
+	Institution
+	[Institution]
+	[ Edit Profile ]
+________________
+
+
+PAGE 12 — ABOUT / FACULTY
+About PULSE CONNECT- Keep visual placeholders for all the faculty with their credentials
+PULSE CONNECT is a 3-part hybrid education series designed to bridge the gap between heart failure guidelines and real-world clinical practice across Asia.
+Faculty
+Name
+	Role
+	Chapters
+	Dr Savarese
+	Speaker
+	Chapters 1, 2, 3
+	Dr Glenny Advincula
+	Speaker
+	Chapter 1
+	Dr Don
+	Chairperson, Philippines
+	Chapter 1
+	Dr Marion Patricio
+	Moderator
+	Chapter 1
+	Dr Richard Tiongco
+	Panelist
+	Chapter 1
+	Speaker from Bangkok
+	Speaker
+	Chapter 2
+	Moderator from Bangkok
+	Moderator
+	Chapter 2
+	Speaker from Indonesia
+	Speaker
+	Chapter 3
+	Moderator from Indonesia
+	Moderator
+	Chapter 3
+	Endorsed By
+Hetero logo | Country Team logos
+________________
+
+
+________________
+
+
+ADMIN DASHBOARD
+Tabs: Overview | Users | Geography | Certificates | Reports
+KPI Cards
+Metric
+	Value
+	Total Users
+	450
+	Active Users
+	320
+	Completed Chapters
+	180
+	Certificates Issued
+	95
+	Chapter Completion
+Chapter
+	Completion
+	Chapter 1 — Manila
+	85%
+	Chapter 2 — Bangkok
+	65%
+	Chapter 3 — Jakarta
+	40%
+	Country Breakdown
+Country
+	Users
+	Philippines
+	120
+	Thailand
+	85
+	Indonesia
+	75
+	Malaysia
+	45
+	Others
+	35
+	Certificate Log
+User
+	Type
+	Chapter
+	Date
+	Dr. A
+	Participation
+	Chapter 1
+	28 Oct
+	Dr. B
+	Advanced
+	All 3
+	31 Oct
+	[ Export CSV ] [ Export PDF ] [ Schedule Report ]
+________________
+
+
+________________
+
+
+ADMIN DASHBOARD (Backend)
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ADMIN | PULSE CONNECT                                      │
+├─────────────────────────────────────────────────────────────┤
+│  TABS: Overview | Users | Geography | Certificates | Reports│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  KPI CARDS                                                  │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+│  │ Total    │ │ Active   │ │ Completed│ │ Certs    │       │
+│  │ Users    │ │ Users    │ │ Chapters │ │ Issued   │       │
+│  │ 450      │ │ 320      │ │ 180      │ │ 95       │       │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘       │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  CHAPTER COMPLETION                                         │
+│  Chapter 1 — Manila   ████████████████████  85%            │
+│  Chapter 2 — Bangkok  ██████████████░░░░░░  65%            │
+│  Chapter 3 — Jakarta  ████████░░░░░░░░░░░░  40%            │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  COUNTRY BREAKDOWN                                          │
+│  Philippines  ████████████████████  120 users              │
+│  Thailand     ██████████████░░░░░░   85 users              │
+│  Indonesia    ████████████░░░░░░░░   75 users              │
+│  Malaysia     ████████░░░░░░░░░░░░   45 users              │
+│  Others       ██████░░░░░░░░░░░░░░   35 users              │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  CERTIFICATE LOG                                            │
+│  ┌────────────┬──────────┬──────────────┬──────────┐       │
+│  │ User       │ Type     │ Chapter      │ Date     │       │
+│  ├────────────┼──────────┼──────────────┼──────────┤       │
+│  │ Dr. A      │ Particip.│ Chapter 1    │ 28 Oct   │       │
+│  │ Dr. B      │ Advanced │ All 3        │ 31 Oct   │       │
+│  └────────────┴──────────┴──────────────┴──────────┘       │
+│                                                             │
+│  [ Export CSV ]  [ Export PDF ]  [ Schedule Report ]        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+ABOUT / FACULTY
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview| Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ABOUT PULSE CONNECT                                        │
+│                                                             │
+│  PULSE CONNECT is a 3-part hybrid education series          │
+│  designed to bridge the gap between heart failure           │
+│  guidelines and real-world clinical practice across Asia.   │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  FACULTY                                                    │
+│                                                             │
+│  ┌──────────────┐  Dr Savarese                              │
+│  │  [Photo]     │  Speaker — Chapters 1, 2, 3               │
+│  └──────────────┘                                           │
+│                                                             │
+│  ┌──────────────┐  Dr Glenny Advincula                      │
+│  │  [Photo]     │  Speaker — Chapter 1                      │
+│  └──────────────┘                                           │
+│                                                             │
+│  ┌──────────────┐  Dr Don                                   │
+│  │  [Photo]     │  Chairperson, Philippines                 │
+│  └──────────────┘                                           │
+│                                                             │
+│  ┌──────────────┐  Dr Marion Patricio                       │
+│  │  [Photo]     │  Moderator — Chapter 1                    │
+│  └──────────────┘                                           │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  ENDORSED BY                                                │
+│  [Hetero Logo]  [Country Team Logos]                        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+CERTIFICATE PAGE
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview | Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  MY CERTIFICATES                                            │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │  🏆 PARTICIPATION CERTIFICATE                       │   │
+│  │  For completing Chapter 1 — Manila                  │   │
+│  │  Status: ✅ Available                               │   │
+│  │  [ Download PDF ]  [ Share to LinkedIn ]            │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │  🏆 ADVANCED LEARNING CERTIFICATE                   │   │
+│  │  For completing all 3 chapters                      │   │
+│  │  Status: 🔒 Locked — complete all chapters          │   │
+│  │  Progress: 1 of 3 chapters completed                │   │
+│  │  ████████░░░░░░░░░░░░  33%                          │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  CERTIFICATE AUDIT TRAIL                                    │
+│  ┌────────────┬──────────────┬──────────────┬──────────┐   │
+│  │ Date       │ Type         │ Chapter      │ Download │   │
+│  ├────────────┼──────────────┼──────────────┼──────────┤   │
+│  │ 28 Oct 26  │ Participation│ Chapter 1    │ ✅       │   │
+│  └────────────┴──────────────┴──────────────┴──────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+RESOURCES LIBRARY
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview | Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  RESOURCES                                                  │
+│                                                             │
+│  Filter: [ All Chapters ▼ ] [ All Types ▼ ] [ Search 🔍 ]  │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │  📄 Chapter 1 — Slides (PDF)                        │   │
+│  │  Closing the GDMT Gap                               │   │
+│  │  [ Download ]                                       │   │
+│  ├─────────────────────────────────────────────────────┤   │
+│  │  📄 Chapter 2 — Slides (PDF)                        │   │
+│  │  Managing Challenging HF Patients                   │   │
+│  │  [ Download ]                                       │   │
+│  ├─────────────────────────────────────────────────────┤   │
+│  │  📄 Chapter 3 — Slides (PDF)                        │   │
+│  │  Personalizing CV Care                              │   │
+│  │  [ Download ]                                       │   │
+│  ├─────────────────────────────────────────────────────┤   │
+│  │  📋 GDMT Quick Reference Guide                      │   │
+│  │  [ Download ]                                       │   │
+│  ├─────────────────────────────────────────────────────┤   │
+│  │  📋 ARNI Positioning Guide                          │   │
+│  │  [ Download ]                                       │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+SESSION / LIVE JOIN PAGE
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview | Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  CHAPTER 2 — LIVE NOW                                       │
+│  Managing Challenging Heart Failure Patients                │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                                                     │   │
+│  │              [ LIVE STREAM EMBED ]                  │   │
+│  │                                                     │   │
+│  │              🔴 LIVE                                │   │
+│  │                                                     │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  NOW PLAYING                                                │
+│  Navigating GDMT in Complex Heart Failure Patients:         │
+│  Low Blood Pressure, CKD and Other Clinical Challenges      │
+│  Speaker: Dr Savarese                                       │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  UP NEXT                                                    │
+│  16:10 — Panel Discussion: From Guidelines to Practice      │
+│  16:30 — Q&A                                                │
+│  16:40 — Take Home Message                                  │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  [ 💬 Ask a Question ]  [ 📥 Download Slides ]              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+CHAPTER DETAIL PAGE (Template)
+
+
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview  | Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  CHAPTER 1                                                  │
+│  Closing the GDMT Gap: From Evidence to Early Implementation│
+│                                                             │
+│  📍 Manila, Philippines                                     │
+│  📅 28 October 2026 | 7:00–9:00 PM PHT                      │
+│  🎥 Hybrid (In-person + Virtual)                            │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  KEY LEARNING OBJECTIVES                                    │
+│  1. Understand the current treatment gap in Heart Failure   │
+│     and its impact on patient outcomes                      │
+│  2. Review the latest evidence supporting early and         │
+│     comprehensive initiation of GDMT in HFrEF patients      │
+│  3. Recognize the clinical benefits of rapid GDMT           │
+│     implementation vs traditional sequential treatment      │
+│  4. Identify barriers leading to clinical inertia           │
+│  5. Explore practical strategies for hospital-to-home       │
+│     transition while maintaining GDMT adherence             │
+│  6. Develop actionable approaches for translating           │
+│     guideline recommendations into routine practice         │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  AGENDA                                                     │
+│                                                             │
+│  ┌──────────────┬──────────────────────────┬─────────────┐  │
+│  │ TIME         │ SESSION                  │ SPEAKER     │  │
+│  ├──────────────┼──────────────────────────┼─────────────┤  │
+│  │ 19:00–19:05  │ Welcome & Intro of       │ Hetero      │  │
+│  │              │ PULSE CONNECT            │ Corporate   │  │
+│  │ 19:05–19:15  │ Welcome Remark & Brief   │ Dr Don      │  │
+│  │ 19:15–19:45  │ Closing the GDMT Gap:    │ Dr Savarese │  │
+│  │              │ Why Early Initiation     │             │  │
+│  │              │ Matters                  │             │  │
+│  │ 19:45–20:00  │ Rapid GDMT Implementation│ Dr Glenny   │  │
+│  │              │ in HF: Why Waiting Costs │ Advincula   │  │
+│  │              │ Lives                    │             │  │
+│  │ 20:00–20:20  │ Panel Discussion: From   │ Panelists   │  │
+│  │              │ Hospital to Home         │             │  │
+│  │ 20:20–20:30  │ Q&A                      │             │  │
+│  │ 20:30–20:35  │ Take Home Message        │ Dr Don      │  │
+│  │ 20:35–20:40  │ Closing Note             │ Country Team│  │
+│  └──────────────┴──────────────────────────┴─────────────┘  │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  FACULTY                                                    │
+│  • Dr Savarese — Speaker                                    │
+│  • Dr Glenny Advincula — Speaker                            │
+│  • Dr Don — Chairperson, Philippines                        │
+│  • Dr Marion Patricio — Moderator                           │
+│  • Panelists: Malaysia, Indonesia, Dr Richard Tiongco       │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  [ JOIN LIVE SESSION ]  [ ADD TO CALENDAR ]                 │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  POST-SESSION                                               │
+│  [ Take Module Feedback ]  [ Download Slides ]              │
+│  [ Mark Complete ]                                          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+PROGRAM OVERVIEW (3 Chapters)
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview | Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  PROGRAM OVERVIEW                                           │
+│  PULSE CONNECT — 3 Chapters                                 │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │  CHAPTER 1                                          │   │
+│  │  Closing the GDMT Gap: From Evidence to Early       │   │
+│  │  Implementation                                     │   │
+│  │                                                     │   │
+│  │  📍 Manila, Philippines                             │   │
+│  │  📅 28 October 2026 | 7:00–9:00 PM PHT              │   │
+│  │                                                     │   │
+│  │  [ View Chapter → ]                                 │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │  CHAPTER 2                                          │   │
+│  │  Managing Challenging Heart Failure Patients        │   │
+│  │                                                     │   │
+│  │  📍 Bangkok, Thailand                               │   │
+│  │  📅 30 October 2026 | 3:00–5:00 PM ICT              │   │
+│  │                                                     │   │
+│  │  [ View Chapter → ]                                 │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │  CHAPTER 3                                          │   │
+│  │  Personalizing Cardiovascular Care Through          │   │
+│  │  Patient Profiling                                  │   │
+│  │                                                     │   │
+│  │  📍 Jakarta, Indonesia                              │   │
+│  │  📅 31 October 2026 | 3:30–5:30 PM WIB              │   │
+│  │                                                     │   │
+│  │  [ View Chapter → ]                                 │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+LEARNER DASHBOARD
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  PULSE CONNECT        Overview  | Resources | Profile│
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Welcome back, Dr. [Name]                                   │
+│  You have completed 1 of 3 chapters                         │
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐        │
+│  │ CHAPTER 1    │ │ CHAPTER 2    │ │ CHAPTER 3    │        │
+│  │ Manila       │ │ Bangkok      │ │ Jakarta      │        │
+│  │ 28 Oct 2026  │ │ 30 Oct 2026  │ │ 31 Oct 2026  │        │
+│  │              │ │              │ │              │        │
+│  │ ✅ Completed │ │ 🔴 Live Now  │ │ 🔒 Locked    │        │
+│  │              │ │ [Join Now]   │ │              │        │
+│  └──────────────┘ └──────────────┘ └──────────────┘        │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  MY PROGRESS                                                │
+│  ████████████░░░░░░░░░░░░  33%                              │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  UPCOMING                                                   │
+│  Chapter 2 — Bangkok | 30 Oct 2026 | 3:00 PM                │
+│  [ Add to Calendar ]  [ Join Link ]                         │
+│                                                             │
+│  ─────────────────────────────────────────────────────      │
+│                                                             │
+│  MY CERTIFICATES                                            │
+│  No certificates yet. Complete all 3 chapters to earn       │
+│  your Advanced Learning Certificate.                        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+THANK YOU / CONFIRMATION
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│              ✅ You're registered!                          │
+│                                                             │
+│   Welcome to PULSE CONNECT, Dr. [Name]                      │
+│                                                             │
+│   Your registration is confirmed for:                       │
+│                                                             │
+│   ┌─────────────────────────────────────────────────────┐   │
+│   │  Chapter 1 — Manila | 28 Oct 2026 | 7:00–9:00 PM   │   │
+│   │  Chapter 2 — Bangkok | 30 Oct 2026 | 3:00–5:00 PM  │   │
+│   │  Chapter 3 — Jakarta | 31 Oct 2026 | 3:30–5:30 PM  │   │
+│   └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│   [ Go to My Dashboard → ]                                  │
+│                                                             │
+│   📧 A confirmation email has been sent to [email]          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
