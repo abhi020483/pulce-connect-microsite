@@ -1,11 +1,11 @@
 # Mirrors the client spec Google Doc into the repo as spec.txt so the hourly
 # cloud routine (whose sandbox cannot reach docs.google.com) can read the
-# CORRECTIONS section from its checkout. Runs at :30 UTC; the routine runs at :40.
+# CORRECTIONS section from its checkout. Runs every 15 minutes.
 name: Mirror client spec doc
 
 on:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
