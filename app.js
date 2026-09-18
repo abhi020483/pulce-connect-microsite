@@ -127,9 +127,9 @@
     { key: 'change',    type: 'text',   q: 'Will this session change anything in your practice? (optional)', hint: 'One or two lines' }
   ];
 
-  const COUNTRIES = ['Philippines', 'Thailand', 'Indonesia', 'Malaysia', 'Singapore', 'Vietnam', 'Cambodia', 'Myanmar', 'Sri Lanka', 'Bangladesh', 'Nepal', 'India', 'Other'];
-  const ROLES = ['Cardiologist', 'Heart failure specialist', 'Internal medicine physician', 'General practitioner', 'Cardiology fellow / resident', 'Nurse / allied health', 'Pharmacist', 'Other'];
-  const SPECIALTIES = ['Heart failure', 'Interventional cardiology', 'Clinical cardiology', 'Cardio-endocrinology', 'Electrophysiology', 'Cardiac imaging', 'Internal medicine', 'Other'];
+  const COUNTRIES = ['Philippines', 'Thailand', 'Indonesia', 'Vietnam', 'Malaysia', 'Singapore', 'Cambodia', 'Myanmar', 'Sri Lanka', 'Bangladesh', 'Nepal', 'India', 'Other'];
+  const ROLES = ['Consultant / Attending', 'Fellow', 'Resident', 'Nurse practitioner', 'Other HCP'];
+  const SPECIALTIES = ['Cardiology', 'Heart failure', 'Internal medicine', 'Interventional cardiology', 'Other'];
 
   const TABS = [['dashboard', 'Dashboard'], ['overview', 'Program Overview'], ['resources', 'Resources'], ['certificates', 'Certificates'], ['about', 'About & Faculty'], ['profile', 'Profile']];
   const VIEWS = ['landing', 'thanks', 'dashboard', 'overview', 'chapter', 'live', 'feedback', 'resources', 'certificates', 'profile', 'about'];
@@ -165,7 +165,8 @@
     if (now >= s && now <= e) return 'live';
     return now > e ? 'replay' : 'upcoming';
   }
-  const STATUS_LABEL = { done: '✅ Completed', live: '🔴 Live Now', upcoming: '🗓 Upcoming', replay: '▶ Replay available', locked: '🔒 Locked' };
+  const STATUS_LABEL = { done: 'Completed', live: 'Live now', upcoming: 'Upcoming', replay: 'Replay available', locked: 'Locked' };
+  const statusPill = (s) => `<span class="status s-${s}">${STATUS_LABEL[s]}</span>`;
 
   /* ========================================================== NAVIGATION */
   function go(view, { push = true } = {}) {
@@ -191,8 +192,8 @@
     document.title = (v === 'landing' ? 'Register' : titleFor(v)) + ' · PULCE Connect 2026';
 
     $('hdr-auth').innerHTML = state.user
-      ? `<span class="hdr-user">${esc(drName())}</span><button class="btn btn-outline sm" data-logout>Log out</button>`
-      : `<button class="btn btn-primary sm" data-show-login>Log in</button>`;
+      ? `<div class="hdr-nav"><span class="hdr-user">Signed in · ${esc(drName())}</span><button class="signout" data-logout>Sign out</button></div>`
+      : `<nav class="hdr-nav"><a href="#chapters">Chapters</a><a href="#program">Program</a><a href="#faculty">Faculty</a><a href="#register" class="cta">Register</a></nav>`;
     $('tabs').innerHTML = state.user ? TABS.map(([id, label]) => {
       const active = v === id || (id === 'overview' && ['chapter', 'live', 'feedback'].includes(v));
       return `<button class="tab${active ? ' active' : ''}" data-go="${id}"${active ? ' aria-current="page"' : ''}>${label}</button>`;
@@ -216,17 +217,23 @@
 
   const eventRows = (cls = '') => CHAPTERS.map((c) => `<tr class="${cls}"><td><b>Chapter ${c.n}</b></td><td>${c.venue}</td><td>${c.date}</td><td>${c.time}</td></tr>`).join('');
   const facultyCard = (id, size = '') => {
-    const f = FACULTY[id];
-    return `<div class="fac ${size}${f.tba ? ' tba' : ''}">
-      <div class="fac-photo">${f.photo ? `<img src="${f.photo}" alt="${esc(f.name)}">` : `<span>${initials(f.name)}</span>`}</div>
-      <div class="fac-body"><b>${esc(f.name)}</b><span>${esc(f.role)}${f.chapters.length ? ' · Chapter' + (f.chapters.length > 1 ? 's ' : ' ') + f.chapters.join(', ') : ''}</span><small>${esc(f.cred)}</small></div>
+    const f = FACULTY[id], tag = f.chapters.length ? 'CH ' + f.chapters.join('·') : 'TBA';
+    return `<div class="fac${size ? ' ' + size : ''}${f.tba ? ' tba' : ''}">
+      <div class="fac-photo">${f.photo ? `<img src="${f.photo}" alt="${esc(f.name)}">` : `<div class="tag">${f.tba ? tag : initials(f.name)}</div>`}</div>
+      <div><b>${esc(f.name)}</b><span>${esc(f.role)}${f.chapters.length ? ' · Chapter' + (f.chapters.length > 1 ? 's ' : ' ') + f.chapters.join(', ') : ''}</span><small>${esc(f.cred)}</small></div>
     </div>`;
   };
 
   /* ---- Landing ---- */
   function renderLanding() {
-    $('land-events').innerHTML = eventRows();
-    $('land-faculty').innerHTML = ['savarese', 'advincula', 'don', 'patricio', 'tiongco'].map((id) => `<span class="fac-chip">${esc(FACULTY[id].name)}</span>`).join('');
+    $('land-chapters').innerHTML = CHAPTERS.map((c) => `<article class="ch-art">
+      <div class="ch-city"><div class="country">${c.country}</div><div><div class="city">${c.city}</div><div class="fmt">In person &amp; livestream</div></div><div class="big">0${c.n}</div></div>
+      <div class="ch-label"><span>Chapter ${c.n}</span><i></i></div>
+      <h3>${c.city}</h3><div class="theme">${esc(c.title)}</div>
+      <dl><dt>Venue</dt><dd>${c.venue}</dd><dt>Date</dt><dd>${c.date}</dd><dt>Time</dt><dd>${c.time}</dd></dl>
+      <a class="btn btn-line sm" href="#register">Register to attend</a>
+    </article>`).join('');
+    $('land-faculty').innerHTML = ['savarese', 'advincula', 'don', 'patricio', 'tiongco', 'speaker-bkk', 'mod-bkk', 'speaker-id'].map((id) => facultyCard(id)).join('');
     const c = $('reg-country');
     if (!c.options.length) {
       c.innerHTML = '<option value="">Select country</option>' + COUNTRIES.map((x) => `<option>${x}</option>`).join('');
@@ -240,45 +247,41 @@
     $('thanks-name').textContent = 'Welcome to PULCE Connect, ' + drName();
     $('thanks-email').textContent = state.user.email || '';
     $('thanks-events').innerHTML = eventRows();
-    $('thanks-faculty').innerHTML = FACULTY_ORDER.slice(0, 9).map((id) => facultyCard(id, 'sm')).join('');
+    $('thanks-faculty').innerHTML = FACULTY_ORDER.slice(0, 8).map((id) => facultyCard(id)).join('');
   }
 
   /* ---- Dashboard ---- */
   function renderDashboard() {
     const n = doneCount();
-    $('dash-welcome').textContent = 'Welcome back, ' + drName();
+    $('dash-welcome').textContent = 'Welcome, ' + drName();
     $('dash-sub').textContent = `You have completed ${n} of 3 chapters.`;
     $('dash-cards').innerHTML = CHAPTERS.map((c, i) => {
       const s = status(i);
-      const action = s === 'locked' ? '<span class="muted">Complete the previous chapter to unlock</span>'
-        : s === 'live' ? `<button class="btn btn-live md" data-chapter="${i}" data-target="live">Join Now</button>`
-        : s === 'done' ? `<button class="btn btn-outline md" data-chapter="${i}">View</button>`
-        : `<button class="btn btn-primary md" data-chapter="${i}">View chapter →</button>`;
-      return `<div class="card ch-card s-${s}${s === 'locked' ? ' locked' : ''}">
-        <div class="ch-n">Chapter ${c.n}</div><b>${esc(c.title)}</b>
-        <div class="ch-meta"><span>📍 ${c.city}</span><span>📅 ${c.dateShort}</span></div>
-        <div class="ch-status">${STATUS_LABEL[s]}</div><div class="ch-action">${action}</div></div>`;
+      const actions = s === 'locked' ? `<span class="small">Unlocks after Chapter ${c.n - 1}</span>`
+        : `${s === 'live' ? `<button class="btn btn-live sm" data-chapter="${i}" data-target="live">Join live</button>` : `<button class="btn btn-navy sm" data-chapter="${i}" data-target="live">${s === 'done' || s === 'replay' ? 'Replay' : 'Join live'}</button>`}<button class="btn btn-soft sm" data-chapter="${i}">Agenda</button>`;
+      return `<div class="row${s === 'locked' ? ' locked' : ''}"><div class="num">0${c.n}</div>
+        <div><b>${c.city} — ${esc(c.title)}</b><div class="meta">${c.venue} · ${c.date} · ${c.time}</div>${statusPill(s)}</div>
+        <div class="btn-row">${actions}</div></div>`;
     }).join('');
     const pct = Math.round(n / 3 * 100);
     $('dash-bar').style.width = pct + '%'; $('dash-pct').textContent = pct + '%';
     const next = CHAPTERS.findIndex((_, i) => !isDone(i));
-    if (next === -1) $('dash-upcoming').innerHTML = '<p>All three chapters complete — your Advanced Learning Certificate is ready.</p><button class="btn btn-primary md" data-go="certificates">View certificates →</button>';
-    else { const c = CHAPTERS[next]; $('dash-upcoming').innerHTML = `<p><b>Chapter ${c.n} — ${c.city}</b> | ${c.dateShort} | ${c.time.split('–')[0].trim()}</p><div class="btn-row"><button class="btn btn-outline md" data-ics="${next}">📅 Add to Calendar</button><button class="btn btn-primary md" data-chapter="${next}" data-target="live">🔗 Join Link</button></div>`; }
-    $('dash-certs').innerHTML = n === 0 ? '<p class="muted">No certificates yet. Complete all 3 chapters to earn your Advanced Learning Certificate.</p>'
-      : `<p>${n} participation certificate${n > 1 ? 's' : ''} available${n === 3 ? ' · Advanced Learning Certificate unlocked' : ''}.</p><button class="btn btn-outline md" data-go="certificates">My certificates →</button>`;
+    if (next === -1) $('dash-upcoming').innerHTML = '<p class="small" style="margin:10px 0 14px">All three chapters complete — your Advanced Learning Certificate is ready.</p><button class="btn btn-navy sm" data-go="certificates">View certificates</button>';
+    else { const c = CHAPTERS[next]; $('dash-upcoming').innerHTML = `<p style="margin:10px 0 4px;font-size:15px"><b>Chapter ${c.n} — ${c.city}</b></p><p class="small" style="margin-bottom:14px">${c.date} · ${c.time}</p><div class="btn-row"><button class="btn btn-soft sm" data-ics="${next}">Add to calendar</button><button class="btn btn-navy sm" data-chapter="${next}" data-target="live">Join link</button></div>`; }
+    $('dash-certs').innerHTML = n === 0 ? '<p style="margin-top:10px;opacity:.9">No certificates yet. Complete all 3 chapters to earn your Advanced Learning Certificate. Certificates of participation are issued after each chapter you complete.</p>'
+      : `<p style="margin:10px 0 14px;opacity:.9">${n} participation certificate${n > 1 ? 's' : ''} available${n === 3 ? ' · Advanced Learning Certificate unlocked' : ''}.</p><button class="btn btn-line sm" data-go="certificates">My certificates</button>`;
   }
 
   /* ---- Overview ---- */
   function renderOverview() {
     $('ov-chapters').innerHTML = CHAPTERS.map((c, i) => {
       const s = status(i);
-      return `<div class="card ov-ch${s === 'locked' ? ' locked' : ''}"><div class="ov-ch-head"><span class="ch-n">Chapter ${c.n}</span><span class="pill-status s-${s}">${STATUS_LABEL[s]}</span></div>
-        <h3>${esc(c.title)}</h3>
-        <div class="ch-meta"><span>📍 ${c.venue}</span><span>📅 ${c.date} | ${c.time}</span></div>
-        <div class="ov-fac">${c.faculty.slice(0, 4).map((id) => `<span class="fac-mini" title="${esc(FACULTY[id].name)}">${FACULTY[id].photo ? `<img src="${FACULTY[id].photo}" alt="">` : initials(FACULTY[id].name)}</span>`).join('')}</div>
-        <button class="btn btn-primary md" data-chapter="${i}" ${s === 'locked' ? 'disabled' : ''}>View Chapter →</button></div>`;
+      return `<div class="ov-row${s === 'locked' ? ' locked' : ''}"><div class="num">0${c.n}</div>
+        <div><div class="ch-label"><span>Chapter ${c.n} · ${c.city}</span><i></i>${statusPill(s)}</div><h3>${esc(c.title)}</h3><div class="meta">${c.venue} · ${c.date} · ${c.time} · Hybrid</div>
+        <div class="avatars">${c.faculty.slice(0, 5).map((id) => `<span class="avatar" title="${esc(FACULTY[id].name)}">${FACULTY[id].photo ? `<img src="${FACULTY[id].photo}" alt="">` : initials(FACULTY[id].name)}</span>`).join('')}</div></div>
+        <button class="btn btn-navy sm" data-chapter="${i}" ${s === 'locked' ? 'disabled' : ''}>View chapter →</button></div>`;
     }).join('');
-    $('ov-faculty').innerHTML = FACULTY_ORDER.map((id) => facultyCard(id, 'sm')).join('');
+    $('ov-faculty').innerHTML = FACULTY_ORDER.map((id) => facultyCard(id)).join('');
   }
 
   /* ---- Chapter detail ---- */
@@ -287,16 +290,16 @@
     $('ch-n').textContent = 'Chapter ' + c.n;
     $('ch-title').textContent = c.title;
     $('ch-venue').textContent = c.venue; $('ch-date').textContent = `${c.date} | ${c.time}`;
-    $('ch-status').innerHTML = `<span class="pill-status s-${s}">${STATUS_LABEL[s]}</span>`;
+    $('ch-status').innerHTML = statusPill(s); $('ch-big').textContent = '0' + c.n; $('ch-agenda-meta').textContent = c.time + ' local time';
     $('ch-objectives').innerHTML = c.objectives.map((o) => `<li>${esc(o)}</li>`).join('');
     $('ch-agenda').innerHTML = c.agenda.map(([t, sess, sp, mod]) => `<tr><td class="mono">${t}</td><td>${esc(sess)}</td><td>${esc(sp)}</td><td>${esc(mod)}</td></tr>`).join('');
-    $('ch-faculty').innerHTML = c.faculty.map((id) => facultyCard(id, 'sm')).join('');
+    $('ch-faculty').innerHTML = c.faculty.map((id) => facultyCard(id, 'compact')).join('');
     $('ch-criteria').hidden = !c.criteria;
     if (c.criteria) $('ch-criteria-rows').innerHTML = c.criteria.map(([r, d]) => `<tr><td><b>${r}</b></td><td>${esc(d)}</td></tr>`).join('');
-    $('ch-join').textContent = s === 'live' ? '🔴 Join live session' : s === 'replay' || s === 'done' ? '▶ Watch replay' : 'Join live session';
+    $('ch-join').textContent = s === 'live' ? 'Join live session' : s === 'replay' || s === 'done' ? 'Watch replay' : 'Join live session';
     $('ch-join').classList.toggle('btn-live', s === 'live');
     $('ch-join').dataset.chapter = i; $('ch-ics').dataset.ics = i;
-    $('ch-feedback').textContent = isDone(i) ? 'Feedback submitted ✓' : 'Take chapter feedback →';
+    $('ch-feedback').textContent = isDone(i) ? 'Feedback submitted' : 'Take chapter feedback →';
     $('ch-feedback').disabled = isDone(i); $('ch-feedback').dataset.chapter = i;
     $('ch-complete').hidden = isDone(i);
   }
@@ -304,15 +307,15 @@
   /* ---- Live / session page ---- */
   function renderLive() {
     const i = state.chapter, c = CHAPTERS[i], s = status(i);
-    $('live-n').innerHTML = `Chapter ${c.n} — ${s === 'live' ? '<span class="live-tag">🔴 LIVE NOW</span>' : s === 'upcoming' ? 'UPCOMING' : 'REPLAY'}`;
+    $('live-n').innerHTML = `Chapter ${c.n} — ${s === 'live' ? '<span class="live-tag">Live now</span>' : s === 'upcoming' ? 'Upcoming' : 'Replay'}`;
     $('live-title').textContent = c.title;
     $('live-embed').innerHTML = s === 'live'
-      ? `<div class="embed-msg"><span class="live-dot"></span>LIVE<small>Stream player embeds here (Zoom / YouTube Live / Vimeo)</small></div>`
-      : s === 'upcoming' ? `<div class="embed-msg">📺<small>The live stream opens on ${c.date} at ${c.time.split('–')[0].trim()} ${c.time.split(' ').pop()}</small></div>`
-      : `<div class="embed-msg">▶<small>Session replay — player embeds here after the event</small></div>`;
+      ? `<div class="embed-msg"><span class="live-dot"></span>Live<small>Stream player embeds here (Zoom / YouTube Live / Vimeo)</small></div>`
+      : s === 'upcoming' ? `<div class="embed-msg">Livestream<small>The live stream opens on ${c.date} at ${c.time.split('–')[0].trim()} ${c.time.split(' ').pop()}</small></div>`
+      : `<div class="embed-msg">Replay<small>Session replay — player embeds here after the event</small></div>`;
     const np = c.agenda[c.nowPlaying];
     $('live-now').innerHTML = `<b>${esc(np[1])}</b><span>Speaker: ${esc(np[2] === '—' ? np[3] : np[2])}</span>`;
-    $('live-next').innerHTML = c.upNext.map((k) => `<li><span class="mono">${c.agenda[k][0].split('–')[0]}</span>${esc(c.agenda[k][1].split(':')[0])}</li>`).join('');
+    $('live-next').innerHTML = c.upNext.map((k) => `<li><span class="mono">${c.agenda[k][0].split('–')[0]}</span><span>${esc(c.agenda[k][1].split(':')[0])}</span></li>`).join('');
     $('live-back').dataset.chapter = i;
   }
 
@@ -343,7 +346,7 @@
   function renderResources() {
     const f = state.resFilter;
     const rows = RESOURCES.filter((r) => (f.ch === 'all' || String(r.ch) === f.ch) && (f.type === 'all' || r.type === f.type) && (!f.q || r.title.toLowerCase().includes(f.q)));
-    $('res-list').innerHTML = rows.map((r) => `<div class="card res"><span class="res-icon">${r.type === 'MP4' ? '🎬' : '📄'}</span><div class="res-text"><b>${esc(r.title)}</b><span>${r.ch ? 'Chapter ' + r.ch : 'All chapters'} · ${r.type} · ${r.size}</span></div><button class="btn btn-soft" data-download="${esc(r.title)}">Download</button></div>`).join('') || '<p class="muted">No resources match.</p>';
+    $('res-list').innerHTML = rows.map((r) => `<div class="res"><span class="ico">${r.type === 'MP4' ? '🎬' : '📄'}</span><div><b>${esc(r.title)}</b><span>${r.ch ? 'Chapter ' + r.ch : 'All chapters'} · ${r.type} · ${r.size}</span></div><button class="btn btn-soft sm" data-download="${esc(r.title)}">Download</button></div>`).join('') || '<p class="small" style="padding-top:16px">No resources match.</p>';
     $('res-ch').value = f.ch; $('res-type').value = f.type;
   }
 
@@ -352,7 +355,7 @@
     const n = doneCount(), u = state.user, pct = Math.round(n / 3 * 100);
     $('cert-part-list').innerHTML = CHAPTERS.map((c, i) => {
       const done = isDone(i), d = done ? new Date(state.progress.completedAt[i]) : null;
-      return `<div class="card cert${done ? '' : ' locked'}">
+      return `<div class="cert${done ? '' : ' locked'}">
         <div class="cert-preview" data-cert="p${i}">
           <div class="cp-logos"><img src="assets/pulce-logo.png" alt="PULCE Connect"><img src="assets/hetero.png" alt="Hetero"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"></div>
           <div class="cp-kicker">Participation Certificate</div><div class="cp-awarded">This certifies that</div>
@@ -361,21 +364,21 @@
           <div class="cp-date">${c.date} · Issued ${done ? fmtDate(d) : '—'}</div>
           <img class="cp-strip" src="assets/partners-strip.png" alt="Partners">
         </div>
-        <div class="cert-foot"><div><b>🏆 Participation Certificate</b><span>For completing Chapter ${c.n} — ${c.city} · Status: ${done ? '✅ Available' : '🔒 Locked — complete Chapter ' + c.n}</span></div>
-        <div class="btn-row"><button class="btn btn-primary md" data-print="p${i}" ${done ? '' : 'disabled'}>Download PDF</button><a class="btn btn-outline md${done ? '' : ' disabled'}" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(location.origin + location.pathname)}">Share to LinkedIn</a></div></div>
+        <div class="cert-foot"><div><b>Participation Certificate</b><span>Chapter ${c.n} — ${c.city} · ${done ? 'Available' : 'Locked — complete Chapter ' + c.n}</span></div>
+        <div class="btn-row"><button class="btn btn-burg sm" data-print="p${i}" ${done ? '' : 'disabled'}>Download PDF</button><a class="btn btn-soft sm${done ? '' : ' disabled'}" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(location.origin + location.pathname)}">Share to LinkedIn</a></div></div>
       </div>`;
     }).join('');
     const all = n === 3;
     $('cert-adv').classList.toggle('locked', !all);
-    $('cert-adv-status').innerHTML = all ? '✅ Available' : `🔒 Locked — complete all chapters`;
-    $('cert-adv-progress').innerHTML = `Progress: ${n} of 3 chapters completed<div class="bar"><i style="width:${pct}%"></i></div><span class="pct">${pct}%</span>`;
+    $('cert-adv-status').innerHTML = all ? 'Available' : 'Locked — complete all chapters';
+    $('cert-adv-progress').innerHTML = `Progress: ${n} of 3 chapters completed · ${pct}%<div class="bar"><i style="width:${pct}%"></i></div>`;
     $('ca-name').textContent = drName();
     const stamps = Object.values(state.progress.completedAt).map((d) => new Date(d)).sort((a, b) => b - a);
     $('ca-date').textContent = 'Issued ' + fmtDate(all ? stamps[0] : new Date());
     $('cert-adv-btn').disabled = !all;
     const trail = CHAPTERS.map((c, i) => isDone(i) ? { d: new Date(state.progress.completedAt[i]), type: 'Participation', ch: 'Chapter ' + c.n, k: 'p' + i } : null).filter(Boolean);
     if (all) trail.push({ d: stamps[0], type: 'Advanced Learning', ch: 'All 3', k: 'adv' });
-    $('cert-trail').innerHTML = trail.length ? trail.sort((a, b) => a.d - b.d).map((t) => `<tr><td>${t.d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td><td>${t.type}</td><td>${t.ch}</td><td><button class="link" data-print="${t.k}">✅ Download</button></td></tr>`).join('') : '<tr><td colspan="4" class="muted">No certificates issued yet.</td></tr>';
+    $('cert-trail').innerHTML = trail.length ? trail.sort((a, b) => a.d - b.d).map((t) => `<tr><td>${t.d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td><td>${t.type}</td><td>${t.ch}</td><td><button class="link" data-print="${t.k}">Download</button></td></tr>`).join('') : '<tr><td colspan="4" >No certificates issued yet.</td></tr>';
   }
 
   /* ---- Profile ---- */
@@ -391,6 +394,7 @@
 
   /* ---- About / faculty ---- */
   function renderAbout() { $('about-faculty').innerHTML = FACULTY_ORDER.map((id) => facultyCard(id)).join(''); }
+  function setMode(login) { $('login-form').hidden = !login; $('reg-form').hidden = login; $('login-intro').hidden = !login; $('reg-intro').hidden = login; $('tab-login').classList.toggle('active', login); $('tab-register').classList.toggle('active', !login); if (login) $('login-email').focus(); }
 
   /* ------------------------------------------------------- Calendar (.ics) */
   function downloadIcs(i) {
@@ -405,9 +409,10 @@
     if (!t) return;
     if (t.classList.contains('disabled')) { e.preventDefault(); return; }
 
-    if (t.dataset.logout != null) { state.user = null; save(LS_USER, null); state.progress = { feedback: {}, completedAt: {} }; save(LS_PROG, null); $('reg-form').reset(); showLogin(false); return go('landing'); }
+    if (t.dataset.logout != null) { state.user = null; save(LS_USER, null); state.progress = { feedback: {}, completedAt: {} }; save(LS_PROG, null); $('reg-form').reset(); setMode(false); return go('landing'); }
     if (t.dataset.showLogin != null) return showLogin(true);
     if (t.dataset.showRegister != null) return showLogin(false);
+    if (t.tagName === 'A' && (t.getAttribute('href') || '').startsWith('#') && !t.dataset.go) return;
     if (t.dataset.go) return go(t.dataset.go);
     if (t.dataset.chapter !== undefined) return openChapter(+t.dataset.chapter, t.dataset.target || (t.id === 'ch-feedback' || t.id === 'ch-complete' ? 'feedback' : t.id === 'ch-join' ? 'live' : 'chapter'));
     if (t.dataset.ics !== undefined) return downloadIcs(+t.dataset.ics);
@@ -437,7 +442,7 @@
     save(LS_USER, state.user); state.progress = { feedback: {}, completedAt: {} }; save(LS_PROG, state.progress);
     go('thanks');
   });
-  function showLogin(on) { $('login-card').hidden = !on; $('reg-card').hidden = on; if (on) $('login-email').focus(); }
+  function showLogin(on) { setMode(on); if (state.view === 'landing') document.getElementById('register').scrollIntoView({ behavior: 'smooth' }); }
   $('login-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const f = new FormData(e.target), email = String(f.get('email') || '').trim(), name = String(f.get('name') || '').trim();

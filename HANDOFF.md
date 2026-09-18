@@ -1,6 +1,8 @@
 # PULCE Connect 2026 — Design Handoff
 
 **For:** Claude Design (claude.ai/design) · **From:** first-version build, 18 Sep 2026
+
+> **Round 1 complete (18 Sep 2026):** the Claude Design revamp (`Pulce Connect website revamp-handoff.zip`) has been implemented. The live site now uses the editorial system below — paper `#F6F3EE`, navy `#0E1A2B`, burgundy `#8E2637`, Carlito/Calibri, square corners, thin rules. Section 3 (brand) is superseded by that system; the rest of this brief still applies for further rounds.
 **Purpose:** take the working v1 microsite, refine the visual design, and hand a bundle back for implementation.
 
 ---
