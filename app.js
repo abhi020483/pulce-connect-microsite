@@ -194,7 +194,7 @@
 
     $('hdr-auth').innerHTML = state.user
       ? `<div class="hdr-nav"><span class="hdr-user">Signed in · ${esc(drName())}</span><button class="signout" data-logout>Sign out</button></div>`
-      : `<nav class="hdr-nav"><a href="#chapters">Chapters</a><a href="#program">Program</a><a href="#faculty">Faculty</a><a href="#register" class="cta">Register</a></nav>`;
+      : `<nav class="hdr-nav"><a href="#chapters">Chapters</a><a href="#register" class="cta">Register</a></nav>`;
     $('tabs').innerHTML = state.user ? TABS.map(([id, label]) => {
       const active = v === id || (id === 'overview' && ['chapter', 'live', 'feedback'].includes(v));
       return `<button class="tab${active ? ' active' : ''}" data-go="${id}"${active ? ' aria-current="page"' : ''}>${label}</button>`;
@@ -255,7 +255,6 @@
     </article>`).join('');
     $('land-events').innerHTML = eventRows();
     countdown($('land-countdown'), CHAPTERS[0].start, 'Chapter 1 opens in');
-    $('land-faculty').innerHTML = ['savarese', 'advincula', 'don', 'patricio', 'tiongco', 'speaker-bkk', 'mod-bkk', 'speaker-id'].map((id) => facultyCard(id)).join('');
     const c = $('reg-country');
     if (!c.options.length) {
       c.innerHTML = '<option value="">Select country</option>' + COUNTRIES.map((x) => `<option>${x}</option>`).join('');
@@ -449,7 +448,7 @@
     if (t.dataset.ics !== undefined) return downloadIcs(+t.dataset.ics);
     if (t.dataset.edit != null) { state.editing = !state.editing; return render(); }
     if (t.dataset.download) { toast(`"${t.dataset.download}" will download once the file is published.`); return; }
-    if (t.dataset.print) { document.body.dataset.print = t.dataset.print; window.print(); return; }
+    if (t.dataset.print) { document.body.dataset.print = t.dataset.print; if (document.documentElement.dataset.theme === 'dark') { document.documentElement.dataset.printTheme = '1'; delete document.documentElement.dataset.theme; } window.print(); return; }
 
     if (t.dataset.fb) {
       const k = t.dataset.fb, o = +t.dataset.o;
@@ -496,7 +495,13 @@
 
   function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(t._h); t._h = setTimeout(() => { t.hidden = true; }, 3500); }
   window.addEventListener('popstate', () => go(location.hash.slice(1) || (state.user ? 'dashboard' : 'landing'), { push: false }));
-  window.addEventListener('afterprint', () => { delete document.body.dataset.print; });
+  window.addEventListener('afterprint', () => { delete document.body.dataset.print; if (document.documentElement.dataset.printTheme) { document.documentElement.dataset.theme = 'dark'; delete document.documentElement.dataset.printTheme; } });
+  /* light / dark theme */
+  $('theme-toggle').addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    if (dark) document.documentElement.dataset.theme = 'dark'; else delete document.documentElement.dataset.theme;
+    try { localStorage.setItem('pulce.theme', dark ? 'dark' : 'light'); } catch (e) {}
+  });
 
   /* ================================================================ BOOT */
   go(location.hash.slice(1) || (state.user ? 'dashboard' : 'landing'), { push: false });
