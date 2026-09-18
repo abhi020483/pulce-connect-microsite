@@ -166,7 +166,8 @@ textarea.input{resize:vertical;min-height:80px}
 .esc-note p{font-size:12.5px;line-height:1.5;color:var(--ink-2)}
 .section{max-width:var(--max);margin:0 auto;padding:76px var(--pad) 0}
 .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border-bottom:1px solid var(--rule)}
-.ch-art{border-right:1px solid var(--rule);padding:0 26px 26px 0;display:flex;flex-direction:column}
+.ch-art{border-right:1px solid var(--rule);padding:0 26px 26px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.ch-art:first-child{padding-left:0}.ch-art .ch-city{align-self:stretch}.ch-art .ch-label{align-self:stretch}
 .ch-art:last-child{border-right:0}
 .ch-city{position:relative;height:210px;margin-bottom:18px;background:var(--navy);color:var(--paper);padding:20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .ch-city>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
@@ -176,14 +177,15 @@ textarea.input{resize:vertical;min-height:80px}
 .ch-city .city{font-size:clamp(30px,3.4vw,44px);font-weight:300;line-height:1;letter-spacing:-.02em}
 .ch-city .fmt{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-top:8px}
 .ch-city .big{position:absolute;right:-6px;bottom:-26px;font-size:120px;font-weight:300;line-height:1;color:rgba(246,243,238,.18)}
-.ch-label{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.ch-label{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.ch-label::before{content:"";height:1px;flex:1;background:var(--rule)}
 .ch-label span{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--burg)}
 .ch-label i{height:1px;flex:1;background:var(--rule)}
 .ch-art h3{font-size:23px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
 .ch-art .theme{font-size:15px;line-height:1.5;color:var(--ink-2);margin-bottom:16px}
-.ch-art dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 14px;font-size:13px}
+.ch-art dl{display:grid;grid-template-columns:auto auto;gap:7px 14px;font-size:13px;justify-content:center;text-align:left}
 .ch-art dt{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px;padding-top:2px}
-.ch-art .btn{margin-top:auto;align-self:flex-start;margin-top:18px}
+.ch-art .btn{margin-top:auto;align-self:center;margin-top:18px}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:52px}
 .two .h2{margin-bottom:18px;border-bottom:2px solid var(--navy);padding-bottom:14px}
 .format{border-top:2px solid var(--burg);background:var(--white);padding:28px;margin-top:22px}
