@@ -1,0 +1,46 @@
+# Mirrors the client spec Google Doc into the repo as spec.txt so the hourly
+# cloud routine (whose sandbox cannot reach docs.google.com) can read the
+# CORRECTIONS section from its checkout. Runs every 15 minutes.
+name: Mirror client spec doc
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pulce-connect-microsite
+
+      - name: Download doc as plain text
+        run: |
+          curl -sSL --fail --retry 3 \
+            'https://docs.google.com/document/d/1b4wEdEpE155eXI9pDv5IS1UrrGZutQZNHuAI3NAukf4/export?format=txt' \
+            -o spec.new
+          # Refuse anything that is not plain text (e.g. an HTML sign-in page) or empty
+          if [ ! -s spec.new ] || grep -qi '<html' spec.new; then
+            echo "::error::Doc export is empty or not plain text - is the doc shared 'Anyone with the link'?"
+            exit 1
+          fi
+          # normalise CRLF and strip the UTF-8 BOM
+          sed -e 's/\r$//' -e '1s/^\xEF\xBB\xBF//' spec.new > spec.txt
+          rm spec.new
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- spec.txt && [ -z "$(git ls-files --others --exclude-standard spec.txt)" ]; then
+            echo "spec.txt unchanged"
+            exit 0
+          fi
+          git config user.name  "spec-mirror[bot]"
+          git config user.email "spec-mirror@users.noreply.github.com"
+          git add spec.txt
+          git commit -m "Mirror client spec doc ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git push origin HEAD:feat/pulce-connect-microsite
