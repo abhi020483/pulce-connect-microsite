@@ -132,7 +132,7 @@ textarea.input{resize:vertical;min-height:80px}
 .landing{padding-bottom:0}
 .hero-bg{position:relative;background:#fff url(assets/cardio/ecg-paper.jpg) center 40%/cover no-repeat}
 .hero-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.90) 45%,rgba(255,255,255,.82) 100%)}
-.hero{position:relative;max-width:var(--max);margin:0 auto;padding:56px var(--pad) 56px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:52px;align-items:start}
+.hero{position:relative;max-width:var(--max);margin:0 auto;padding:56px var(--pad) 22px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:52px;align-items:start}
 .hero-logo{margin:0 0 6px}
 .hero-logo img{width:min(100%,520px);height:auto}
 .hero .sub{font-size:clamp(20px,2.2vw,27px);font-weight:800;letter-spacing:-.01em;color:var(--navy);margin:10px 0 20px}
@@ -165,6 +165,7 @@ textarea.input{resize:vertical;min-height:80px}
 .esc-note img{width:120px;height:56px;object-fit:contain;flex:none}
 .esc-note p{font-size:12.5px;line-height:1.5;color:var(--ink-2)}
 .section{max-width:var(--max);margin:0 auto;padding:76px var(--pad) 0}
+#chapters{padding-top:34px}
 .chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border-bottom:1px solid var(--rule)}
 .ch-art{border-right:1px solid var(--rule);padding:0 26px 26px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .ch-art:first-child{padding-left:0}.ch-art .ch-city{align-self:stretch}.ch-art .ch-label{align-self:stretch}
@@ -514,7 +515,7 @@ textarea.input{resize:vertical;min-height:80px}
   .reg-card{padding:22px 18px;border-radius:14px}.reg{grid-template-columns:1fr;gap:12px}.reg-head h2.reg-title{font-size:26px}
   .reg .input,.input,select.input,textarea.input{font-size:16px}
   /* sections */
-  .wrap{padding:24px var(--pad) 48px}.section{padding-top:44px}.section-head{margin-top:44px}
+  .wrap{padding:24px var(--pad) 48px}.section{padding-top:44px}#chapters{padding-top:26px}.section-head{margin-top:44px}
   .chapters-grid{grid-template-columns:1fr}.ch-art{border-right:0;border-bottom:1px solid var(--rule);padding:0 0 22px;margin-bottom:22px}.ch-art:last-child{border-bottom:0}
   .ch-city{height:180px}.ch-city .big{font-size:90px}
   .pulse-band{margin-top:44px}.pulse-band.in-wrap{margin:44px calc(-1*var(--pad)) 0}.pulse-in{padding:40px var(--pad)}.pulse-in h2{font-size:24px}
