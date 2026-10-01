@@ -1,9 +1,10 @@
 # PULCE Connect 2026 — Design Handoff
 
-**For:** Claude Design (claude.ai/design) · **From:** first-version build, 18 Sep 2026
+**For:** whoever picks this up next (Claude Design, another designer/developer, or the client team) · **Updated:** 1 Oct 2026
 
-> **Round 1 complete (18 Sep 2026):** the Claude Design revamp (`Pulce Connect website revamp-handoff.zip`) has been implemented. The live site now uses the editorial system below — paper `#F6F3EE`, navy `#0E1A2B`, burgundy `#8E2637`, Carlito/Calibri, square corners, thin rules. Section 3 (brand) is superseded by that system; the rest of this brief still applies for further rounds.
-**Purpose:** take the working v1 microsite, refine the visual design, and hand a bundle back for implementation.
+> **Status — rounds 1 and 2 complete.** The Claude Design revamp (`Pulce Connect website revamp-handoff.zip`) was implemented, followed by a full round of client design direction: white background, PULCE logo lockup in the hero and header, ONCOSPHERE-style registration card, programme content moved behind registration, light/dark themes, real faculty headshots, learning-objective cards and a phone optimisation pass. Section 3 below describes the **current** system. Everything else in this brief still applies for further rounds.
+
+**Purpose:** hand over a complete, working microsite — source, assets, live deployment and the automation that keeps it in sync with the client's spec.
 
 ---
 
@@ -29,17 +30,23 @@
 
 **Access model:** registration is open to all; every inner page is gated behind registration; chapters unlock **sequentially** — chapter N+1 opens only after the feedback survey for chapter N is submitted.
 
-## 3. Brand
+## 3. Brand — current system
+
+All tokens live on `:root` in `style.css`; the dark theme redefines them under `html[data-theme="dark"]`.
 
 | Token | Value | Use |
 |---|---|---|
-| Hetero red | `#E0242B` (dark `#C4161C`) | Primary CTA, eyebrows, live state, accents |
-| PULCE blue | `#2F5DA8` (dark `#1F4E9C`) | Secondary buttons, links, progress |
-| Navy | `#17305F` | Headings on imagery, admin badge, footer text |
-| Ink | `#1B2438` · `#2E3A55` · `#4C5A78` | Text hierarchy |
-| Lines / backgrounds | `#E4E8F0` · `#F2F5FA` · `#FBFCFE` | Borders, cards, page |
-| Gradient | `linear-gradient(94deg,#E0242B,#2F5DA8)` | Active tab, progress bar, headline |
-| Type | **Manrope** 400–800 (Google Fonts) | Everything |
+| Paper / white | `#FFFFFF` · `#F5F5F5` | Page and card surfaces (client: white background only) |
+| Navy | `#0E1A2B` | Headings, ink, dark panels, chapter heroes |
+| Burgundy | `#8E2637` | Eyebrows, rules, links, secondary CTA |
+| Rose | `#E2A0AC` | Accents on dark panels |
+| PULCE red | `#E01C24` (dark `#C4161C`) | Register CTA only — sampled from the logo |
+| Ink | `#0E1A2B` · `#3B4654` · `#5C6675` | Text hierarchy |
+| Rules | `#DCD5CA` · `#E2DACE` · `#C9BFB0` | Borders and dividers |
+| State | green `#1F6B45` · amber `#8A5A00` · live `#F7E1E5` | Completed / replay / live pills |
+| Type | **Mulish** 300–800 (Google Fonts) — the ESC website font | Everything |
+
+**Dark theme:** toggled by the sun/moon button in the header, remembered per browser; `?theme=dark` / `?theme=light` force it. Page `#0B1220`, surfaces `#152238`, lifted burgundy `#D4536A`. Brand logos sit on white plates so they stay legible. Certificates always print light. The admin console stays light.
 
 Logo rules (from the client): **Hetero and PULCE logos substantially visible on every page.** Current placement: header = Hetero · divider · PULCE Connect 2026 lockup, with ESC endorsement on the right; footer = partner strip + ESC endorsement.
 
@@ -52,7 +59,14 @@ Logo rules (from the client): **Hetero and PULCE logos substantially visible on 
 | `partners-strip.png` | "An educational initiative brought to you by" Hetero Healthcare · Camber · Seven Pharma · Amarox · Technical support by AlphaMed · "in the interest of Heart Failure Care" |
 | `keyvisual.jpg` | Portrait key-visual (Asian skylines + heart artwork, 1400×2088) |
 | `skyline.jpg` | Landscape crop of the key-visual: Manila cathedral · Bangkok Grand Palace · Jakarta Monas (1600×573) — used as landing visual and chapter hero |
-| `faculty/savarese.jpg` | Dr Gianluigi Savarese portrait (the only faculty photo supplied) |
+| `cities/{manila,bangkok,jakarta}.jpg` | Per-chapter crops of the key-visual used on chapter cards, dashboard rows and heroes |
+| `cardio/ecg-paper.jpg` | Faint ECG-paper texture behind the landing hero |
+| `cardio/{ecg,monitor,heart-model,heart-illustration,echo}.jpg` | Cardio imagery: statement band, live-session frame, thank-you, programme, about |
+| `faculty/savarese.jpg` | Dr Gianluigi Savarese (supplied by the client) |
+| `faculty/patricio.jpg` | Dr Marion Patricio — ESC 365 profile photo, used with the client's stated consent |
+| `faculty/tiongco.jpg` | Dr Richard Henry Tiongco II — ManilaMed profile photo, same basis |
+
+All three headshots are cropped to one rule: face centred, eyes on the same line, identical head-to-frame ratio, 600×600. **Still missing:** Dr Glenn Rose Advincula (hospital profile page is bot-blocked) and "Dr Don" (no surname in the spec). Both render as initials in a circle until files are dropped into `assets/faculty/` and a `photo:` path is added to `FACULTY` in `app.js`.
 
 ## 4. Page inventory (what to import)
 
@@ -110,10 +124,19 @@ Keep: sequential-unlock model, all copy verbatim from the spec, both logos on ev
 - **Feedback questions** (5) and **dropdown options** (country / role / specialty) were authored by us — the spec leaves them unspecified.
 - **Live status is date-driven** — 🔴 LIVE appears only inside each chapter's real time window; before it, "Upcoming"; after, "Replay".
 - **Certificate dates** use the real completion timestamp.
-- No real photos were sourced for the named Philippine faculty (consent/licensing) — placeholders until supplied.
+- Photos for Dr Patricio and Dr Tiongco were sourced online on the client's instruction that the faculty are participating with consent; Dr Advincula and Dr Don remain initials placeholders.
+- **Login is not a real gate** — this is a static site, so "Log in" accepts any name/email without verifying a prior registration. A backend is required to fix it.
+- Resident content (statement band, programme summary, what-you-will-learn, faculty) sits on **Program Overview**, behind registration; the landing page keeps hero + registration + chapter cards + partner strip.
 
 ## 8. Technical notes for the return trip
 
 - Static HTML / CSS / vanilla JS; no framework, no backend. Registration, progress and admin auth are `localStorage` / `sessionStorage`. Admin data is a seeded demo set.
 - Files: `index.html` · `app.js` · `style.css` (participant) · `admin.html` · `admin.js` · `admin.css` · `assets/` · `vercel.json`.
 - Hand back a Claude Design export bundle (the `*-handoff.zip` with `project/*.dc.html`) and it will be re-implemented onto the same Vercel URL and pushed as a follow-up PR.
+
+## 9. Deployment and sync automation
+
+- **Vercel ← GitHub.** The Vercel project `pulce-connect` is linked to the repo with its **production branch set to `feat/pulce-connect-microsite`** (not `main`, which is only an empty scaffold). Every push to that branch auto-deploys to https://pulce-connect.vercel.app.
+- **Spec mirror.** `.github/workflows/mirror-spec.yml` (lives on `main`, because GitHub only schedules workflows from the default branch) exports the client's Google Doc as plain text every 15 minutes and commits `spec.txt` to the site branch when it changes.
+- **Corrections routine.** A cloud routine runs every 6 hours, reads `spec.txt`, takes everything after the last heading containing "CORRECTIONS", diffs it against `.corrections-seen.txt`, applies genuinely new items to the site and pushes them to the site branch (commits prefixed `Apply doc corrections:`). It never edits `spec.txt`, `.github/` or `main`. The client adds change requests by appending them under that heading at the end of the doc.
+- To hand this to someone else: they need write access to the GitHub repo and the Vercel project; the routine is tied to the account that created it and would need recreating.
