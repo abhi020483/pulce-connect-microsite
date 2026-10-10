@@ -6,7 +6,7 @@
   /* ================================================================ DATA */
   const CHAPTERS = [
     {
-      n: 1, city: 'Manila', country: 'Philippines', venue: 'Manila, Philippines', img: 'assets/cities/manila.jpg',
+      n: 1, code: 'IMPLEMENT', city: 'Manila', country: 'Philippines', venue: 'Manila, Philippines', img: 'assets/cities/manila.jpg',
       title: 'Closing the GDMT Gap: From Evidence to Early Implementation',
       short: 'Closing the GDMT Gap',
       date: '28 October 2026', dateShort: '28 Oct 2026', time: '7:00–9:00 PM PHT',
@@ -33,11 +33,11 @@
       nowPlaying: 2, upNext: [4, 5, 6]
     },
     {
-      n: 2, city: 'Bangkok', country: 'Thailand', venue: 'Bangkok, Thailand', img: 'assets/cities/bangkok.jpg',
+      n: 2, code: 'OPTIMIZE', city: 'Bangkok', country: 'Thailand', venue: 'Bangkok, Thailand', img: 'assets/cities/bangkok.jpg',
       title: 'Managing Challenging Heart Failure Patients',
       short: 'Managing Challenging HF Patients',
-      date: '30 October 2026', dateShort: '30 Oct 2026', time: '3:00–5:00 PM ICT',
-      start: '2026-10-30T15:00:00+07:00', end: '2026-10-30T17:00:00+07:00', tz: 'Asia/Bangkok',
+      date: '29 October 2026', dateShort: '29 Oct 2026', time: '6:00–8:00 PM ICT',
+      start: '2026-10-29T18:00:00+07:00', end: '2026-10-29T20:00:00+07:00', tz: 'Asia/Bangkok',
       objectives: [
         'Understand the challenges of implementing GDMT in complex heart failure patients with low blood pressure, chronic kidney disease, and other high-risk clinical conditions',
         'Learn evidence-based approaches for optimizing heart failure therapies in patients with multiple comorbidities',
@@ -47,23 +47,23 @@
         'Apply guideline recommendations effectively in challenging clinical scenarios to maximize patient outcomes'
       ],
       agenda: [
-        ['15:00–15:10', 'Welcome Note & Brief on Day 1 Agenda: Closing the GDMT Gap', '—', 'Moderator from Bangkok'],
-        ['15:15–15:45', 'Navigating GDMT in Complex Heart Failure Patients: Low Blood Pressure, CKD and Other Clinical Challenges', 'Dr Gianluigi Savarese', 'Moderator from Bangkok'],
-        ['15:45–16:10', 'Optimizing Guideline-Directed Therapy in Heart Failure with Multiple Comorbidities', 'Speaker from Bangkok', '—'],
-        ['16:10–16:30', 'Panel Discussion: From Guidelines to Practice — Practical Titration Strategies and Overcoming Treatment Barriers', 'Panelists: Dr from Sri Lanka (Virtual) · Dr from Malaysia (Virtual) · Dr from Cambodia (Virtual) · Dr Gianluigi Savarese', 'Moderator from Bangkok'],
-        ['16:30–16:40', 'Q&A', '—', '—'],
-        ['16:40–16:45', 'Take Home Message', '—', 'Moderator from Bangkok'],
-        ['16:45–16:50', 'Thank You Note', 'Country Team', '—']
+        ['18:00–18:10', 'Welcome Note & Brief on Day 1 Agenda: Closing the GDMT Gap', '—', 'Moderator from Bangkok'],
+        ['18:15–18:45', 'Navigating GDMT in Complex Heart Failure Patients: Low Blood Pressure, CKD and Other Clinical Challenges', 'Dr Gianluigi Savarese', 'Moderator from Bangkok'],
+        ['18:45–19:10', 'Optimizing Guideline-Directed Therapy in Heart Failure with Multiple Comorbidities', 'Faculty from Bangkok', '—'],
+        ['19:10–19:30', 'Panel Discussion: From Guidelines to Practice — Practical Titration Strategies and Overcoming Treatment Barriers', 'Panelists: Dr from Sri Lanka (Virtual) · Dr from Malaysia (Virtual) · Dr from Cambodia (Virtual) · Dr Gianluigi Savarese', 'Moderator from Bangkok'],
+        ['19:30–19:40', 'Q&A', '—', '—'],
+        ['19:40–19:45', 'Take Home Message', '—', 'Moderator from Bangkok'],
+        ['19:45–19:50', 'Thank You Note', 'Country Team', '—']
       ],
       criteria: [
         ['Moderator', 'Top KOL or Subject Matter Expert from the country, 20+ years experience, authority to influence other HCPs'],
-        ['Speaker & Panel', 'Cardiologists with minimum 12+ years experience']
+        ['Faculty & Panel', 'Cardiologists with minimum 12+ years experience']
       ],
       faculty: ['savarese', 'speaker-bkk', 'mod-bkk', 'panel-lk', 'panel-my', 'panel-kh'],
       nowPlaying: 1, upNext: [3, 4, 5]
     },
     {
-      n: 3, city: 'Jakarta', country: 'Indonesia', venue: 'Jakarta, Indonesia', img: 'assets/cities/jakarta.jpg',
+      n: 3, code: 'INDIVIDUALIZE', city: 'Jakarta', country: 'Indonesia', venue: 'Jakarta, Indonesia', img: 'assets/cities/jakarta.jpg',
       title: 'Personalizing Cardiovascular Care Through Patient Profiling',
       short: 'Personalizing CV Care',
       date: '31 October 2026', dateShort: '31 Oct 2026', time: '3:30–5:30 PM WIB',
@@ -79,7 +79,7 @@
       agenda: [
         ['15:30–15:40', 'Welcome Note & Brief on Day 2 Agenda: Managing Challenging Heart Failure Patients', '—', 'Moderator from Indonesia'],
         ['15:40–16:10', 'Personalizing Cardiovascular Care Through Patient Profiling — The Right Heart Failure Patient for the Right Therapy: Positioning ARNI Across the Patient Journey', 'Dr Gianluigi Savarese', 'Moderator from Indonesia'],
-        ['16:10–16:35', 'Balancing Bleeding and Thrombotic Risk: A Precision Medicine Approach', 'Speaker from Indonesia', '—'],
+        ['16:10–16:35', 'Balancing Bleeding and Thrombotic Risk: A Precision Medicine Approach', 'Faculty from Indonesia', '—'],
         ['16:35–16:55', 'Panel Discussion: Precision-Based Cardiovascular Care — Translating Patient Profiles into Therapeutic Decisions', 'Panelists: Dr from Malaysia (Virtual) · Dr from Vietnam (Virtual) · Dr from Myanmar (Virtual) · Dr Gianluigi Savarese', 'Moderator from Indonesia'],
         ['16:55–17:05', 'Q&A', '—', '—'],
         ['17:05–17:10', 'Take Home Message', '—', 'Moderator from Indonesia'],
@@ -91,14 +91,14 @@
   ];
 
   const FACULTY = {
-    'savarese':    { name: 'Dr Gianluigi Savarese', role: 'Speaker', chapters: [1, 2, 3], photo: 'assets/faculty/savarese.jpg?v=3', cred: 'Karolinska Institutet, Stockholm · Heart failure specialist' },
-    'advincula':   { name: 'Dr Glenny Advincula', role: 'Speaker', chapters: [1], cred: 'Cardiologist, Philippines' },
+    'savarese':    { name: 'Dr Gianluigi Savarese', role: 'Faculty', chapters: [1, 2, 3], photo: 'assets/faculty/savarese.jpg?v=3', cred: 'Karolinska Institutet, Stockholm · Heart failure specialist' },
+    'advincula':   { name: 'Dr Glenny Advincula', role: 'Faculty', chapters: [1], cred: 'Cardiologist, Philippines' },
     'don':         { name: 'Dr Don', role: 'Chairperson, Philippines', chapters: [1], cred: 'Chairperson · Philippines' },
     'patricio':    { name: 'Dr Marion Patricio', role: 'Moderator', chapters: [1], photo: 'assets/faculty/patricio.jpg?v=3', cred: 'Cardiologist, Philippines' },
     'tiongco':     { name: 'Dr Richard Tiongco', role: 'Panelist', chapters: [1], photo: 'assets/faculty/tiongco.jpg?v=3', cred: 'Cardiologist, Philippines' },
-    'speaker-bkk': { name: 'Speaker from Bangkok', role: 'Speaker', chapters: [2], cred: 'Cardiologist, Thailand · To be announced', tba: true },
+    'speaker-bkk': { name: 'Faculty from Bangkok', role: 'Faculty', chapters: [2], cred: 'Cardiologist, Thailand · To be announced', tba: true },
     'mod-bkk':     { name: 'Moderator from Bangkok', role: 'Moderator', chapters: [2], cred: 'Top KOL, Thailand · To be announced', tba: true },
-    'speaker-id':  { name: 'Speaker from Indonesia', role: 'Speaker', chapters: [3], cred: 'Cardiologist, Indonesia · To be announced', tba: true },
+    'speaker-id':  { name: 'Faculty from Indonesia', role: 'Faculty', chapters: [3], cred: 'Cardiologist, Indonesia · To be announced', tba: true },
     'mod-id':      { name: 'Moderator from Indonesia', role: 'Moderator', chapters: [3], cred: 'Top KOL, Indonesia · To be announced', tba: true },
     'panel-my':    { name: 'Panelist — Malaysia', role: 'Panelist (Virtual)', chapters: [1, 2, 3], cred: 'To be announced', tba: true },
     'panel-id':    { name: 'Panelist — Indonesia', role: 'Panelist (Virtual)', chapters: [1], cred: 'To be announced', tba: true },
@@ -131,7 +131,7 @@
   const ROLES = ['Consultant / Attending', 'Fellow', 'Resident', 'Nurse practitioner', 'Other HCP'];
   const SPECIALTIES = ['Cardiology', 'Heart failure', 'Internal medicine', 'Interventional cardiology', 'Other'];
 
-  const TABS = [['dashboard', 'Dashboard'], ['overview', 'Program Overview'], ['resources', 'Resources'], ['certificates', 'Certificates'], ['about', 'About & Faculty'], ['profile', 'Profile']];
+  const TABS = [['dashboard', 'Dashboard'], ['overview', 'Program Overview'], ['resources', 'Learning Hub'], ['certificates', 'Certificates'], ['about', 'About & Faculty'], ['profile', 'Profile']];
   const VIEWS = ['landing', 'thanks', 'dashboard', 'overview', 'chapter', 'live', 'feedback', 'resources', 'certificates', 'profile', 'about'];
   const LS_USER = 'pulce.user', LS_PROG = 'pulce.progress';
 
@@ -151,21 +151,20 @@
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const isDone = (i) => state.progress.feedback[i] != null;
-  const isUnlocked = (i) => i === 0 || isDone(i - 1);
   const doneCount = () => CHAPTERS.filter((_, i) => isDone(i)).length;
   const fmtDate = (d = new Date()) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   const drName = () => { const n = (state.user?.name || '').trim(); return /^dr\.?\s/i.test(n) ? n : 'Dr. ' + n; };
-  const initials = (n) => n.replace(/^(Dr\.?|Panelist|Speaker|Moderator)\s*(from|—)?\s*/i, '').split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('') || 'TBA';
+  const initials = (n) => n.replace(/^(Dr\.?|Panelist|Speaker|Faculty|Moderator)\s*(from|—)?\s*/i, '').split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('') || 'TBA';
 
-  /** live status of a chapter: 'done' | 'live' | 'upcoming' | 'replay' | 'locked' */
+  /** live status of a module: 'done' | 'live' | 'upcoming' | 'replay'. No module is ever locked —
+      doctors may join any of the three live sessions irrespective of their progress on the others. */
   function status(i) {
     if (isDone(i)) return 'done';
-    if (!isUnlocked(i)) return 'locked';
     const c = CHAPTERS[i], now = Date.now(), s = Date.parse(c.start), e = Date.parse(c.end);
     if (now >= s && now <= e) return 'live';
     return now > e ? 'replay' : 'upcoming';
   }
-  const STATUS_LABEL = { done: 'Completed', live: 'Live now', upcoming: 'Upcoming', replay: 'Replay available', locked: 'Locked' };
+  const STATUS_LABEL = { done: 'Completed ✓', live: 'Live now', upcoming: 'Upcoming', replay: 'Watch on demand' };
   const statusPill = (s) => `<span class="status s-${s}">${STATUS_LABEL[s]}</span>`;
 
   /* ========================================================== NAVIGATION */
@@ -179,7 +178,6 @@
     window.scrollTo({ top: 0 });
   }
   function openChapter(i, view = 'chapter') {
-    if (!isUnlocked(i)) return;
     state.chapter = i; state.fb = {};
     go(view);
   }
@@ -194,7 +192,7 @@
 
     $('hdr-auth').innerHTML = state.user
       ? `<div class="hdr-nav"><span class="hdr-user">Signed in · ${esc(drName())}</span><button class="signout" data-logout>Sign out</button></div>`
-      : `<nav class="hdr-nav"><a href="#chapters">Chapters</a><a href="#register" class="cta">Register</a></nav>`;
+      : `<nav class="hdr-nav"><a href="#chapters">Modules</a><a href="#register" class="cta">Register</a></nav>`;
     $('tabs').innerHTML = state.user ? TABS.map(([id, label]) => {
       const active = v === id || (id === 'overview' && ['chapter', 'live', 'feedback'].includes(v));
       return `<button class="tab${active ? ' active' : ''}" data-go="${id}"${active ? ' aria-current="page"' : ''}>${label}</button>`;
@@ -214,15 +212,15 @@
     requestAnimationFrame(reveal);
   }
   function titleFor(v) {
-    return { thanks: 'Registered', dashboard: 'Dashboard', overview: 'Program Overview', chapter: 'Chapter ' + (state.chapter + 1), live: 'Live Session', feedback: 'Feedback', resources: 'Resources', certificates: 'Certificates', profile: 'Profile', about: 'About & Faculty' }[v] || 'PULCE Connect';
+    return { thanks: 'Registered', dashboard: 'Dashboard', overview: 'Program Overview', chapter: 'Module ' + (state.chapter + 1), live: 'Live Session', feedback: 'Feedback', resources: 'Learning Hub', certificates: 'Certificates', profile: 'Profile', about: 'About & Faculty' }[v] || 'PULCE Connect';
   }
 
-  const eventRows = (cls = '') => CHAPTERS.map((c) => `<tr class="${cls}"><td><b>Chapter ${c.n}</b></td><td>${c.venue}</td><td>${c.date}</td><td>${c.time}</td></tr>`).join('');
+  const eventRows = (cls = '') => CHAPTERS.map((c) => `<tr class="${cls}"><td><b>Module ${c.n}</b></td><td>${c.venue}</td><td>${c.date}</td><td>${c.time}</td></tr>`).join('');
   const facultyCard = (id, size = '') => {
-    const f = FACULTY[id], tag = f.chapters.length ? 'CH ' + f.chapters.join('·') : 'TBA';
+    const f = FACULTY[id], tag = f.chapters.length ? 'MOD ' + f.chapters.join('·') : 'TBA';
     return `<div class="fac${size ? ' ' + size : ''}${f.tba ? ' tba' : ''}">
       <div class="fac-photo">${f.photo ? `<img src="${f.photo}" alt="${esc(f.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'tag',textContent:'${initials(f.name)}'}))">` : `<div class="tag">${f.tba ? tag : initials(f.name)}</div>`}</div>
-      <div><b>${esc(f.name)}</b><span>${esc(f.role)}${f.chapters.length ? ' · Chapter' + (f.chapters.length > 1 ? 's ' : ' ') + f.chapters.join(', ') : ''}</span><small>${esc(f.cred)}</small></div>
+      <div><b>${esc(f.name)}</b><span>${esc(f.role)}${f.chapters.length ? ' · Module' + (f.chapters.length > 1 ? 's ' : ' ') + f.chapters.join(', ') : ''}</span><small>${esc(f.cred)}</small></div>
     </div>`;
   };
 
@@ -248,13 +246,13 @@
   function renderLanding() {
     $('land-chapters').innerHTML = CHAPTERS.map((c) => `<article class="ch-art">
       <div class="ch-city"><img src="${c.img}" alt="${c.city}"><div class="country">${c.country}</div><div><div class="city">${c.city}</div><div class="fmt">In person &amp; livestream</div></div><div class="big">0${c.n}</div></div>
-      <div class="ch-label"><span>Chapter ${c.n}</span><i></i></div>
+      <div class="ch-label"><span>Module ${c.n} — ${c.code}</span><i></i></div>
       <h3>${c.city}</h3><div class="theme">${esc(c.title)}</div>
       <dl><dt>Venue</dt><dd>${c.venue}</dd><dt>Date</dt><dd>${c.date}</dd><dt>Time</dt><dd>${c.time}</dd></dl>
       <a class="btn btn-line sm" href="#register">Register to attend</a>
     </article>`).join('');
     $('land-events').innerHTML = eventRows();
-    countdown($('land-countdown'), CHAPTERS[0].start, 'Chapter 1 opens in');
+    countdown($('land-countdown'), CHAPTERS[0].start, 'Module 1 opens in');
     const c = $('reg-country');
     if (!c.options.length) {
       c.innerHTML = '<option value="">Select country</option>' + COUNTRIES.map((x) => `<option>${x}</option>`).join('');
@@ -275,21 +273,20 @@
   function renderDashboard() {
     const n = doneCount();
     $('dash-welcome').textContent = 'Welcome, ' + drName();
-    $('dash-sub').textContent = `You have completed ${n} of 3 chapters.`;
+    $('dash-sub').textContent = `You have completed ${n} of 3 modules.`;
     $('dash-cards').innerHTML = CHAPTERS.map((c, i) => {
       const s = status(i);
-      const actions = s === 'locked' ? `<span class="small">Unlocks after Chapter ${c.n - 1}</span>`
-        : `${s === 'live' ? `<button class="btn btn-live sm" data-chapter="${i}" data-target="live">Join live</button>` : `<button class="btn btn-navy sm" data-chapter="${i}" data-target="live">${s === 'done' || s === 'replay' ? 'Replay' : 'Join live'}</button>`}<button class="btn btn-soft sm" data-chapter="${i}">Agenda</button>`;
-      return `<div class="row${s === 'locked' ? ' locked' : ''}"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
+      const actions = `${s === 'live' ? `<button class="btn btn-live sm" data-chapter="${i}" data-target="live">Join live</button>` : `<button class="btn btn-navy sm" data-chapter="${i}" data-target="live">${s === 'done' || s === 'replay' ? 'Watch on demand' : 'Join live'}</button>`}<button class="btn btn-soft sm" data-chapter="${i}">Agenda</button>`;
+      return `<div class="row"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
         <div><b>${c.city} — ${esc(c.title)}</b><div class="meta">${c.venue} · ${c.date} · ${c.time}</div>${statusPill(s)}</div>
         <div class="btn-row">${actions}</div></div>`;
     }).join('');
     const pct = Math.round(n / 3 * 100);
     $('dash-bar').style.width = pct + '%'; $('dash-pct').textContent = pct + '%';
     const next = CHAPTERS.findIndex((_, i) => !isDone(i));
-    if (next === -1) $('dash-upcoming').innerHTML = '<p class="small" style="margin:10px 0 14px">All three chapters complete — your Advanced Learning Certificate is ready.</p><button class="btn btn-navy sm" data-go="certificates">View certificates</button>';
-    else { const c = CHAPTERS[next]; $('dash-upcoming').innerHTML = `<p style="margin:10px 0 4px;font-size:15px"><b>Chapter ${c.n} — ${c.city}</b></p><p class="small" style="margin-bottom:14px">${c.date} · ${c.time}</p><div class="btn-row"><button class="btn btn-soft sm" data-ics="${next}">Add to calendar</button><button class="btn btn-navy sm" data-chapter="${next}" data-target="live">Join link</button></div>`; }
-    $('dash-certs').innerHTML = n === 0 ? '<p style="margin-top:10px;opacity:.9">No certificates yet. Complete all 3 chapters to earn your Advanced Learning Certificate. Certificates of participation are issued after each chapter you complete.</p>'
+    if (next === -1) $('dash-upcoming').innerHTML = '<p class="small" style="margin:10px 0 14px">All three modules complete — your Advanced Learning Certificate is ready.</p><button class="btn btn-navy sm" data-go="certificates">View certificates</button>';
+    else { const c = CHAPTERS[next]; $('dash-upcoming').innerHTML = `<p style="margin:10px 0 4px;font-size:15px"><b>Module ${c.n} — ${c.city}</b></p><p class="small" style="margin-bottom:14px">${c.date} · ${c.time}</p><div class="btn-row"><button class="btn btn-soft sm" data-ics="${next}">Add to calendar</button><button class="btn btn-navy sm" data-chapter="${next}" data-target="live">Join link</button></div>`; }
+    $('dash-certs').innerHTML = n === 0 ? '<p style="margin-top:10px;opacity:.9">No certificates yet. Complete all 3 modules to earn your Advanced Learning Certificate. Certificates of participation are issued after each module you complete.</p>'
       : `<p style="margin:10px 0 14px;opacity:.9">${n} participation certificate${n > 1 ? 's' : ''} available${n === 3 ? ' · Advanced Learning Certificate unlocked' : ''}.</p><button class="btn btn-line sm" data-go="certificates">My certificates</button>`;
   }
 
@@ -297,10 +294,10 @@
   function renderOverview() {
     $('ov-chapters').innerHTML = CHAPTERS.map((c, i) => {
       const s = status(i);
-      return `<div class="ov-row${s === 'locked' ? ' locked' : ''}"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
-        <div><div class="ch-label"><span>Chapter ${c.n} · ${c.city}</span><i></i>${statusPill(s)}</div><h3>${esc(c.title)}</h3><div class="meta">${c.venue} · ${c.date} · ${c.time} · Hybrid</div>
+      return `<div class="ov-row"><div class="thumb"><img src="${c.img}" alt="${c.city}"><span class="num">0${c.n}</span></div>
+        <div><div class="ch-label"><span>Module ${c.n} — ${c.code} · ${c.city}</span><i></i>${statusPill(s)}</div><h3>${esc(c.title)}</h3><div class="meta">${c.venue} · ${c.date} · ${c.time} · Hybrid</div>
         <div class="avatars">${c.faculty.slice(0, 5).map((id) => `<span class="avatar" title="${esc(FACULTY[id].name)}">${FACULTY[id].photo ? `<img src="${FACULTY[id].photo}" alt="" onerror="this.replaceWith(document.createTextNode('${initials(FACULTY[id].name)}'))">` : initials(FACULTY[id].name)}</span>`).join('')}</div></div>
-        <button class="btn btn-navy sm" data-chapter="${i}" ${s === 'locked' ? 'disabled' : ''}>View chapter →</button></div>`;
+        <button class="btn btn-navy sm" data-chapter="${i}">View module →</button></div>`;
     }).join('');
     $('ov-faculty').innerHTML = FACULTY_ORDER.map((id) => facultyCard(id)).join('');
   }
@@ -324,7 +321,7 @@
 
   function renderChapter() {
     const i = state.chapter, c = CHAPTERS[i], s = status(i);
-    $('ch-n').textContent = 'Chapter ' + c.n;
+    $('ch-n').textContent = 'Module ' + c.n + ' — ' + c.code;
     $('ch-title').textContent = c.title;
     $('ch-venue').textContent = c.venue; $('ch-date').textContent = `${c.date} | ${c.time}`;
     $('ch-status').innerHTML = statusPill(s); $('ch-big').textContent = '0' + c.n; $('ch-img').src = c.img; $('ch-img').alt = c.city; $('ch-agenda-meta').textContent = c.time + ' local time';
@@ -337,15 +334,15 @@
       const [a0, a1] = t.split('\u2013').map((x) => x.split(':').map(Number)); const m0 = a0[0] * 60 + a0[1], m1 = a1[0] * 60 + a1[1];
       const isNow = live && nowMin >= m0 && nowMin < m1, isBreak = /^Q&A|Welcome|Closing|Thank You/i.test(sess) && sp === '\u2014';
       const dur = m1 - m0;
-      return `<div class="tl${isNow ? ' now' : ''}${isBreak ? ' break' : ''}"><div class="t">${t}<small>${dur} min${isNow ? ' \u00b7 now' : ''}</small></div><div><h4>${esc(sess)}</h4><div class="who">${sp !== '\u2014' ? `<div><small>${/^Panelists/.test(sp) ? 'Panel' : 'Speaker'}</small>${people(sp)}</div>` : ''}${mod !== '\u2014' ? `<div><small>Chair</small>${people(mod)}</div>` : ''}</div></div></div>`;
+      return `<div class="tl${isNow ? ' now' : ''}${isBreak ? ' break' : ''}"><div class="t">${t}<small>${dur} min${isNow ? ' \u00b7 now' : ''}</small></div><div><h4>${esc(sess)}</h4><div class="who">${sp !== '\u2014' ? `<div><small>${/^Panelists/.test(sp) ? 'Panel' : 'Faculty'}</small>${people(sp)}</div>` : ''}${mod !== '\u2014' ? `<div><small>Chair</small>${people(mod)}</div>` : ''}</div></div></div>`;
     }).join('');
     $('ch-faculty').innerHTML = c.faculty.map((id) => facultyCard(id, 'compact')).join('');
     $('ch-criteria').hidden = !c.criteria;
     if (c.criteria) $('ch-criteria-rows').innerHTML = c.criteria.map(([r, d]) => `<tr><td><b>${r}</b></td><td>${esc(d)}</td></tr>`).join('');
-    $('ch-join').textContent = s === 'live' ? 'Join live session' : s === 'replay' || s === 'done' ? 'Watch replay' : 'Join live session';
+    $('ch-join').textContent = s === 'live' ? 'Join live session' : s === 'replay' || s === 'done' ? 'Watch on demand' : 'Join live session';
     $('ch-join').classList.toggle('btn-live', s === 'live');
     $('ch-join').dataset.chapter = i; $('ch-ics').dataset.ics = i;
-    $('ch-feedback').textContent = isDone(i) ? 'Feedback submitted' : 'Take chapter feedback →';
+    $('ch-feedback').textContent = isDone(i) ? 'Feedback submitted' : 'Take module feedback →';
     $('ch-feedback').disabled = isDone(i); $('ch-feedback').dataset.chapter = i;
     $('ch-complete').hidden = isDone(i);
   }
@@ -353,14 +350,14 @@
   /* ---- Live / session page ---- */
   function renderLive() {
     const i = state.chapter, c = CHAPTERS[i], s = status(i);
-    $('live-n').innerHTML = `Chapter ${c.n} — ${s === 'live' ? '<span class="live-tag">Live now</span>' : s === 'upcoming' ? 'Upcoming' : 'Replay'}`;
+    $('live-n').innerHTML = `Module ${c.n} — ${s === 'live' ? '<span class="live-tag">Live now</span>' : s === 'upcoming' ? 'Upcoming' : 'Watch on demand'}`;
     $('live-title').textContent = c.title;
     $('live-embed').innerHTML = s === 'live'
       ? `<div class="embed-msg"><span class="live-dot"></span>Live<small>Stream player embeds here (Zoom / YouTube Live / Vimeo)</small></div>`
       : s === 'upcoming' ? `<div class="embed-msg">Livestream<small>The live stream opens on ${c.date} at ${c.time.split('–')[0].trim()} ${c.time.split(' ').pop()}</small></div>`
-      : `<div class="embed-msg">Replay<small>Session replay — player embeds here after the event</small></div>`;
+      : `<div class="embed-msg">Watch on demand<small>Session replay — player embeds here after the event</small></div>`;
     const np = c.agenda[c.nowPlaying];
-    $('live-now').innerHTML = `<b>${esc(np[1])}</b><span>Speaker: ${esc(np[2] === '—' ? np[3] : np[2])}</span>`;
+    $('live-now').innerHTML = `<b>${esc(np[1])}</b><span>Faculty: ${esc(np[2] === '—' ? np[3] : np[2])}</span>`;
     $('live-next').innerHTML = c.upNext.map((k) => `<li><span class="mono">${c.agenda[k][0].split('–')[0]}</span><span>${esc(c.agenda[k][1].split(':')[0])}</span></li>`).join('');
     $('live-back').dataset.chapter = i;
   }
@@ -368,7 +365,7 @@
   /* ---- Feedback ---- */
   function renderFeedback() {
     const i = state.chapter, c = CHAPTERS[i];
-    $('fb-n').textContent = `Chapter ${c.n} · ${c.city}`;
+    $('fb-n').textContent = `Module ${c.n} · ${c.city}`;
     $('fb-title').textContent = c.title;
     $('fb-body').innerHTML = FEEDBACK.map((q, qi) => {
       const val = state.fb[q.key];
@@ -385,14 +382,14 @@
     }).join('');
     const complete = FEEDBACK.filter((q) => q.type !== 'text').every((q) => state.fb[q.key] != null && (q.type !== 'multi' || state.fb[q.key].length));
     $('fb-submit').disabled = !complete;
-    $('fb-submit').textContent = i < 2 ? 'Submit feedback & complete chapter →' : 'Submit feedback & unlock certificate →';
+    $('fb-submit').textContent = i < 2 ? 'Submit feedback & complete module →' : 'Submit feedback & unlock certificate →';
   }
 
   /* ---- Resources ---- */
   function renderResources() {
     const f = state.resFilter;
     const rows = RESOURCES.filter((r) => (f.ch === 'all' || String(r.ch) === f.ch) && (f.type === 'all' || r.type === f.type) && (!f.q || r.title.toLowerCase().includes(f.q)));
-    $('res-list').innerHTML = rows.map((r) => `<div class="res"><span class="ico">${r.type === 'MP4' ? '🎬' : '📄'}</span><div><b>${esc(r.title)}</b><span>${r.ch ? 'Chapter ' + r.ch : 'All chapters'} · ${r.type} · ${r.size}</span></div><button class="btn btn-soft sm" data-download="${esc(r.title)}">Download</button></div>`).join('') || '<p class="small" style="padding-top:16px">No resources match.</p>';
+    $('res-list').innerHTML = rows.map((r) => `<div class="res"><span class="ico">${r.type === 'MP4' ? '🎬' : '📄'}</span><div><b>${esc(r.title)}</b><span>${r.ch ? 'Module ' + r.ch : 'All modules'} · ${r.type} · ${r.size}</span></div><button class="btn btn-soft sm" data-download="${esc(r.title)}">Download</button></div>`).join('') || '<p class="small" style="padding-top:16px">No resources match.</p>';
     $('res-ch').value = f.ch; $('res-type').value = f.type;
   }
 
@@ -406,23 +403,23 @@
           <div class="cp-logos"><img src="assets/pulce-logo.png" alt="PULCE Connect"><img src="assets/hetero.png" alt="Hetero"><img src="assets/esc-endorsed.png" alt="Endorsed by ESC"></div>
           <div class="cp-kicker">Participation Certificate</div><div class="cp-awarded">This certifies that</div>
           <div class="cp-name">${esc(drName())}</div>
-          <div class="cp-awarded">participated in Chapter ${c.n} — ${c.city}</div><div class="cp-prog">${esc(c.title)}</div>
+          <div class="cp-awarded">participated in Module ${c.n} — ${c.city}</div><div class="cp-prog">${esc(c.title)}</div>
           <div class="cp-date">${c.date} · Issued ${done ? fmtDate(d) : '—'}</div>
           <img class="cp-strip" src="assets/partners-strip.png" alt="Partners">
         </div>
-        <div class="cert-foot"><div><b>Participation Certificate</b><span>Chapter ${c.n} — ${c.city} · ${done ? 'Available' : 'Locked — complete Chapter ' + c.n}</span></div>
+        <div class="cert-foot"><div><b>Participation Certificate</b><span>Module ${c.n} — ${c.city} · ${done ? 'Available' : 'Locked — complete Module ' + c.n}</span></div>
         <div class="btn-row"><button class="btn btn-burg sm" data-print="p${i}" ${done ? '' : 'disabled'}>Download PDF</button><a class="btn btn-soft sm${done ? '' : ' disabled'}" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(location.origin + location.pathname)}">Share to LinkedIn</a></div></div>
       </div>`;
     }).join('');
     const all = n === 3;
     $('cert-adv').classList.toggle('locked', !all);
-    $('cert-adv-status').innerHTML = all ? 'Available' : 'Locked — complete all chapters';
-    $('cert-adv-progress').innerHTML = `Progress: ${n} of 3 chapters completed · ${pct}%<div class="bar"><i style="width:${pct}%"></i></div>`;
+    $('cert-adv-status').innerHTML = all ? 'Available' : 'Locked — complete all modules';
+    $('cert-adv-progress').innerHTML = `Progress: ${n} of 3 modules completed · ${pct}%<div class="bar"><i style="width:${pct}%"></i></div>`;
     $('ca-name').textContent = drName();
     const stamps = Object.values(state.progress.completedAt).map((d) => new Date(d)).sort((a, b) => b - a);
     $('ca-date').textContent = 'Issued ' + fmtDate(all ? stamps[0] : new Date());
     $('cert-adv-btn').disabled = !all;
-    const trail = CHAPTERS.map((c, i) => isDone(i) ? { d: new Date(state.progress.completedAt[i]), type: 'Participation', ch: 'Chapter ' + c.n, k: 'p' + i } : null).filter(Boolean);
+    const trail = CHAPTERS.map((c, i) => isDone(i) ? { d: new Date(state.progress.completedAt[i]), type: 'Participation', ch: 'Module ' + c.n, k: 'p' + i } : null).filter(Boolean);
     if (all) trail.push({ d: stamps[0], type: 'Advanced Learning', ch: 'All 3', k: 'adv' });
     $('cert-trail').innerHTML = trail.length ? trail.sort((a, b) => a.d - b.d).map((t) => `<tr><td>${t.d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td><td>${t.type}</td><td>${t.ch}</td><td><button class="link" data-print="${t.k}">Download</button></td></tr>`).join('') : '<tr><td colspan="4" >No certificates issued yet.</td></tr>';
   }
@@ -445,7 +442,7 @@
   /* ------------------------------------------------------- Calendar (.ics) */
   function downloadIcs(i) {
     const c = CHAPTERS[i], f = (iso) => new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//PULCE Connect//EN', 'BEGIN:VEVENT', `UID:pulce-ch${c.n}@hetero`, `DTSTAMP:${f(new Date().toISOString())}`, `DTSTART:${f(c.start)}`, `DTEND:${f(c.end)}`, `SUMMARY:PULCE Connect — Chapter ${c.n}: ${c.title}`, `LOCATION:${c.venue} (Hybrid)`, `DESCRIPTION:Heart Failure Educational Series. Join link: ${location.origin}${location.pathname}#live`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//PULCE Connect//EN', 'BEGIN:VEVENT', `UID:pulce-ch${c.n}@hetero`, `DTSTAMP:${f(new Date().toISOString())}`, `DTSTART:${f(c.start)}`, `DTEND:${f(c.end)}`, `SUMMARY:PULCE Connect — Module ${c.n}: ${c.title}`, `LOCATION:${c.venue} (Hybrid)`, `DESCRIPTION:Heart Failure Educational Series. Join link: ${location.origin}${location.pathname}#live`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); a.download = `pulce-connect-chapter-${c.n}.ics`; a.click();
   }
 
@@ -483,7 +480,7 @@
   $('reg-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const f = new FormData(e.target), name = String(f.get('name') || '').trim();
-    if (!name || !f.get('email') || !f.get('country') || !f.get('role') || !f.get('specialty')) { e.target.reportValidity(); return; }
+    if (!name || !f.get('email') || !f.get('country') || !f.get('role') || !f.get('specialty') || !f.get('consent')) { e.target.reportValidity(); return; }
     state.user = { name, email: f.get('email'), country: f.get('country'), role: f.get('role'), specialty: f.get('specialty'), license: f.get('license') || '', institution: f.get('institution') || '', registeredAt: new Date().toISOString() };
     save(LS_USER, state.user); state.progress = { feedback: {}, completedAt: {} }; save(LS_PROG, state.progress);
     go('thanks');
