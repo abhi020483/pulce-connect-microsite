@@ -1,0 +1,354 @@
+Corrections 
+
+
+Page 1: Registration page: 
+  
+
+
+
+Add consent: [] I consent to receive communication about this module series and related educational content from Hetero.*
+
+
+A countdown timer may be added after the registration page, depending on the overall design and look and feel - which is currently seen on the doctorly page (registration page).
+
+
+
+
+GLOBAL changes (Page 2 onwards)  — Header, footer and branding
+TOP LEFT: ESC “Endorsed by” logo + approved host-country/local association logo(s).
+TOP RIGHT: Original Hetero logo.
+PULCE Connect 2026 logo (prominent in the programme hero; not repeated as a faded watermark)
+Footer: An educational initiative brought to you by
+[Hetero Healthcare]   [Camber]   [Seven Pharma]   [Amarox]
+in the interest of Heart Failure Care.
+Technical Support by [AlphaMed]
+[Approved HCP disclaimer exactly as in the final invitation artwork]
+No PULCE or ESC logos in the footer. Do not alter any original logo.
+
+
+(Word speaker to be replaced with Faculty and Chapters / Sessions to be replaced with Modules.)
+Design / developer changes
+·       Scientific | Contemporary | Premium | Simple | Learning-led.
+·       Remove heartbeat animation, generic heart stock imagery, duplicate programme branding and faded logos.
+* Overall look and feel should be as per the invite.
+* Kindly add login button as well besides Register button.
+
+
+  
+
+  
+
+  
+
+Page 2: Registration confirmation mail in designed format to get triggered automatically (OAM to design).\
+  
+
+
+
+YOU’RE REGISTERED!
+Welcome to PULCE Connect 2026, Dr. [Name].
+Your registration for all three Heart Failure learning sessions is confirmed.
+Your PULCE Connect Journey
+Session
+	City / date
+	Time
+	01 IMPLEMENT
+	Manila | 28 Oct 2026
+	7:00–9:00 PM PHT / 11:00–13:00 UTC
+	02 OPTIMIZE
+	Bangkok | 29 Oct 2026
+	6:00–8:00 PM ICT / 11:00–13:00 UTC
+	03 INDIVIDUALIZE
+	Jakarta | 31 Oct 2026
+	3:30–5:30 PM WIB / 08:30–10:30 UTC
+	 
+A confirmation email has been sent to [email].
+[GO TO MY LEARNING DASHBOARD]  [EXPLORE PROGRAMME]  [ADD TO CALENDAR]
+
+
+FLOW:
+PULCE CONNECT 2026 | HEART FAILURE SERIES (LOGO)
+From Guidelines to Individualised Heart Failure Care
+Three connected learning sessions bringing international and regional faculty together to translate heart failure evidence into clinical practice.
+Join live. Continue on demand. Complete the learning journey.
+IMPLEMENT  →  OPTIMIZE  →  INDIVIDUALIZE
+3 Sessions | 3 Cities | International & Regional Faculty | Live + On Demand
+
+
+Attend In Person | Join Live Webcast | Access On Demand
+
+
+
+
+Module
+	City / country
+	Date
+	Local / UTC
+	01 IMPLEMENT
+	Manila, Philippines
+	28 Oct 2026
+	7:00–9:00 PM PHT | 11:00–13:00 UTC
+	02 OPTIMIZE
+	Bangkok, Thailand
+	29 Oct 2026
+	6:00–8:00 PM ICT | 11:00–13:00 UTC
+	03 INDIVIDUALIZE
+	Jakarta, Indonesia
+	31 Oct 2026
+	3:30–5:30 PM WIB | 08:30–10:30 UTC
+	
+
+       ·    Remove monument design from page 2 after registration.
+·       First screen must answer what PULCE is, what doctors learn, who teaches and how to participate.
+·       Keep a compact Manila → Bangkok → Jakarta cue, not large city-image cards.
+·       Remove extra header PULCE logo, Chapter navigation and dynamic heartbeat.
+·       One registration covers all sessions; full learning pages require sign-in, while a public programme preview remains accessible.
+·       Countdown can sit below hero / post-registration if uncluttered. Provide a country-wise time switcher.
+Design / developer changes
+·       Remove PULCE watermark and generic heart image
+·       No sequential locks. All three session links remain accessible.
+·       Send automated registration confirmation and provide local-time calendar options.
+
+
+Page 2: The Navigation flow after login should be: 
+Navigation after login:  PROGRAMME OVERVIEW  | FACULTY | AGENDA | LEARNING HUB | MY PROGRESS | LIVE-ON DEMAND | CERTIFICATES | PROFILE
+* We do not need separate navigation tabs for “Pre Read” and “Post Event Hub”. These should  become part of the Learning Hub.
+
+
+  
+
+1. Dashboard - After login, the homepage should become a personalized dashboard.
+
+
+Welcome back, Dr. [Name]
+Your PULCE Connect Journey
+01 IMPLEMENT — Closing the GDMT Gap | Manila, 28 Oct | [Dynamic status ( ✓ Completed)
+ 
+02 OPTIMIZE — Managing Challenging Heart Failure Patients | Bangkok, 29 Oct | [Dynamic status] 55% completed
+[CONTINUE]
+
+
+03 INDIVIDUALIZE — Personalising Cardiovascular Care | Jakarta, 31 Oct | [Dynamic status] |
+YOUR SERIES PROGRESS — [X of 3 Sessions Completed]  [Progress bar]
+Complete all three sessions to complete your PULCE Connect learning journey.
+NEXT UPCOMING SESSION: [JOIN LIVE] [ADD TO CALENDAR]
+After live: [WATCH ON DEMAND] / [CONTINUE WATCHING
+
+After the live programme, this automatically changes to:
+WATCH ON DEMAND / CONTINUE WATCHING
+
+
+2. Programme overview
+PULCE CONNECT 2026
+From Guidelines to Individualised Heart Failure Care
+Design / developer changes
+·       Use a clean connected visual journey IMPLEMENT → OPTIMIZE → INDIVIDUALIZE. (visually show the learning journey)
+·       Remove “3 Chapters”, redundant Programme Summary and decorative sections.
+·       Do not make this progression an access lock.
+
+
+
+
+  
+
+Redesign this page  write up as follows:
+Program Over view – Remove 3 Chapter  
+
+
+Pulce Connect  - ( in place of Program Summary ) 
+
+
+What is PULCE Connect?
+PULCE Connect is a three module education series designed for cardiologists and heart failure specialists across.
+Each chapter addresses a critical gap in heart failure management — from early GDMT implementation to managing complex patients and personalising cardiovascular care. The chapters features international and regional faculty & interactive panel discussions, followed by Q&A session
+
+
+What will I learn?
+Explore three key areas of contemporary heart failure management:
+* IMPLEMENT: Closing the GDMT Gap – From Evidence to Early Implementation.
+* OPTIMIZE: Managing Challenging Heart Failure Patients – Complexity, comorbidities and treatment optimisation.
+* INDIVIDUALIZE: Personalising Cardiovascular Care – Through Patient Profiling.
+3. Who will I learn from?
+Learn from Prof. Gianluigi Savarese, Professor of Cardiology at Karolinska Institute and President-Elect of the Heart Failure Association of the ESC, alongside distinguished regional cardiology faculty.
+Gain international scientific insights complemented by regional clinical perspectives and practical, case-based discussions.
+4. How can I participate?
+Attend In Person | Join Live Webcast | Access On Demand
+Join the scientific sessions live from:
+* Manila, Philippines: 28 October 2026
+* Bangkok, Thailand: 29 October 2026
+* Jakarta, Indonesia: 31 October 2026
+One registration provides access to all three sessions, with the flexibility to participate live or continue learning on demand.
+  
+
+  
+
+
+
+
+
+3. FACULTY
+
+
+International Keynote Faculty
+
+
+Short Bio about Prof Savarese + Picture - 
+
+
+
+
+Regional Faculty - 
+Photo | Name | Institution | Country | Specialty/Role | Short professional profile
+
+
+
+
+4. AGENDA
+
+
+Module 1 - IMPLEMENT - Closing the GDMT Gap: From evidence to early implementation - Why early
+initiation matters: evidence supporting rapid GDMT implementation 
+
+
+LIVE FROM MANILA
+28 Oct, 2026
+7:00 PM – 9:00 PM PHT*
+11:00–13:00 UTC
+In-person Meeting + Live Webcast
+
+
+
+
+  
+
+
+
+Module 2 - OPTIMIZE - Navigating GDMT in complex heart failure patients: Low blood pressure, CKD and other clinical challenges
+
+
+LIVE FROM BANGKOK
+29 Oct, 2026
+6:00 PM – 8:00 PM ICT**
+11:00–13:00 UTC
+In-person Meeting + Live Webcast
+
+
+  
+
+
+
+
+
+Module 2 - INDIVIDUALIZE - Personalizing cardiovascular care through patient profiling: The right heart failure patient for the right therapy, positioning ARNI across the patient journey
+
+
+LIVE FROM JAKARTA
+31 Oct, 2026
+3:30 PM – 5:30 PM WIB***
+8:30–10:30 UTC
+In-person Meeting + Live Webcast
+
+
+
+
+5. LEARNING HUB
+(This will include Pre Read and Post Event materials)
+
+
+Organise the content session-wise.
+For each session:
+BEFORE YOU JOIN
+* 5-minute clinical primer
+* Key guideline/evidence update
+* Clinical case/question to consider
+
+
+SESSION
+* Join Live
+* Watch On Demand
+* Agenda
+* Faculty
+
+
+AFTER THE SESSION
+* Key clinical takeaways
+* Selected references/guidelines
+* Clinical pearls/cases
+* Knowledge check if applicable
+* Evaluation
+* Certificate
+Note: However, please do not remove the resource concept completely. We should still provide selected scientific resources and key learning takeaways to give physicians a reason to return to the platform.
+
+
+     6. Live + On-Demand participation
+
+
+Attend when it works for you. Continue your learning journey at your own pace.
+Doctors can participate:
+In Person | Live Online | On Demand
+
+
+Note to the Developer: 
+Where technically feasible, progress should be tracked across live and on-demand participation.
+Therefore, if someone watches 40 minutes live and later continues the remaining content on demand, their progress should continue rather than restart.
+
+
+
+
+      6. Certificates (designed verson will be provided by OAM later)
+Individual Session Certificate:
+
+
+Logo of ESC , logo of Local Body                                                                                                         Hetero Logo
+Certificate of Participation
+This is to Certify that
+…………………………………………………….
+has participated in the CME module of ESC
+……………………name of the Module………………………………..
+held on  ………. October 2026
+This educational initiative has been accredited by  ESC &....
+Signature of ESC Authority                                               
+                                                                    Signature of Local association                                                
+
+
+
+
+
+
+Full Series Completion Certificate
+
+
+Logo of ESC , logo of Local Body                                                                                                         Hetero Logo
+Certificate of Participation
+This is to Certify that
+…………………………………………………….
+has participated in the  3 CME module by  ESC  on
+Guidelines to Individualized Cardiovascular Care
+held on 28th , 29th and 31st October 2026
+This educational initiative has been accredited by  ESC &.
+Signature of ESC Authority                                               
+                                                         Signature of Local association   1,2,3                                              
+
+
+
+
+7. MY PROGRESS
+(Note to IT: Do NOT lock sessions sequentially
+This is an important change.
+Please remove the current logic where Session 2 is locked until Session 1 is completed, etc.
+Doctors should be free to attend any of the three live sessions, irrespective of whether they participated in the earlier one.
+Each session should simply have a status:
+UPCOMING
+LIVE NOW
+WATCH ON DEMAND
+IN PROGRESS
+COMPLETED ✓
+
+
+
+
+NOTE TO DEVELOPER:
+Polls and Dry Run
+•Poll Questions will be added during the live session. (will share shotly)
+•Conduct a dry run with the poll questions, involving all speakers and panellists, one week before the event.
+Q&A box to be given for the audience to ask questions.
