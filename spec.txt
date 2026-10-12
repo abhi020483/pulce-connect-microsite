@@ -1,3 +1,4 @@
+\
 Instructions - The logos of the company Hetero and Pulce should be substantially visible (aesthetic ) across all pages in the microsite. The landing page should be the registration page with content that is mentioned in the landing page here. Following the registration only should the user have access to all of the content placed in the inner pages. After the registration of the user the inner pages should have prominent tabs which on clicking will navigate one to the module overview and then on subsequently clicking only should one get access to the respective modules overview. There will be a feedback survey after each of the modules / chapter . It would be good to pick up the latest images of the respective Drs whose names are mentioned in this document for their profiles and 
 
 
