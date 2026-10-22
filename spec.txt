@@ -1223,3 +1223,49 @@ Polls and Dry Run
 •Poll Questions will be added during the live session. (will share shotly)
 •Conduct a dry run with the poll questions, involving all speakers and panellists, one week before the event.
 Q&A box to be given for the audience to ask questions.
+
+
+
+
+      
+
+
+Client changes - 22nd Oct 
+
+
+1. Delete across asia.
+  
+
+
+
+2. PULCE LOGO to be seen on all microsite pages.
+  
+
+
+
+3. From the below, remove Dr. Puti and instead add the details of the below:
+* Dr. Nanda Iryuza, 
+Moderator
+SpJP, Interventional Cardiologist   
+           In addition, there are 2 more speakers who got added today. 
+* Dr. Wahyu Aditya
+Speaker
+SpJP, Interventional Cardiologist   
+   * Dr. Agung Fabian Chandranegara
+                      Speaker 
+                      SpJP, Cardiologist
+  
+
+   4. Module thumbnails to be replaced with the below:
+  
+  
+  
+
+
+
+
+
+   5. Agenda to be replaced: (will provide pdf & ai file)
+
+
+   6. In the agenda section: Increase the font size of Module 1 · IMPLEMENT, similarly do the change for Module 2 · OPTIMIZE  & Module 3 · INDIVIDUALIZE
